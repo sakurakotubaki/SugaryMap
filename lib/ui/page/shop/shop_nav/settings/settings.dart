@@ -13,6 +13,7 @@ class _SettingPageState extends State<SettingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('設定'),
         centerTitle: true,
         backgroundColor: MyAppBar.appBar.appColor,
       ),
@@ -21,14 +22,6 @@ class _SettingPageState extends State<SettingPage> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             const Text('設定'),
-            TextButton(
-              onPressed: () {
-                // BottomNavigationBar内のページで、
-                // 詳細ページへ画面遷移するときは、以下のコードを書く.
-                GoRouter.of(context).go('/a/details');
-              },
-              child: const Text('View A details'),
-            ),
           ],
         ),
       ),

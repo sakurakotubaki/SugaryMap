@@ -14,6 +14,7 @@ class _AdminPageState extends State<AdminPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: MyAppBar.appBar.appColor,
         centerTitle: true,
         title: Text('予約管理'),
       ),

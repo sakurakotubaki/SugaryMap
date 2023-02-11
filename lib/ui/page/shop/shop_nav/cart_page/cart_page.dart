@@ -13,21 +13,14 @@ class _ShopCartState extends State<ShopCart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('商品管理'),
         centerTitle: true,
         backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            const Text('商品管理'),
-            TextButton(
-              onPressed: () {
-
-              },
-              child: const Text('View A details'),
-            ),
-          ],
+          children: <Widget>[],
         ),
       ),
     );

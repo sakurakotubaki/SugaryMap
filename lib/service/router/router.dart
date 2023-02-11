@@ -1,6 +1,8 @@
 import 'package:sugary_map/service/export/nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/admin_page.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/cart_page/cart_page.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/settings.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/shop_navbar.dart';
 import 'package:sugary_map/ui/page/user/user_nav/cart_page/total/reserev/reserevation.dart';
 import 'package:sugary_map/ui/page/user/user_nav/cart_page/total/total_page.dart';
@@ -202,7 +204,19 @@ final router = GoRouter(
           GoRoute(
             path: '/admin',
             builder: (context, state) {
-              return AdminPage();
+              return const AdminPage();
+            },
+          ),
+          GoRoute(
+            path: '/product',
+            builder: (context, state) {
+              return const ShopCart();
+            },
+          ),
+          GoRoute(
+            path: '/setting',
+            builder: (context, state) {
+              return const SettingPage();
             },
           )
         ])
