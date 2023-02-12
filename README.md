@@ -5,5 +5,5 @@ Riverpodにリファクタリングする.
 
 - 使用している技術
   - Flutter3.3.10
-  - Dart2.18.0
+  - Dart2.18.6
   - go_router: ^6.0.5
