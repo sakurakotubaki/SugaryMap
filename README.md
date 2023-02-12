@@ -1,5 +1,6 @@
 # Sugary Map
-Jboyが作成しているアプリ。
+Jboyが作成しているアプリ.
+StatefulWidgetでまずは作成する.
 
 - 使用している技術
   - Flutter3.3.10
