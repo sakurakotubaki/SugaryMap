@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 
