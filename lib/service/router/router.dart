@@ -1,6 +1,11 @@
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_account_page.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_mail_reset_page.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_manual_page.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_password_reset_page.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/update_shop.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -222,11 +227,43 @@ final router = GoRouter(
           },
         ),
         GoRoute(
-          path: '/setting',
-          builder: (context, state) {
-            return const SettingPage();
-          },
-        ),
+            path: '/setting',
+            builder: (context, state) {
+              return const ShopSettingPage();
+            },
+            routes: [
+              GoRoute(
+                path: 'shop_manual',
+                builder: (context, state) {
+                  return const ShopManualPage();
+                },
+              ),
+              GoRoute(
+                  path: 'shop_account',
+                  builder: (context, state) {
+                    return const ShopAccountSettings();
+                  },
+                  routes: [
+                    GoRoute(
+                      path: 'shop_mail',
+                      builder: (context, state) {
+                        return ShopMailUpdate();
+                      },
+                    ),
+                    GoRoute(
+                      path: 'shop_password',
+                      builder: (context, state) {
+                        return ShopPasswordUpdate();
+                      },
+                    ),
+                    GoRoute(
+                      path: 'update_shop',
+                      builder: (context, state) {
+                        return UpdateShop();
+                      },
+                    ),
+                  ]),
+            ]),
       ],
     ),
   ],

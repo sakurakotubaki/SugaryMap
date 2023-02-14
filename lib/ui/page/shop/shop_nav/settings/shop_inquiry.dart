@@ -1,8 +1,8 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 
-class Inquiry extends StatelessWidget {
-  const Inquiry({Key? key}) : super(key: key);
+class ShopInquiry extends StatelessWidget {
+  const ShopInquiry({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

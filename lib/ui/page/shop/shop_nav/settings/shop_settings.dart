@@ -1,14 +1,15 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
+import 'package:sugary_map/ui/auth/signin_page.dart';
 
-class SettingPage extends StatefulWidget {
-  const SettingPage({Key? key}) : super(key: key);
+class ShopSettingPage extends StatefulWidget {
+  const ShopSettingPage({Key? key}) : super(key: key);
 
   @override
-  State<SettingPage> createState() => _SettingPageState();
+  State<ShopSettingPage> createState() => _ShopSettingPageState();
 }
 
-class _SettingPageState extends State<SettingPage> {
+class _ShopSettingPageState extends State<ShopSettingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +28,7 @@ class _SettingPageState extends State<SettingPage> {
                   SizedBox(height: 50),
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/manual');
+                      GoRouter.of(context).go('/setting/shop_manual');
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
@@ -42,7 +43,7 @@ class _SettingPageState extends State<SettingPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/account');
+                      GoRouter.of(context).go('/setting/shop_account');
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
@@ -71,9 +72,7 @@ class _SettingPageState extends State<SettingPage> {
                     color: Colors.black12,
                   ),
                   GestureDetector(
-                    onTap: () {
-                      GoRouter.of(context).go('/mypage/terms');
-                    },
+                    onTap: () {},
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('利用規約'),
@@ -86,9 +85,7 @@ class _SettingPageState extends State<SettingPage> {
                     color: Colors.black12,
                   ),
                   GestureDetector(
-                    onTap: () {
-                      GoRouter.of(context).go('/mypage/inquiry');
-                    },
+                    onTap: () {},
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('お問い合わせ'),
@@ -101,7 +98,9 @@ class _SettingPageState extends State<SettingPage> {
                     color: Colors.black12,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.goNamed(SignInPage.routeName);
+                    },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('ログアウト'),

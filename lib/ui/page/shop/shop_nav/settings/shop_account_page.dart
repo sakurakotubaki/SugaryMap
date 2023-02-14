@@ -1,14 +1,14 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 
-class AccontSettings extends StatefulWidget {
-  const AccontSettings({Key? key}) : super(key: key);
+class ShopAccountSettings extends StatefulWidget {
+  const ShopAccountSettings({Key? key}) : super(key: key);
 
   @override
-  State<AccontSettings> createState() => _AccontSettingsState();
+  State<ShopAccountSettings> createState() => _ShopAccountSettingsState();
 }
 
-class _AccontSettingsState extends State<AccontSettings> {
+class _ShopAccountSettingsState extends State<ShopAccountSettings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +37,7 @@ class _AccontSettingsState extends State<AccontSettings> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/account/user_email');
+                      GoRouter.of(context).go('/setting/shop_account/shop_mail');
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
@@ -52,7 +52,7 @@ class _AccontSettingsState extends State<AccontSettings> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/account/user_password');
+                      GoRouter.of(context).go('/setting/shop_account/shop_password');
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
@@ -67,7 +67,7 @@ class _AccontSettingsState extends State<AccontSettings> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/account/update_user');
+                      GoRouter.of(context).go('/setting/shop_account/update_shop');
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
