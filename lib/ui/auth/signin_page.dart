@@ -57,7 +57,18 @@ class _SignInPageState extends State<SignInPage> {
               child: OutlinedButton(
                   onPressed: () {},
                   child: Text(
-                    'ログイン',
+                    '一般ユーザーでログイン',
+                    style: TextStyle(color: Colors.black),
+                  )),
+            ),
+            SizedBox(height: 20),
+            SizedBox(
+              width: 300,
+              height: 40,
+              child: OutlinedButton(
+                  onPressed: () {},
+                  child: Text(
+                    '店舗ユーザーでログイン',
                     style: TextStyle(color: Colors.black),
                   )),
             ),

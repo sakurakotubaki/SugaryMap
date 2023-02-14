@@ -1,18 +1,20 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 
-class AdminHistory extends StatefulWidget {
-  AdminHistory({Key? key}) : super(key: key);
+class ItemHistory extends StatefulWidget {
+  ItemHistory({Key? key}) : super(key: key);
+
+  static const rootName = 'itemHistory';
 
   @override
-  State<AdminHistory> createState() => _AdminHistoryState();
+  State<ItemHistory> createState() => _ItemHistoryState();
 }
 
-class _AdminHistoryState extends State<AdminHistory> {
+class _ItemHistoryState extends State<ItemHistory> {
   List items = [
-    "トラさん",
-    "むっくさん",
-    "おっさん",
+    "ショートケーキ",
+    "ガトーショコラ",
+    "チーズケーキ",
   ];
 
   @override

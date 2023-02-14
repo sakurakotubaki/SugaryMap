@@ -17,6 +17,10 @@ class _ShopCartState extends State<ShopCart> {
         centerTitle: true,
         backgroundColor: MyAppBar.appBar.appColor,
       ),
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.redAccent,
+          onPressed: () {},
+          child: const Icon(Icons.add)),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,

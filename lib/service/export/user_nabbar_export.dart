@@ -12,3 +12,6 @@ export 'package:sugary_map/ui/page/user/user_nav/mypage/account/password_reset_p
 export 'package:sugary_map/ui/page/user/user_nav/mypage/inquiry.dart';
 export 'package:sugary_map/ui/page/user/user_nav/mypage/manual_page.dart';
 export 'package:sugary_map/ui/page/user/user_nav/mypage/terms_of_service.dart';
+export 'package:sugary_map/ui/page/user/user_nav/cart_page/total/reserev/reserevation.dart';
+export 'package:sugary_map/ui/page/user/user_nav/cart_page/total/total_page.dart';
+export 'package:sugary_map/ui/page/user/user_nav/mypage/account/update_user.dart';

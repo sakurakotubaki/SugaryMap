@@ -1,12 +1,6 @@
-import 'package:sugary_map/service/export/nabbar_export.dart';
+import 'package:sugary_map/service/export/shop_nabbar_export.dart';
+import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/admin_page.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/cart_page/cart_page.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/settings/settings.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/shop_navbar.dart';
-import 'package:sugary_map/ui/page/user/user_nav/cart_page/total/reserev/reserevation.dart';
-import 'package:sugary_map/ui/page/user/user_nav/cart_page/total/total_page.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/account/update_user.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -194,31 +188,46 @@ final router = GoRouter(
       path: '/create_shop',
       builder: (context, state) => CreateShop(),
     ),
+
     // 店舗用のボトムナビゲーションバー
     ShellRoute(
-        navigatorKey: _shellNavigatorKey,
-        builder: (BuildContext context, GoRouterState state, Widget child) {
-          return ShopNavBar(child: child);
-        },
-        routes: <RouteBase>[
-          GoRoute(
+      navigatorKey: _shellNavigatorKey,
+      builder: (BuildContext context, GoRouterState state, Widget child) {
+        return ShopNavBar(child: child);
+      },
+      routes: <RouteBase>[
+        GoRoute(
             path: '/admin',
             builder: (context, state) {
               return const AdminPage();
             },
-          ),
-          GoRoute(
-            path: '/product',
-            builder: (context, state) {
-              return const ShopCart();
-            },
-          ),
-          GoRoute(
-            path: '/setting',
-            builder: (context, state) {
-              return const SettingPage();
-            },
-          )
-        ])
+            routes: [
+              GoRoute(
+                path: 'history_tab',
+                builder: (context, state) {
+                  return HistoryTab();
+                },
+              ),
+              GoRoute(
+                path: 'user_info',
+                builder: (context, state) {
+                  return UserInfo();
+                },
+              ),
+            ]),
+        GoRoute(
+          path: '/product',
+          builder: (context, state) {
+            return const ShopCart();
+          },
+        ),
+        GoRoute(
+          path: '/setting',
+          builder: (context, state) {
+            return const SettingPage();
+          },
+        ),
+      ],
+    ),
   ],
 );
