@@ -2,7 +2,6 @@ import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/theme/button_theme.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 class PostDetail extends StatefulWidget {
   const PostDetail({Key? key}) : super(key: key);

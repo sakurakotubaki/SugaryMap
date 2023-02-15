@@ -37,7 +37,7 @@ class _UpdateUserState extends State<UpdateUser> {
             ),
             SizedBox(height: 50),
             Container(
-              width: 250,
+              width: 300,
               child: TextFormField(
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
@@ -50,7 +50,7 @@ class _UpdateUserState extends State<UpdateUser> {
             ),
             const SizedBox(height: 20),
             Container(
-              width: 250,
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -63,7 +63,7 @@ class _UpdateUserState extends State<UpdateUser> {
             const SizedBox(height: 50),
             Container(),
             SizedBox(
-              width: 250,
+              width: 300,
               height: 50,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(

@@ -1,41 +1,36 @@
-import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/theme/button_theme.dart';
+import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 
-class MapPage extends StatefulWidget {
-  const MapPage({Key? key}) : super(key: key);
+class SearchPage extends StatefulWidget {
+  const SearchPage({Key? key}) : super(key: key);
 
   @override
-  State<MapPage> createState() => _MapPageState();
+  State<SearchPage> createState() => _SearchPageState();
 }
 
-class _MapPageState extends State<MapPage> {
+class _SearchPageState extends State<SearchPage> {
   List posts = ["パティスリーニキ", "サロンドego", "フランス屋"];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // AppBar検索Form.
-        title: Card(
-          child: TextField(
-            decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.search), hintText: '店舗を検索'),
-            onChanged: (value) {},
-          ),
-        ),
         centerTitle: true,
+        title: const Text('口コミ'),
         backgroundColor: MyAppBar.appBar.appColor,
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
-        label: const Text('自分の現在地を表示'),
-        icon: const Icon(Icons.pin_drop),
-        backgroundColor: Colors.amber[300],
+      floatingActionButton: FloatingActionButton(
+        onPressed: (() {
+          context.goNamed(PostAdd.routeName);
+        }),
+        backgroundColor: MyButton.appButton.appColor,
+        child: const Icon(Icons.add),
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Expanded(
                 child: ListView.builder(
@@ -44,7 +39,7 @@ class _MapPageState extends State<MapPage> {
                       final post = posts[index];
                       return ListTile(
                         onTap: (() {
-                          GoRouter.of(context).go('/map/shop_info');
+                          GoRouter.of(context).go('/post/post_detail');
                         }),
                         title: Text(post),
                       );

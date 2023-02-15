@@ -1,6 +1,7 @@
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/shop_info.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/post_detail.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
@@ -63,6 +64,15 @@ final router = GoRouter(
           builder: (BuildContext context, GoRouterState state) {
             return const MapPage();
           },
+          routes: [
+            GoRoute(
+              path: 'shop_info',
+              parentNavigatorKey: _rootNavigatorKey,
+              builder: (BuildContext context, GoRouterState state) {
+                return const ShopInfo();
+              },
+            ),
+          ]
         ),
         GoRoute(
           path: '/post',
