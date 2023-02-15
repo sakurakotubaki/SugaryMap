@@ -42,70 +42,70 @@ class _ProductListState extends State<ProductList> {
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.redAccent,
           onPressed: () {
-            showModalBottomSheet(
-                context: context,
-                shape: const RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(10.0)),
-                ),
-                builder: (builder) {
-                  return Container(
-                    height: 200.0,
-                    color: Colors.transparent,
-                    child: Center(
-                      child: Column(
-                        children: [
-                          SizedBox(height: 30),
-                          Text("商品カテゴリを作成"),
-                          const SizedBox(height: 20),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 50, right: 50),
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                contentPadding: EdgeInsets.only(left: 20),
-                                enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide(color: Colors.grey)),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 20),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(left: 100, right: 50),
-                            child: Row(
-                              children: [
-                                ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor:
-                                            MyButton.appButton.appColor),
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text('作成')),
-                                const SizedBox(width: 50),
-                                ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor:
-                                            MyButton.appButton.appColor),
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text('閉じる')),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  );
-                });
+            _createModal(context);
           },
           child: const Icon(Icons.add)),
       body: _flag
           ? TrueList(context, oddItemColor, evenItemColor)
           : FalseList(context, oddItemColor, evenItemColor),
     );
+  }
+
+  Future<dynamic> _createModal(BuildContext context) {
+    return showModalBottomSheet(
+        context: context,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(10.0)),
+        ),
+        builder: (builder) {
+          return Container(
+            height: 200.0,
+            color: Colors.transparent,
+            child: Center(
+              child: Column(
+                children: [
+                  SizedBox(height: 30),
+                  Text("商品カテゴリを作成"),
+                  const SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50, right: 50),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.only(left: 20),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(color: Colors.grey)),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 100, right: 50),
+                    child: Row(
+                      children: [
+                        ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: MyButton.appButton.appColor),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Text('作成')),
+                        const SizedBox(width: 50),
+                        ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: MyButton.appButton.appColor),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Text('閉じる')),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        });
   }
 
   Center FalseList(
@@ -160,9 +160,68 @@ class _ProductListState extends State<ProductList> {
                     child: Row(
                       children: [
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                barrierDismissible: false,
+                                builder: (_) {
+                                  return AlertDialog(
+                                    title: Center(child: Text("カテゴリ設定")),
+                                    actions: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 80.0),
+                                        child: Row(
+                                          children: [
+                                            const Text('カテゴリを変更'),
+                                            const SizedBox(width: 20),
+                                            IconButton(
+                                                onPressed: () {},
+                                                icon: const Icon(Icons.edit))
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 80.0),
+                                        child: Row(
+                                          children: [
+                                            const Text('カテゴリを削除'),
+                                            const SizedBox(width: 20),
+                                            IconButton(
+                                                onPressed: () {},
+                                                icon: const Icon(Icons.delete))
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 80.0),
+                                        child: Row(
+                                          children: [
+                                            TextButton(
+                                              child: const Text("Cancel"),
+                                              onPressed: () {
+                                                GoRouter.of(context).pop();
+                                              },
+                                            ),
+                                            TextButton(
+                                              child: const Text("OK"),
+                                              onPressed: () {
+                                                GoRouter.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  );
+                                },
+                              );
+                            },
                             icon: const Icon(Icons.more_horiz_rounded)),
-                        const Icon(Icons.menu),
+                        IconButton(
+                            onPressed: () {}, icon: const Icon(Icons.menu)),
                       ],
                     ),
                   ),
