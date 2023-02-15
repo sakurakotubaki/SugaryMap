@@ -1,6 +1,8 @@
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/cart_page/product_detail.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/cart_page/product_item.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_account_page.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_inquiry.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_mail_reset_page.dart';
@@ -224,11 +226,26 @@ final router = GoRouter(
               ),
             ]),
         GoRoute(
-          path: '/product',
-          builder: (context, state) {
-            return const ShopCart();
-          },
-        ),
+            path: '/product',
+            builder: (context, state) {
+              return const ProductList();
+            },
+            routes: [
+              GoRoute(
+                  path: 'product_detail',
+                  builder: (context, state) {
+                    return const ProductDetail();
+                  },
+                  routes: [
+                    GoRoute(
+                      path: 'product_item',
+                      pageBuilder: (context, state) {
+                        return MaterialPage(
+                            fullscreenDialog: true, child: ProductItem());
+                      },
+                    ),
+                  ]),
+            ]),
         GoRoute(
             path: '/setting',
             builder: (context, state) {
@@ -266,19 +283,19 @@ final router = GoRouter(
                       },
                     ),
                   ]),
-                  GoRoute(
+              GoRoute(
                 path: 'shop_privacy',
                 builder: (context, state) {
                   return const ShopPrivacy();
                 },
               ),
-                  GoRoute(
+              GoRoute(
                 path: 'shop_terms',
                 builder: (context, state) {
                   return const ShopTerms();
                 },
               ),
-                  GoRoute(
+              GoRoute(
                 path: 'shop_inquiry',
                 builder: (context, state) {
                   return const ShopInquiry();
