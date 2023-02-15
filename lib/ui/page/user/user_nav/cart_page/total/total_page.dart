@@ -17,7 +17,7 @@ class _TotalPageState extends State<TotalPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('カート'),
+        title: const Text('カート'),
         backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
@@ -41,8 +41,8 @@ class _TotalPageState extends State<TotalPage> {
                 onPressed: () {
                   context.go('/cart/total/reserve');
                 },
-                child: Text('予約する')),
-            SizedBox(height: 40),
+                child: const Text('予約する')),
+            const SizedBox(height: 40),
           ],
         ),
       ),

@@ -18,12 +18,12 @@ class _PostPageState extends State<PostPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('口コミ'),
+        title: const Text('口コミ'),
         backgroundColor: MyAppBar.appBar.appColor,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (() {
-          context.goNamed(AddPost.routeName);
+          context.goNamed(PostAdd.routeName);
         }),
         backgroundColor: MyButton.appButton.appColor,
         child: const Icon(Icons.add),
@@ -39,7 +39,7 @@ class _PostPageState extends State<PostPage> {
                       final post = posts[index];
                       return ListTile(
                         onTap: (() {
-                          
+                          GoRouter.of(context).go('/post/post_detail');
                         }),
                         title: Text(post),
                       );

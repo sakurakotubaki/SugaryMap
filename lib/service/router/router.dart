@@ -1,6 +1,7 @@
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/post_page/post_detail.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -81,11 +82,18 @@ final router = GoRouter(
           },
           routes: <RouteBase>[
             GoRoute(
-              path: 'details',
-              name: AddPost.routeName,
+              path: 'post_add',
+              name: PostAdd.routeName,
               parentNavigatorKey: _rootNavigatorKey,
               builder: (BuildContext context, GoRouterState state) {
-                return AddPost();
+                return PostAdd();
+              },
+            ),
+            GoRoute(
+              path: 'post_detail',
+              parentNavigatorKey: _rootNavigatorKey,
+              builder: (BuildContext context, GoRouterState state) {
+                return const PostDetail();
               },
             ),
           ],

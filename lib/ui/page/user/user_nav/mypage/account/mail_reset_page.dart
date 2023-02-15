@@ -40,10 +40,11 @@ class _MailUpdateState extends State<MailUpdate> {
               width: 300,
               height: 40,
               child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: MyButton.appButton.appColor),
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'メールアドレスを変更',
-                    style: TextStyle(color: MyButton.appButton.appColor),
                   )),
             ),
           ],

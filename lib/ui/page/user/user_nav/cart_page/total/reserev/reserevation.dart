@@ -15,7 +15,7 @@ class _ReserevationState extends State<Reserevation> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('カート'),
+        title: const Text('カート'),
         backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
@@ -29,8 +29,8 @@ class _ReserevationState extends State<Reserevation> {
                 onPressed: () {
                   context.go('/cart');
                 },
-                child: Text('カートに戻る')),
-            SizedBox(height: 40),
+                child: const Text('カートに戻る')),
+            const SizedBox(height: 40),
           ],
         ),
       ),
