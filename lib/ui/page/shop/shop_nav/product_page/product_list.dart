@@ -16,6 +16,7 @@ class _ProductListState extends State<ProductList> {
   //   "チョコレート",
   // ];
   final List<int> _items = List<int>.generate(50, (int index) => index);
+  bool _flag = false;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,15 @@ class _ProductListState extends State<ProductList> {
 
     return Scaffold(
       appBar: AppBar(
-        actions: [TextButton(onPressed: () {}, child: Text('編集'))],
+        actions: [
+          TextButton(
+              onPressed: () {
+                setState(() {
+                  _flag = !_flag;
+                });
+              },
+              child: Text('編集'))
+        ],
         title: const Text('商品管理'),
         centerTitle: true,
         backgroundColor: MyAppBar.appBar.appColor,
@@ -93,52 +102,89 @@ class _ProductListState extends State<ProductList> {
                 });
           },
           child: const Icon(Icons.add)),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            // Expanded(
-            //   child: ListView.builder(
-            //     itemCount: _items.length,
-            //     itemBuilder: (BuildContext context, int index) {
-            //       final item = _items[index];
-            //       return ListTile(
-            //         onTap: () {
-            //           GoRouter.of(context).go('/product/product_detail');
-            //         },
-            //         title: Text(item),
-            //       );
-            //     },
-            //   ),
-            // ),
-            Expanded(
-                child: ReorderableListView(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
-              children: <Widget>[
-                for (int index = 0; index < _items.length; index += 1)
-                  ListTile(
-                    trailing: const Icon(Icons.menu),
-                    onTap: () {
-                      GoRouter.of(context).go('/product/product_detail');
-                    },
-                    key: Key('$index'),
-                    tileColor:
-                        _items[index].isOdd ? oddItemColor : evenItemColor,
-                    title: Text('Item ${_items[index]}'),
+      body: _flag
+          ? TrueList(context, oddItemColor, evenItemColor)
+          : FalseList(context, oddItemColor, evenItemColor),
+    );
+  }
+
+  Center FalseList(
+      BuildContext context, Color oddItemColor, Color evenItemColor) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Expanded(
+              child: ReorderableListView(
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            children: <Widget>[
+              for (int index = 0; index < _items.length; index += 1)
+                ListTile(
+                  onTap: () {
+                    GoRouter.of(context).go('/product/product_detail');
+                  },
+                  key: Key('$index'),
+                  tileColor: _items[index].isOdd ? oddItemColor : evenItemColor,
+                  title: Text('Item ${_items[index]}'),
+                ),
+            ],
+            onReorder: (int oldIndex, int newIndex) {
+              setState(() {
+                if (oldIndex < newIndex) {
+                  newIndex -= 1;
+                }
+                final int item = _items.removeAt(oldIndex);
+                _items.insert(newIndex, item);
+              });
+            },
+          ))
+        ],
+      ),
+    );
+  }
+
+  Center TrueList(
+      BuildContext context, Color oddItemColor, Color evenItemColor) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Expanded(
+              child: ReorderableListView(
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            children: <Widget>[
+              for (int index = 0; index < _items.length; index += 1)
+                ListTile(
+                  trailing: SizedBox(
+                    width: 100,
+                    child: Row(
+                      children: [
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.more_horiz_rounded)),
+                        const Icon(Icons.menu),
+                      ],
+                    ),
                   ),
-              ],
-              onReorder: (int oldIndex, int newIndex) {
-                setState(() {
-                  if (oldIndex < newIndex) {
-                    newIndex -= 1;
-                  }
-                  final int item = _items.removeAt(oldIndex);
-                  _items.insert(newIndex, item);
-                });
-              },
-            ))
-          ],
-        ),
+                  onTap: () {
+                    GoRouter.of(context).go('/product/product_detail');
+                  },
+                  key: Key('$index'),
+                  tileColor: _items[index].isOdd ? oddItemColor : evenItemColor,
+                  title: Text('Item ${_items[index]}'),
+                ),
+            ],
+            onReorder: (int oldIndex, int newIndex) {
+              setState(() {
+                if (oldIndex < newIndex) {
+                  newIndex -= 1;
+                }
+                final int item = _items.removeAt(oldIndex);
+                _items.insert(newIndex, item);
+              });
+            },
+          ))
+        ],
       ),
     );
   }
