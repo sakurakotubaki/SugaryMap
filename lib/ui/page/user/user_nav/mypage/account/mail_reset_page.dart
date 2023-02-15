@@ -1,5 +1,6 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
+import 'package:sugary_map/theme/button_theme.dart';
 
 class MailUpdate extends StatefulWidget {
   MailUpdate({Key? key}) : super(key: key);
@@ -38,11 +39,11 @@ class _MailUpdateState extends State<MailUpdate> {
             SizedBox(
               width: 300,
               height: 40,
-              child: OutlinedButton(
+              child: ElevatedButton(
                   onPressed: () {},
                   child: Text(
                     'メールアドレスを変更',
-                    style: TextStyle(color: Colors.black),
+                    style: TextStyle(color: MyButton.appButton.appColor),
                   )),
             ),
           ],

@@ -1,8 +1,8 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 
-class TermsOfService extends StatelessWidget {
-  const TermsOfService({Key? key}) : super(key: key);
+class UserTerms extends StatelessWidget {
+  const UserTerms({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

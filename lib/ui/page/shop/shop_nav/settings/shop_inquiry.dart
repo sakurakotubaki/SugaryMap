@@ -17,10 +17,10 @@ class ShopInquiry extends StatelessWidget {
         children: <Widget>[
           SizedBox(height: 40),
           Text("""
-          SugaryMapをご利用いただきあり
-          がとうございます。
-          トラブルやお困りごと、ご意見が
-          あればこちらから、ご連絡ください
+  SugaryMapをご利用いただきあり
+  がとうございます。
+  トラブルやお困りごと、ご意見が
+  あればこちらから、ご連絡ください
                 """, style: TextStyle(fontSize: 20)),
           SizedBox(height: 20),
           Padding(

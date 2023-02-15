@@ -58,7 +58,7 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print('アカウント設定');
+                      GoRouter.of(context).go('/setting/shop_privacy');
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
@@ -72,7 +72,9 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
                     color: Colors.black12,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      GoRouter.of(context).go('/setting/shop_terms');
+                    },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('利用規約'),
@@ -85,7 +87,9 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
                     color: Colors.black12,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      GoRouter.of(context).go('/setting/shop_inquiry');
+                    },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('お問い合わせ'),

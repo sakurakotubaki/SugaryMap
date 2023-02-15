@@ -1,5 +1,6 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
+import 'dart:developer';
 
 class AdminHistory extends StatefulWidget {
   AdminHistory({Key? key}) : super(key: key);
@@ -27,7 +28,9 @@ class _AdminHistoryState extends State<AdminHistory> {
                 itemBuilder: (BuildContext context, int index) {
                   final item = items[index];
                   return ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      
+                    },
                     title: Text(item),
                   );
                 },

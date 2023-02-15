@@ -2,9 +2,12 @@ import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_account_page.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_inquiry.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_mail_reset_page.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_manual_page.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_password_reset_page.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_privacy.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_terms.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/update_shop.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
@@ -177,7 +180,7 @@ final router = GoRouter(
             GoRoute(
               path: 'terms',
               builder: (BuildContext context, GoRouterState state) {
-                return const TermsOfService();
+                return const UserTerms();
               },
             ),
           ],
@@ -263,6 +266,24 @@ final router = GoRouter(
                       },
                     ),
                   ]),
+                  GoRoute(
+                path: 'shop_privacy',
+                builder: (context, state) {
+                  return const ShopPrivacy();
+                },
+              ),
+                  GoRoute(
+                path: 'shop_terms',
+                builder: (context, state) {
+                  return const ShopTerms();
+                },
+              ),
+                  GoRoute(
+                path: 'shop_inquiry',
+                builder: (context, state) {
+                  return const ShopInquiry();
+                },
+              ),
             ]),
       ],
     ),
