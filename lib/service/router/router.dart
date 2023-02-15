@@ -1,8 +1,8 @@
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/cart_page/product_detail.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/cart_page/product_item.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/product_page/product_detail.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/product_page/product_item.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_account_page.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_inquiry.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_mail_reset_page.dart';

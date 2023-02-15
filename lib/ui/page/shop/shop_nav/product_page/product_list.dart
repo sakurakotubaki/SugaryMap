@@ -10,16 +10,22 @@ class ProductList extends StatefulWidget {
 }
 
 class _ProductListState extends State<ProductList> {
-  List items = [
-    "ホールケーキ",
-    "プティガトー",
-    "チョコレート",
-  ];
+  // List _items = [
+  //   "ホールケーキ",
+  //   "プティガトー",
+  //   "チョコレート",
+  // ];
+  final List<int> _items = List<int>.generate(50, (int index) => index);
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+    final Color oddItemColor = colorScheme.primary.withOpacity(0.05);
+    final Color evenItemColor = colorScheme.primary.withOpacity(0.15);
+
     return Scaffold(
       appBar: AppBar(
+        actions: [TextButton(onPressed: () {}, child: Text('編集'))],
         title: const Text('商品管理'),
         centerTitle: true,
         backgroundColor: MyAppBar.appBar.appColor,
@@ -91,20 +97,46 @@ class _ProductListState extends State<ProductList> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+            // Expanded(
+            //   child: ListView.builder(
+            //     itemCount: _items.length,
+            //     itemBuilder: (BuildContext context, int index) {
+            //       final item = _items[index];
+            //       return ListTile(
+            //         onTap: () {
+            //           GoRouter.of(context).go('/product/product_detail');
+            //         },
+            //         title: Text(item),
+            //       );
+            //     },
+            //   ),
+            // ),
             Expanded(
-              child: ListView.builder(
-                itemCount: items.length,
-                itemBuilder: (BuildContext context, int index) {
-                  final item = items[index];
-                  return ListTile(
+                child: ReorderableListView(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              children: <Widget>[
+                for (int index = 0; index < _items.length; index += 1)
+                  ListTile(
+                    trailing: const Icon(Icons.menu),
                     onTap: () {
                       GoRouter.of(context).go('/product/product_detail');
                     },
-                    title: Text(item),
-                  );
-                },
-              ),
-            ),
+                    key: Key('$index'),
+                    tileColor:
+                        _items[index].isOdd ? oddItemColor : evenItemColor,
+                    title: Text('Item ${_items[index]}'),
+                  ),
+              ],
+              onReorder: (int oldIndex, int newIndex) {
+                setState(() {
+                  if (oldIndex < newIndex) {
+                    newIndex -= 1;
+                  }
+                  final int item = _items.removeAt(oldIndex);
+                  _items.insert(newIndex, item);
+                });
+              },
+            ))
           ],
         ),
       ),
