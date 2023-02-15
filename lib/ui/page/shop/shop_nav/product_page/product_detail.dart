@@ -1,3 +1,4 @@
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/theme/button_theme.dart';
@@ -39,9 +40,40 @@ class _ProductDetailState extends State<ProductDetail> {
                 itemCount: items.length,
                 itemBuilder: (BuildContext context, int index) {
                   final item = items[index];
-                  return ListTile(
+                  return Slidable(
+                    key: const ValueKey(0),
+                  endActionPane: ActionPane(
+                    motion: const DrawerMotion(),
+                    // childrenの中にボタンを書く.
+                    children: [
+                      // 種類ボタン.
+                      SlidableAction(
+                        onPressed: (value) {},
+                        backgroundColor: Colors.green,
+                        icon: Icons.category,
+                        label: '種類',
+                      ),
+                      // 編集ボタン.
+                      SlidableAction(
+                        onPressed: (value) {},
+                        backgroundColor: Colors.blue,
+                        icon: Icons.edit,
+                        label: '編集',
+                      ),
+                      // 削除ボタン
+                      SlidableAction(
+                        onPressed: (value) {
+                        
+                        },
+                        backgroundColor: Colors.red,
+                        icon: Icons.delete,
+                        label: '削除',
+                      ),
+                    ],
+                  ),
+                      child: ListTile(
                     title: Text(item),
-                  );
+                  ));
                 },
               ),
             ),
