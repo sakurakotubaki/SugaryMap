@@ -25,10 +25,10 @@ class _SignInPageState extends State<SignInPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.lock_rounded, size: 100.0, color: Colors.grey),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            const Icon(Icons.lock_rounded, size: 100.0, color: Colors.grey),
+            const SizedBox(height: 20),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -38,9 +38,9 @@ class _SignInPageState extends State<SignInPage> {
                     labelText: "メールアドレスを入力"),
               ),
             ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            const SizedBox(height: 20),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -50,40 +50,40 @@ class _SignInPageState extends State<SignInPage> {
                     labelText: "パスワードを入力"),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SizedBox(
               width: 300,
               height: 40,
               child: OutlinedButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     '一般ユーザーでログイン',
                     style: TextStyle(color: Colors.black),
                   )),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SizedBox(
               width: 300,
               height: 40,
               child: OutlinedButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     '店舗ユーザーでログイン',
                     style: TextStyle(color: Colors.black),
                   )),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             TextButton(
                 onPressed: () {
                   context.goNamed(SignUpPage.routeName);
                 },
-                child: Text('新規登録')),
-            SizedBox(height: 10),
+                child: const Text('新規登録')),
+            const SizedBox(height: 10),
             TextButton(
                 onPressed: () {
-                  context.goNamed(PasswordResetPage.routeName);
+                  context.goNamed(ForgetPassword.routeName);
                 },
-                child: Text('パスワードを忘れた')),
+                child: const Text('パスワードを忘れた')),
           ],
         ),
       ),

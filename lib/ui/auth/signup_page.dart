@@ -13,7 +13,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  bool light = true;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 '一般ユーザーとして登録',
                 style: TextStyle(color: Colors.black),
               )),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           OutlinedButton(
               onPressed: () {
                 context.goNamed(ShopSignupPage.routeName);

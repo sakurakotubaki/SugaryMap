@@ -24,10 +24,11 @@ class _ShopSignupPageState extends State<ShopSignupPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.lock_person_rounded, size: 100.0, color: Colors.grey),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            const Icon(Icons.lock_person_rounded,
+                size: 100.0, color: Colors.grey),
+            const SizedBox(height: 20),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -37,9 +38,9 @@ class _ShopSignupPageState extends State<ShopSignupPage> {
                     labelText: "メールアドレスを入力"),
               ),
             ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            const SizedBox(height: 20),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -49,7 +50,7 @@ class _ShopSignupPageState extends State<ShopSignupPage> {
                     labelText: "パスワードを入力"),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SizedBox(
               width: 300,
               height: 40,
@@ -57,7 +58,7 @@ class _ShopSignupPageState extends State<ShopSignupPage> {
                   onPressed: () {
                     context.goNamed(CreateShop.routeName);
                   },
-                  child: Text(
+                  child: const Text(
                     '店舗ユーザー新規登録',
                     style: TextStyle(color: Colors.black),
                   )),

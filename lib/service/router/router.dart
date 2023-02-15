@@ -11,8 +11,8 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
 final router = GoRouter(
   navigatorKey: _rootNavigatorKey,
   // initialLocation: '/admin', // 最初に表示されるshop側のページ.
-  initialLocation: '/map',// 最初に表示されるuserページ.
-  // initialLocation: '/sign_in',// 最初に表示されるページ.
+  // initialLocation: '/map',// 最初に表示されるuserページ.
+  initialLocation: '/sign_in', // 最初に表示されるページ.
   routes: [
     GoRoute(
       name: SignInPage.routeName,
@@ -39,9 +39,9 @@ final router = GoRouter(
         ),
         // パスワードのリセットページ.
         GoRoute(
-          name: PasswordResetPage.routeName,
-          path: 'reset_page',
-          builder: (context, state) => PasswordResetPage(),
+          name: ForgetPassword.routeName,
+          path: 'forget_password',
+          builder: (context, state) => ForgetPassword(),
         ),
       ],
     ),
@@ -63,17 +63,6 @@ final router = GoRouter(
           builder: (BuildContext context, GoRouterState state) {
             return const MapPage();
           },
-          routes: <RouteBase>[
-            // 内側のナビゲータに重ねて表示する詳細画面。
-            // これは画面Aをカバーするが、アプリケーションシェルはカバーしない。
-
-            // GoRoute(
-            //   path: 'details',
-            //   builder: (BuildContext context, GoRouterState state) {
-            //     return const DetailsScreen(label: 'A');
-            //   },
-            // ),
-          ],
         ),
         GoRoute(
           path: '/post',

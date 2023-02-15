@@ -24,23 +24,21 @@ class _CreateUserState extends State<CreateUser> {
       ),
       body: Column(
         children: [
-          SizedBox(height: 50),
-          Padding(
-            padding: const EdgeInsets.only(left: 50, right: 50),
-            child: Container(
-              clipBehavior: Clip.antiAlias,
-              width: 160,
-              height: 160,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.grey,
-              ),
+          const SizedBox(height: 50),
+          Container(
+            clipBehavior: Clip.antiAlias,
+            width: 160,
+            height: 160,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.grey,
             ),
           ),
-          SizedBox(height: 50),
-          Padding(
-            padding: const EdgeInsets.only(left: 50, right: 50),
+          const SizedBox(height: 50),
+          Container(
+            width: 250,
             child: TextFormField(
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 20),
                   enabledBorder: OutlineInputBorder(
@@ -49,9 +47,9 @@ class _CreateUserState extends State<CreateUser> {
                   labelText: "電話番号を入力"),
             ),
           ),
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.only(left: 50, right: 50),
+          const SizedBox(height: 20),
+          Container(
+            width: 250,
             child: TextFormField(
               decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 20),
@@ -61,9 +59,10 @@ class _CreateUserState extends State<CreateUser> {
                   labelText: "メールアドレスを入力"),
             ),
           ),
-          SizedBox(height: 50),
+          Container(),
+          const SizedBox(height: 50),
           SizedBox(
-            width: 200,
+            width: 250,
             height: 50,
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
