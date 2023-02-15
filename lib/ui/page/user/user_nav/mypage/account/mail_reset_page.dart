@@ -24,8 +24,8 @@ class _MailUpdateState extends State<MailUpdate> {
           children: [
             Icon(Icons.mail_lock, size: 100.0, color: Colors.grey),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),

@@ -47,10 +47,10 @@ class _MyPageState extends State<MyPage> {
                       const Text('こんぶさん'),
                       SizedBox(height: 20),
                       Row(
-                        children: [
-                          const Text('称号'),
+                        children:  [
+                          Text('称号'),
                           SizedBox(width: 20),
-                          const Text('甘党'),
+                          Text('甘党'),
                         ],
                       ),
                     ],
