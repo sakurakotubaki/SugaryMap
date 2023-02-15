@@ -1,16 +1,6 @@
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/product_page/product_detail.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/product_page/product_item.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_account_page.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_inquiry.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_mail_reset_page.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_manual_page.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_password_reset_page.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_privacy.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_terms.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/settings/update_shop.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -19,7 +9,8 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
 
 final router = GoRouter(
   navigatorKey: _rootNavigatorKey,
-  initialLocation: '/admin', // 最初に表示されるページ.
+  // initialLocation: '/admin', // 最初に表示されるshop側のページ.
+  initialLocation: '/map',// 最初に表示されるuserページ.
   // initialLocation: '/sign_in',// 最初に表示されるページ.
   routes: [
     GoRoute(
@@ -238,10 +229,16 @@ final router = GoRouter(
                   },
                   routes: [
                     GoRoute(
-                      path: 'product_item',
+                      path: 'product_add',
                       pageBuilder: (context, state) {
                         return MaterialPage(
-                            fullscreenDialog: true, child: ProductItem());
+                            fullscreenDialog: true, child: ProductAdd());
+                      },
+                    ),
+                    GoRoute(
+                      path: 'product_edit',
+                      builder: (context, state) {
+                        return ProductEdit();
                       },
                     ),
                   ]),

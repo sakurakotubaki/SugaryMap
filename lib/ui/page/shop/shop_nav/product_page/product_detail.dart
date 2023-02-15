@@ -41,39 +41,40 @@ class _ProductDetailState extends State<ProductDetail> {
                 itemBuilder: (BuildContext context, int index) {
                   final item = items[index];
                   return Slidable(
-                    key: const ValueKey(0),
-                  endActionPane: ActionPane(
-                    motion: const DrawerMotion(),
-                    // childrenの中にボタンを書く.
-                    children: [
-                      // 種類ボタン.
-                      SlidableAction(
-                        onPressed: (value) {},
-                        backgroundColor: Colors.green,
-                        icon: Icons.category,
-                        label: '種類',
+                      key: const ValueKey(0),
+                      endActionPane: ActionPane(
+                        motion: const DrawerMotion(),
+                        // childrenの中にボタンを書く.
+                        children: [
+                          // 種類ボタン.
+                          SlidableAction(
+                            onPressed: (value) {},
+                            backgroundColor: Colors.green,
+                            icon: Icons.category,
+                            label: '種類',
+                          ),
+                          // 編集ボタン.
+                          SlidableAction(
+                            onPressed: (value) {
+                              GoRouter.of(context)
+                                  .go('/product/product_detail/product_edit');
+                            },
+                            backgroundColor: Colors.blue,
+                            icon: Icons.edit,
+                            label: '編集',
+                          ),
+                          // 削除ボタン
+                          SlidableAction(
+                            onPressed: (value) {},
+                            backgroundColor: Colors.red,
+                            icon: Icons.delete,
+                            label: '削除',
+                          ),
+                        ],
                       ),
-                      // 編集ボタン.
-                      SlidableAction(
-                        onPressed: (value) {},
-                        backgroundColor: Colors.blue,
-                        icon: Icons.edit,
-                        label: '編集',
-                      ),
-                      // 削除ボタン
-                      SlidableAction(
-                        onPressed: (value) {
-                        
-                        },
-                        backgroundColor: Colors.red,
-                        icon: Icons.delete,
-                        label: '削除',
-                      ),
-                    ],
-                  ),
                       child: ListTile(
-                    title: Text(item),
-                  ));
+                        title: Text(item),
+                      ));
                 },
               ),
             ),

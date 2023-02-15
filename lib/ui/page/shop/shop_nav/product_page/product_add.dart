@@ -3,14 +3,14 @@ import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/theme/button_theme.dart';
 import 'package:sugary_map/theme/text_color.dart';
 
-class ProductItem extends StatefulWidget {
-  ProductItem({Key? key}) : super(key: key);
+class ProductAdd extends StatefulWidget {
+  ProductAdd({Key? key}) : super(key: key);
 
   @override
-  State<ProductItem> createState() => _ProductItemState();
+  State<ProductAdd> createState() => _ProductAddState();
 }
 
-class _ProductItemState extends State<ProductItem> {
+class _ProductAddState extends State<ProductAdd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
