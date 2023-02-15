@@ -2,16 +2,18 @@ import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/theme/button_theme.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/page/admin_history.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/page/user_details/concentration/concentration.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/page/user_details/item_history/item_history.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/page/user_info.dart';
 
-class AdminPage extends StatefulWidget {
-  const AdminPage({Key? key}) : super(key: key);
+class HistoryTab extends StatefulWidget {
+  const HistoryTab({Key? key}) : super(key: key);
 
   @override
-  State<AdminPage> createState() => _AdminPageState();
+  State<HistoryTab> createState() => _HistoryTabState();
 }
 
-class _AdminPageState extends State<AdminPage> with TickerProviderStateMixin {
+class _HistoryTabState extends State<HistoryTab> with TickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -31,7 +33,7 @@ class _AdminPageState extends State<AdminPage> with TickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: MyAppBar.appBar.appColor,
-        title: const Text('予約管理'),
+        title: const Text('顧客情報詳細'),
         bottom: TabBar(
           onTap: (index) {
             _tabController.animateTo(index);
@@ -39,17 +41,20 @@ class _AdminPageState extends State<AdminPage> with TickerProviderStateMixin {
           controller: _tabController,
           tabs: const <Widget>[
             Tab(
-              text: '予約履歴',
+              text: '購入履歴',
             ),
             Tab(
-              text: '顧客情報',
+              text: '購入履歴集計',
             ),
           ],
         ),
       ),
       body: TabBarView(
         controller: _tabController,
-        children: <Widget>[AdminHistory(), UserInfo()],
+        children: <Widget>[
+          ItemHistory(),
+          Concentration(),
+        ],
       ),
     );
   }

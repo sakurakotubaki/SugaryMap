@@ -1,28 +1,27 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
 
-class MailUpdate extends StatefulWidget {
-  MailUpdate({Key? key}) : super(key: key);
+class ShopPasswordUpdate extends StatefulWidget {
+  ShopPasswordUpdate({Key? key}) : super(key: key);
 
   @override
-  State<MailUpdate> createState() => _MailUpdateState();
+  State<ShopPasswordUpdate> createState() => _ShopPasswordUpdateState();
 }
 
-class _MailUpdateState extends State<MailUpdate> {
+class _ShopPasswordUpdateState extends State<ShopPasswordUpdate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: MyAppBar.appBar.appColor,
-        title: const Text('メールアドレスの変更'),
+        title: const Text('パスワードの変更'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.mail_lock, size: 100.0, color: Colors.grey),
+            Icon(Icons.lock_reset, size: 100.0, color: Colors.grey),
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(left: 50, right: 50),
@@ -39,11 +38,11 @@ class _MailUpdateState extends State<MailUpdate> {
             SizedBox(
               width: 300,
               height: 40,
-              child: ElevatedButton(
+              child: OutlinedButton(
                   onPressed: () {},
                   child: Text(
-                    'メールアドレスを変更',
-                    style: TextStyle(color: MyButton.appButton.appColor),
+                    'パスワードを変更',
+                    style: TextStyle(color: Colors.black),
                   )),
             ),
           ],

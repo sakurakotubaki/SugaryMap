@@ -1,10 +1,6 @@
-import 'package:sugary_map/service/export/nabbar_export.dart';
+import 'package:sugary_map/service/export/shop_nabbar_export.dart';
+import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/admin_page.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/shop_navbar.dart';
-import 'package:sugary_map/ui/page/user/user_nav/cart_page/total/reserev/reserevation.dart';
-import 'package:sugary_map/ui/page/user/user_nav/cart_page/total/total_page.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/account/update_user.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -13,7 +9,8 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
 
 final router = GoRouter(
   navigatorKey: _rootNavigatorKey,
-  initialLocation: '/admin', // 最初に表示されるページ.
+  // initialLocation: '/admin', // 最初に表示されるshop側のページ.
+  initialLocation: '/map',// 最初に表示されるuserページ.
   // initialLocation: '/sign_in',// 最初に表示されるページ.
   routes: [
     GoRoute(
@@ -176,7 +173,7 @@ final router = GoRouter(
             GoRoute(
               path: 'terms',
               builder: (BuildContext context, GoRouterState state) {
-                return const TermsOfService();
+                return const UserTerms();
               },
             ),
           ],
@@ -192,19 +189,117 @@ final router = GoRouter(
       path: '/create_shop',
       builder: (context, state) => CreateShop(),
     ),
+
     // 店舗用のボトムナビゲーションバー
     ShellRoute(
-        navigatorKey: _shellNavigatorKey,
-        builder: (BuildContext context, GoRouterState state, Widget child) {
-          return ShopNavBar(child: child);
-        },
-        routes: <RouteBase>[
-          GoRoute(
+      navigatorKey: _shellNavigatorKey,
+      builder: (BuildContext context, GoRouterState state, Widget child) {
+        return ShopNavBar(child: child);
+      },
+      routes: <RouteBase>[
+        GoRoute(
             path: '/admin',
             builder: (context, state) {
-              return AdminPage();
+              return const AdminPage();
             },
-          )
-        ])
+            routes: [
+              GoRoute(
+                path: 'history_tab',
+                builder: (context, state) {
+                  return HistoryTab();
+                },
+              ),
+              GoRoute(
+                path: 'user_info',
+                builder: (context, state) {
+                  return UserInfo();
+                },
+              ),
+            ]),
+        GoRoute(
+            path: '/product',
+            builder: (context, state) {
+              return const ProductList();
+            },
+            routes: [
+              GoRoute(
+                  path: 'product_detail',
+                  builder: (context, state) {
+                    return const ProductDetail();
+                  },
+                  routes: [
+                    GoRoute(
+                      path: 'product_add',
+                      pageBuilder: (context, state) {
+                        return MaterialPage(
+                            fullscreenDialog: true, child: ProductAdd());
+                      },
+                    ),
+                    GoRoute(
+                      path: 'product_edit',
+                      builder: (context, state) {
+                        return ProductEdit();
+                      },
+                    ),
+                  ]),
+            ]),
+        GoRoute(
+            path: '/setting',
+            builder: (context, state) {
+              return const ShopSettingPage();
+            },
+            routes: [
+              GoRoute(
+                path: 'shop_manual',
+                builder: (context, state) {
+                  return const ShopManualPage();
+                },
+              ),
+              GoRoute(
+                  path: 'shop_account',
+                  builder: (context, state) {
+                    return const ShopAccountSettings();
+                  },
+                  routes: [
+                    GoRoute(
+                      path: 'shop_mail',
+                      builder: (context, state) {
+                        return ShopMailUpdate();
+                      },
+                    ),
+                    GoRoute(
+                      path: 'shop_password',
+                      builder: (context, state) {
+                        return ShopPasswordUpdate();
+                      },
+                    ),
+                    GoRoute(
+                      path: 'update_shop',
+                      builder: (context, state) {
+                        return UpdateShop();
+                      },
+                    ),
+                  ]),
+              GoRoute(
+                path: 'shop_privacy',
+                builder: (context, state) {
+                  return const ShopPrivacy();
+                },
+              ),
+              GoRoute(
+                path: 'shop_terms',
+                builder: (context, state) {
+                  return const ShopTerms();
+                },
+              ),
+              GoRoute(
+                path: 'shop_inquiry',
+                builder: (context, state) {
+                  return const ShopInquiry();
+                },
+              ),
+            ]),
+      ],
+    ),
   ],
 );

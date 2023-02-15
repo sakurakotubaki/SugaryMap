@@ -1,15 +1,14 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
 
-class MailUpdate extends StatefulWidget {
-  MailUpdate({Key? key}) : super(key: key);
+class ShopMailUpdate extends StatefulWidget {
+  ShopMailUpdate({Key? key}) : super(key: key);
 
   @override
-  State<MailUpdate> createState() => _MailUpdateState();
+  State<ShopMailUpdate> createState() => _ShopMailUpdateState();
 }
 
-class _MailUpdateState extends State<MailUpdate> {
+class _ShopMailUpdateState extends State<ShopMailUpdate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,11 +38,11 @@ class _MailUpdateState extends State<MailUpdate> {
             SizedBox(
               width: 300,
               height: 40,
-              child: ElevatedButton(
+              child: OutlinedButton(
                   onPressed: () {},
                   child: Text(
                     'メールアドレスを変更',
-                    style: TextStyle(color: MyButton.appButton.appColor),
+                    style: TextStyle(color: Colors.black),
                   )),
             ),
           ],

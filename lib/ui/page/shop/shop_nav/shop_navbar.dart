@@ -36,16 +36,16 @@ class _ShopNavBarState extends State<ShopNavBar> {
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.pin_drop),
-            label: 'お店',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.comment),
-            label: '口コミ',
+            icon: Icon(Icons.calendar_month),
+            label: '予約管理',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
-            label: 'カート',
+            label: '商品管理',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: '設定',
           ),
         ],
         currentIndex: ShopNavBar._calculateSelectedIndex(context),
@@ -57,13 +57,13 @@ class _ShopNavBarState extends State<ShopNavBar> {
   void _onItemTapped(int index, BuildContext context) {
     switch (index) {
       case 0:
-        GoRouter.of(context).go('/map');
+        GoRouter.of(context).go('/admin');
         break;
       case 1:
-        GoRouter.of(context).go('/post');
+        GoRouter.of(context).go('/product');
         break;
       case 2:
-        GoRouter.of(context).go('/cart');
+        GoRouter.of(context).go('/setting');
         break;
     }
   }
