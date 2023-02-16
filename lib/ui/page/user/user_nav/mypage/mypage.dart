@@ -15,6 +15,13 @@ class _MyPageState extends State<MyPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+              onPressed: () {
+                GoRouter.of(context).go('/mypage/user_notification');
+              },
+              icon: const Icon(Icons.notifications))
+        ],
         centerTitle: true,
         title: Text('マイページ'),
         backgroundColor: MyAppBar.appBar.appColor,
@@ -47,7 +54,7 @@ class _MyPageState extends State<MyPage> {
                       const Text('こんぶさん'),
                       SizedBox(height: 20),
                       Row(
-                        children:  [
+                        children: [
                           Text('称号'),
                           SizedBox(width: 20),
                           Text('甘党'),

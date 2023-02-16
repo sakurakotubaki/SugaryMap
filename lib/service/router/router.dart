@@ -1,8 +1,10 @@
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/order/shop_reservation.dart';
 import 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/order_shop.dart';
 import 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/shop_info.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/user_notification.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/post_detail.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
@@ -61,27 +63,30 @@ final router = GoRouter(
       routes: <RouteBase>[
         /// 下部のナビゲーションバーに最初に表示される画面.
         GoRoute(
-          path: '/map',
-          builder: (BuildContext context, GoRouterState state) {
-            return const MapPage();
-          },
-          routes: [
-            GoRoute(
-              path: 'shop_info',
-              parentNavigatorKey: _rootNavigatorKey,
-              builder: (BuildContext context, GoRouterState state) {
-                return const ShopInfo();
-              },
-            ),
-            GoRoute(
-              path: 'order_shop',
-              parentNavigatorKey: _rootNavigatorKey,
-              builder: (BuildContext context, GoRouterState state) {
-                return const OrderShop();
-              },
-            ),
-          ]
-        ),
+            path: '/map',
+            builder: (BuildContext context, GoRouterState state) {
+              return const MapPage();
+            },
+            routes: [
+              GoRoute(
+                path: 'shop_info',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const ShopInfo();
+                },
+              ),
+              GoRoute(
+                  path: 'order_shop',
+                  builder: (BuildContext context, GoRouterState state) {
+                    return const OrderShop();
+                  },
+                  routes: [
+                    GoRoute(
+                        path: 'order_reservation',
+                        builder: (BuildContext context, GoRouterState state) {
+                          return const ShopReservation();
+                        }),
+                  ]),
+            ]),
         GoRoute(
           path: '/post',
           builder: (BuildContext context, GoRouterState state) {
@@ -136,6 +141,12 @@ final router = GoRouter(
             return const MyPage();
           },
           routes: <RouteBase>[
+            GoRoute(
+              path: 'user_notification',
+              builder: (BuildContext context, GoRouterState state) {
+                return const UserNotification();
+              },
+            ),
             GoRoute(
               path: 'order',
               builder: (BuildContext context, GoRouterState state) {

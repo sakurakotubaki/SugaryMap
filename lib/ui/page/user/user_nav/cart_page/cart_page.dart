@@ -28,6 +28,10 @@ class _CartPageState extends State<CartPage> {
                 children: [
                   SizedBox(height: 30),
                   Text("サロンド・エゴ"),
+                  Text('2 ショートケーキ ¥500'),
+                  Text('3 ガトーショコラ ¥500'),
+                  Text('3 シュークリーム ¥900'),
+                  SizedBox(height: 30),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: MyButton.appButton.appColor),

@@ -33,7 +33,9 @@ class _OrderShopState extends State<OrderShop> {
                       final post = posts[index];
                       return ListTile(
                         onTap: (() {
-                          GoRouter.of(context).go('/post/post_detail');
+                          GoRouter.of(context)
+                              .go('/map/order_shop/order_reservation');
+                          print('クリック!');
                         }),
                         title: Text(post),
                       );
