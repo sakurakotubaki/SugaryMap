@@ -49,6 +49,21 @@ class _MapPageState extends State<MapPage> {
                         title: Text(post),
                       );
                     })),
+
+                    /// [お店詳細]
+                    const SizedBox(height: 20),
+                    Expanded(
+                child: ListView.builder(
+                    itemCount: posts.length,
+                    itemBuilder: (BuildContext cotext, int index) {
+                      final post = posts[index];
+                      return ListTile(
+                        onTap: (() {
+                          GoRouter.of(context).go('/map/order_shop');
+                        }),
+                        title: Text(post),
+                      );
+                    })),
           ],
         ),
       ),

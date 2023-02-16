@@ -1,6 +1,7 @@
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/order_shop.dart';
 import 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/shop_info.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/post_detail.dart';
 
@@ -70,6 +71,13 @@ final router = GoRouter(
               parentNavigatorKey: _rootNavigatorKey,
               builder: (BuildContext context, GoRouterState state) {
                 return const ShopInfo();
+              },
+            ),
+            GoRoute(
+              path: 'order_shop',
+              parentNavigatorKey: _rootNavigatorKey,
+              builder: (BuildContext context, GoRouterState state) {
+                return const OrderShop();
               },
             ),
           ]
