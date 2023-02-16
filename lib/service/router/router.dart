@@ -1,11 +1,15 @@
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/cart_page/total/cart_update.dart';
 import 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/order/shop_reservation.dart';
 import 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/order_shop.dart';
 import 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/shop_info.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/order_page%20copy.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/user_notification.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/post_detail.dart';
+
+import '../../ui/page/user/user_nav/mypage/order_cancel/order_page.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -131,6 +135,11 @@ final router = GoRouter(
                         return const Reserevation();
                       }),
                 ]),
+            GoRoute(
+                path: 'cart_update',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const CartUpdate();
+                })
           ],
         ),
 
@@ -148,11 +157,17 @@ final router = GoRouter(
               },
             ),
             GoRoute(
-              path: 'order',
-              builder: (BuildContext context, GoRouterState state) {
-                return const OrderPage();
-              },
-            ),
+                path: 'order_history',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const OrderHistory();
+                },
+                routes: [
+                  GoRoute(
+                      path: 'order_cancel',
+                      builder: (BuildContext context, GoRouterState state) {
+                        return const OrderCancel();
+                      })
+                ]),
             GoRoute(
               path: 'bookmark',
               builder: (BuildContext context, GoRouterState state) {

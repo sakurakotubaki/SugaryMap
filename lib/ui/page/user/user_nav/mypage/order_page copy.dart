@@ -3,15 +3,17 @@ import 'package:sugary_map/theme/appbar_theme.dart';
 
 const List<String> list = <String>['１ヶ月前', '3ヶ月前', '６ヶ月前', '１年前', '３年前'];
 
-class OrderPage extends StatefulWidget {
-  const OrderPage({Key? key}) : super(key: key);
+class OrderHistory extends StatefulWidget {
+  const OrderHistory({Key? key}) : super(key: key);
 
   @override
-  State<OrderPage> createState() => _OrderPageState();
+  State<OrderHistory> createState() => _OrderHistoryState();
 }
 
-class _OrderPageState extends State<OrderPage> {
+class _OrderHistoryState extends State<OrderHistory> {
   String dropdownValue = list.first;
+
+  List posts = ["パティスリーニキ", "サロンドego", "フランス屋"];
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +52,22 @@ class _OrderPageState extends State<OrderPage> {
                 }).toList(),
               ),
             ),
+            // ダミーデータ.
+            const SizedBox(height: 20),
+            Expanded(
+                child: ListView.builder(
+                    itemCount: posts.length,
+                    itemBuilder: (BuildContext cotext, int index) {
+                      final post = posts[index];
+                      return ListTile(
+                        onTap: (() {
+                          GoRouter.of(context)
+                              .go('/mypage/order_history/order_cancel');
+                          print('fff');
+                        }),
+                        title: Text(post),
+                      );
+                    })),
           ],
         ),
       ),

@@ -4,7 +4,6 @@ export 'package:sugary_map/ui/page/user/user_nav/mypage/mypage.dart';
 export 'package:sugary_map/ui/page/user/user_nav/post_page/post_page.dart';
 export 'package:sugary_map/ui/page/user/user_nav/user_navbar.dart';
 export 'package:sugary_map/ui/page/user/user_nav/mypage/bookmark_page.dart';
-export 'package:sugary_map/ui/page/user/user_nav/mypage/order_page.dart';
 export 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 export 'package:sugary_map/ui/page/user/user_nav/mypage/accont_page.dart';
 export 'package:sugary_map/ui/page/user/user_nav/mypage/account/mail_reset_page.dart';

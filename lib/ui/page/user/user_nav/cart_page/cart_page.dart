@@ -12,6 +12,7 @@ class CartPage extends StatefulWidget {
 
 class _CartPageState extends State<CartPage> {
   List posts = ["パティスリーニキ", "サロンドego"];
+  List<String> itemList = ["2 ショートケーキ ¥500", "3 ガトーショコラ ¥500", "3 シュークリーム ¥900"];
 
   void _showBottomSheetMenu(BuildContext context) {
     showModalBottomSheet(
@@ -28,9 +29,17 @@ class _CartPageState extends State<CartPage> {
                 children: [
                   SizedBox(height: 30),
                   Text("サロンド・エゴ"),
-                  Text('2 ショートケーキ ¥500'),
-                  Text('3 ガトーショコラ ¥500'),
-                  Text('3 シュークリーム ¥900'),
+                  Expanded(child: ListView.builder(
+                    itemCount: itemList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListTile(
+                        onTap: () => {
+                          GoRouter.of(context).go('/cart/cart_update'),
+                        },
+                        title: Text('${itemList[index]}'),
+                      );
+                    },
+                  ),),
                   SizedBox(height: 30),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(

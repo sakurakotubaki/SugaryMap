@@ -1,7 +1,6 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/ui/auth/signin_page.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/order_page.dart';
 
 class MyPage extends StatefulWidget {
   const MyPage({Key? key}) : super(key: key);
@@ -70,7 +69,7 @@ class _MyPageState extends State<MyPage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/order');
+                      GoRouter.of(context).go('/mypage/order_history');
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
