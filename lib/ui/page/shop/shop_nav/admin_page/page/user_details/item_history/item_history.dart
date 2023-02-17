@@ -11,33 +11,64 @@ class ItemHistory extends StatefulWidget {
 }
 
 class _ItemHistoryState extends State<ItemHistory> {
-  List items = [
-    "ショートケーキ",
-    "ガトーショコラ",
-    "チーズケーキ",
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView.builder(
-                itemCount: items.length,
-                itemBuilder: (BuildContext context, int index) {
-                  final item = items[index];
-                  return ListTile(
-                    onTap: () {},
-                    title: Text(item),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
+        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(height: 20),
+          Container(
+              alignment: Alignment(-0.9, -1.0),
+              child: Text('2023年1月', style: TextStyle(fontSize: 20))),
+          SizedBox(height: 10),
+          Container(
+              alignment: Alignment(-0.8, -1.0),
+              child:
+                  Text('ショートケーキ4号 １個 ¥1980', style: TextStyle(fontSize: 20))),
+          SizedBox(height: 10),
+          Container(
+              alignment: Alignment(-0.8, -1.0),
+              child: Text('ガトーショコラ １個 ¥420', style: TextStyle(fontSize: 20))),
+          SizedBox(height: 10),
+          Container(
+              alignment: Alignment(-0.8, -1.0),
+              child: Text('シュークリーム ３個 ¥ 750', style: TextStyle(fontSize: 20))),
+          SizedBox(height: 10),
+          Container(
+              width: 350,
+              alignment: Alignment(-0.9, -1.0),
+              child: Text('キゥイアレルギーがありますので、ショートケーキには、使わないでください。',
+                  style: TextStyle(fontSize: 20))),
+          Divider(
+            thickness: 2,
+            indent: 20,
+            endIndent: 20,
+            color: Colors.black12,
+          ),
+          SizedBox(height: 20),
+          Container(
+              alignment: Alignment(-0.8, -1.0),
+              child:
+                  Text('ショートケーキ6号 １個 ¥4200', style: TextStyle(fontSize: 20))),
+          SizedBox(height: 10),
+          Container(
+              alignment: Alignment(-0.8, -1.0),
+              child: Text('フルーツタルト 2個 ¥900', style: TextStyle(fontSize: 20))),
+          SizedBox(height: 10),
+          Container(
+              width: 350,
+              alignment: Alignment(-0.9, -1.0),
+              child: Text('メッセージプレートは、優ちゃんお誕生日おめでとうでお願いいたします。',
+                  style: TextStyle(fontSize: 20))),
+          Divider(
+            thickness: 2,
+            indent: 20,
+            endIndent: 20,
+            color: Colors.black12,
+          ),
+        ],
       ),
-    );
+    ));
   }
 }

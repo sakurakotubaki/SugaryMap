@@ -2,6 +2,7 @@ import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/theme/button_theme.dart';
 import 'package:sugary_map/theme/text_color.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/admin_page.dart';
 
 class CreateShop extends StatefulWidget {
   CreateShop({Key? key}) : super(key: key);
@@ -124,21 +125,13 @@ class _CreateShopState extends State<CreateShop> {
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: Colors.grey)),
-                    labelText: "https://の後から入力"),
+                    labelText: "ホームページのURLを全て貼り付ける"),
               ),
             ),
             SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: Row(
-                children: [
-                  IconButton(
-                      onPressed: () {}, icon: Icon(Icons.calendar_month)),
-                  SizedBox(width: 10),
-                  Text('営業日を入力')
-                ],
-              ),
-            ),
+
+            ///[カレンダーのようなものを配置]
+            
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(left: 50),
@@ -255,7 +248,9 @@ class _CreateShopState extends State<CreateShop> {
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       backgroundColor: MyButton.appButton.appColor),
-                  onPressed: () {},
+                  onPressed: () {
+                    context.go('/admin');
+                  },
                   child: Text(
                     '登録',
                     style: TextStyle(color: MyText.textColor.appColor),
