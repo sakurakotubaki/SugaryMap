@@ -77,8 +77,8 @@ class _PostAddState extends State<PostAdd> {
                     labelText: "https://の後から入力"),
               ),
             ),
-            SizedBox(height: 10),
-            Container(),// 空のWidgetを置かないと左に全てよってしまう!
+            SizedBox(height: 30),
+            Container(), // 空のWidgetを置かないと左に全てよってしまう!
             SizedBox(
               width: 200,
               height: 50,

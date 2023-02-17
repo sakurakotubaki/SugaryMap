@@ -11,8 +11,6 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
-  List posts = ["パティスリーニキ", "サロンドego", "フランス屋"];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,35 +34,7 @@ class _MapPageState extends State<MapPage> {
       ),
       body: Center(
         child: Column(
-          children: <Widget>[
-            Expanded(
-                child: ListView.builder(
-                    itemCount: posts.length,
-                    itemBuilder: (BuildContext cotext, int index) {
-                      final post = posts[index];
-                      return ListTile(
-                        onTap: (() {
-                          GoRouter.of(context).go('/map/shop_info');
-                        }),
-                        title: Text(post),
-                      );
-                    })),
-
-                    /// [お店詳細]
-                    const SizedBox(height: 20),
-                    Expanded(
-                child: ListView.builder(
-                    itemCount: posts.length,
-                    itemBuilder: (BuildContext cotext, int index) {
-                      final post = posts[index];
-                      return ListTile(
-                        onTap: (() {
-                          GoRouter.of(context).go('/map/order_shop');
-                        }),
-                        title: Text(post),
-                      );
-                    })),
-          ],
+          children: <Widget>[],
         ),
       ),
     );

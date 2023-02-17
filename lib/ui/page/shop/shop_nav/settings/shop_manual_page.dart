@@ -16,16 +16,7 @@ class ShopManualPage extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(height: 40),
-              Text("""
-              fff
-                    """, style: TextStyle(fontSize: 15)),
-              SizedBox(height: 20),
-              Text("""
-              fff
-                    """, style: TextStyle(fontSize: 15)),
-            ],
+            children: <Widget>[],
           ),
         ),
       ),

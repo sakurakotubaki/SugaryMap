@@ -19,54 +19,67 @@ class _PostDetailState extends State<PostDetail> {
         title: const Text('口コミ詳細'),
         backgroundColor: MyAppBar.appBar.appColor,
       ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            const SizedBox(height: 40),
-            Container(
-              width: 200,
-              height: 100,
-              color: Colors.amber,
-            ),
-            const SizedBox(height: 20),
-            Container(
-              color: Colors.blueAccent,
-              alignment: const Alignment(0.0, 0.0),
-              width: 200,
-              height: 50,
-              child: Row(
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              const SizedBox(height: 40),
+              Container(
+                width: 300,
+                height: 150,
+                color: Colors.grey[200],
+              ),
+              Container(
+                alignment: const Alignment(0.0, 0.0),
+                width: 300,
+                height: 50,
+                child: Row(
+                  children: [
+                    Text('投稿者'),
+                    const SizedBox(width: 20),
+                    Text('上田'),
+                  ],
+                ),
+              ),
+              Container(
+                alignment: const Alignment(0.0, 0.0),
+                width: 300,
+                height: 50,
+                child: Row(
+                  children: [
+                    Text('いったお店'),
+                    const SizedBox(width: 20),
+                    Text('オーボン・ビュータン'),
+                  ],
+                ),
+              ),
+              Column(
                 children: [
-                  Text('投稿者'),
-                  const SizedBox(width: 20),
-                  Text('上田'),
+                  Container(
+                      alignment: const Alignment(-1.0, -1.0),
+                      width: 300,
+                      height: 100,
+                      child: Text('クラシックなフランス菓子を数多く扱う名店。\nおすすめは、ガトピレネーです。')),
+                  Container(
+                      alignment: const Alignment(-1.0, -1.0),
+                      width: 300,
+                      height: 100,
+                      child: Column(
+                        // テキストを左端に寄せる.
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        verticalDirection: VerticalDirection.down,
+                        children: [
+                          Text('東京都尾山台'),
+                          SizedBox(height: 20),
+                          Text('090-9988-3477'),
+                        ],
+                      )),
                 ],
               ),
-            ),
-            const SizedBox(height: 20),
-            Column(
-              children: [
-                Container(
-                    alignment: const Alignment(-1.0, -1.0),
-                    width: 200,
-                    height: 100,
-                    color: Colors.redAccent,
-                    child: Text('ffffffffffff\nffffffffffff\nffffffffffff')),
-                const SizedBox(height: 20),
-                Container(
-                    alignment: const Alignment(-1.0, -1.0),
-                    width: 200,
-                    height: 100,
-                    color: Colors.pink,
-                    child: Column(
-                      children: [
-                        Text('東京小山代'),
-                        SizedBox(height: 20),
-                        Text('090-9988-3477'),
-                      ],
-                    )),
-              ],
-            ),
-          ],
+              Image.network(
+                  'https://poi-static-map.cld.navitime.jp/02022/120998/image.png'),
+            ],
+          ),
         ),
       ),
     );
