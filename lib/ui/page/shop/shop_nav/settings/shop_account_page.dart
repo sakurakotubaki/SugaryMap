@@ -17,67 +17,70 @@ class _ShopAccountSettingsState extends State<ShopAccountSettings> {
         title: Text('アカウント設定'),
         backgroundColor: MyAppBar.appBar.appColor,
       ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              child: ListView(
-                children: [
-                  SizedBox(height: 30),
-                  Container(
-                    alignment: Alignment.topLeft,
-                    width: 250,
-                    child: Text("""
-                    メールアドレスの変更には、
-                    ユーザーが最近ログインして
-                    いる必要があります。
-                    一度ログアウトして、再ログイン
-                    してください。
-                    """, style: TextStyle(fontSize: 15)),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      GoRouter.of(context).go('/setting/shop_account/shop_mail');
-                    },
-                    child: ListTile(
-                      trailing: Icon(Icons.arrow_forward_ios),
-                      title: Text('メールアドレスを変更する'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: 800,
+                child: ListView(
+                  children: [
+                    SizedBox(height: 30),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 20.0),
+                      width: 350,
+                      child: Text(
+                          "メールアドレスの変更には、ユーザーが最近ログインしている必要があります。一度ログアウトして、再ログインしてください。",
+                          style: TextStyle(fontSize: 15)),
                     ),
-                  ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      GoRouter.of(context).go('/setting/shop_account/shop_password');
-                    },
-                    child: ListTile(
-                      trailing: Icon(Icons.arrow_forward_ios),
-                      title: Text('パスワードを変更する'),
+                    SizedBox(height: 20),
+                    GestureDetector(
+                      onTap: () {
+                        GoRouter.of(context)
+                            .go('/setting/shop_account/shop_mail');
+                      },
+                      child: ListTile(
+                        trailing: Icon(Icons.arrow_forward_ios),
+                        title: Text('メールアドレスを変更する'),
+                      ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      GoRouter.of(context).go('/setting/shop_account/update_shop');
-                    },
-                    child: ListTile(
-                      trailing: Icon(Icons.arrow_forward_ios),
-                      title: Text('プロフィールを編集'),
+                    Divider(
+                      thickness: 2,
+                      indent: 20,
+                      endIndent: 20,
+                      color: Colors.black12,
                     ),
-                  ),
-                ],
+                    GestureDetector(
+                      onTap: () {
+                        GoRouter.of(context)
+                            .go('/setting/shop_account/shop_password');
+                      },
+                      child: ListTile(
+                        trailing: Icon(Icons.arrow_forward_ios),
+                        title: Text('パスワードを変更する'),
+                      ),
+                    ),
+                    Divider(
+                      thickness: 2,
+                      indent: 20,
+                      endIndent: 20,
+                      color: Colors.black12,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        GoRouter.of(context)
+                            .go('/setting/shop_account/update_shop');
+                      },
+                      child: ListTile(
+                        trailing: Icon(Icons.arrow_forward_ios),
+                        title: Text('プロフィールを編集'),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

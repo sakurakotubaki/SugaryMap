@@ -16,15 +16,15 @@ class ShopInquiry extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           SizedBox(height: 40),
-          Text("""
-  SugaryMapをご利用いただきあり
-  がとうございます。
-  トラブルやお困りごと、ご意見が
-  あればこちらから、ご連絡ください
-                """, style: TextStyle(fontSize: 20)),
+          Container(
+              width: 330,
+              child: Text(
+                  "SugaryMapをご利用いただきありがとうございます。トラブルやお困りごと、ご意見があればこちらから、ご連絡ください",
+                  style: TextStyle(fontSize: 20))),
           SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.only(left: 75),
+          Container(),
+          Container(
+            width: 330,
             child: Row(
               children: [
                 Icon(Icons.mail),
@@ -34,7 +34,16 @@ class ShopInquiry extends StatelessWidget {
             ),
           ),
           SizedBox(height: 10),
-          Text('copyright©️ JboyHashimoto')
+          // Container(width: 330, child: Text('copyright©️ JboyHashimoto'))
+          Container(
+              width: 330,
+              child: Row(
+                children: [
+                  Icon(Icons.copyright),
+                  SizedBox(width: 20),
+                  Text('copyright©️ JboyHashimoto'),
+                ],
+              )),
         ],
       ),
     );

@@ -28,7 +28,7 @@ class Inquiry extends StatelessWidget {
             width: 350,
             child: Row(
               children: const [
-                Icon(Icons.mail, color: Colors.grey),
+                Icon(Icons.mail),
                 SizedBox(width: 20),
                 Text('JboyCompany@gmail.com'),
               ],
@@ -39,7 +39,7 @@ class Inquiry extends StatelessWidget {
               width: 350,
               child: Row(
                 children: const [
-                  Icon(Icons.policy, color: Colors.grey),
+                  Icon(Icons.copyright),
                   SizedBox(width: 20),
                   Text('copyright©️ JboyHashimoto'),
                 ],
