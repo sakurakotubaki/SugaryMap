@@ -24,7 +24,7 @@ class _UserSignupPageState extends State<UserSignupPage> {
         child: Center(
           child: Column(
             children: [
-              const SizedBox(height: 50),
+              const SizedBox(height: 150),
               const Icon(Icons.lock_person_rounded,
                   size: 100.0, color: Colors.grey),
               const SizedBox(height: 20),

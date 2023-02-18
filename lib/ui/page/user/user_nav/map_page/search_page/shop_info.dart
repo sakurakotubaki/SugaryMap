@@ -12,7 +12,6 @@ class ShopInfo extends StatefulWidget {
 }
 
 class _ShopInfoState extends State<ShopInfo> {
-
   List posts = ["パティスリーニキ", "サロンドego", "フランス屋"];
 
   final List<Color> colors = [
@@ -133,19 +132,20 @@ class _ShopInfoState extends State<ShopInfo> {
                     ),
                   ),
                   const SizedBox(height: 20),
+
                   /// [お店商品紹介]
-                //   Expanded(
-                // child: ListView.builder(
-                //     itemCount: posts.length,
-                //     itemBuilder: (BuildContext cotext, int index) {
-                //       final post = posts[index];
-                //       return ListTile(
-                //         onTap: (() {
-                //           GoRouter.of(context).go('/post/post_detail');
-                //         }),
-                //         title: Text(post),
-                //       );
-                //     })),
+                  //   Expanded(
+                  // child: ListView.builder(
+                  //     itemCount: posts.length,
+                  //     itemBuilder: (BuildContext cotext, int index) {
+                  //       final post = posts[index];
+                  //       return ListTile(
+                  //         onTap: (() {
+                  //           GoRouter.of(context).go('/post/post_detail');
+                  //         }),
+                  //         title: Text(post),
+                  //       );
+                  //     })),
                 ],
               ),
             ),

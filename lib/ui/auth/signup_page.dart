@@ -25,7 +25,7 @@ class _SignUpPageState extends State<SignUpPage> {
         child: Center(
             child: Column(
           children: [
-            const SizedBox(height: 200),
+            const SizedBox(height: 250),
             OutlinedButton(
                 onPressed: () {
                   context.goNamed(UserSignupPage.routeName);

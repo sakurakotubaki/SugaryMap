@@ -1,13 +1,9 @@
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
-import 'package:sugary_map/ui/page/user/user_nav/cart_page/total/cart_update.dart';
-import 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/order/shop_reservation.dart';
-import 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/order_shop.dart';
-import 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/shop_info.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/order_page%20copy.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/user_notification.dart';
-import 'package:sugary_map/ui/page/user/user_nav/post_page/post_detail.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_detail.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dymmy_shot.dart';
+
 
 import '../../ui/page/user/user_nav/mypage/order_cancel/order_page.dart';
 
@@ -166,14 +162,28 @@ final router = GoRouter(
                       path: 'order_cancel',
                       builder: (BuildContext context, GoRouterState state) {
                         return const OrderCancel();
-                      })
+                      }),
                 ]),
             GoRoute(
-              path: 'bookmark',
-              builder: (BuildContext context, GoRouterState state) {
-                return const BookmarkPage();
-              },
-            ),
+                path: 'bookmark',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const BookmarkPage();
+                },
+                routes: [
+                  // ダミーのショップ
+                  GoRoute(
+                      path: 'dummy_detail',
+                      builder: (BuildContext context, GoRouterState state) {
+                        return const DummyDetail();
+                      }),
+
+                  // ダミーのショップ購入.
+                      // GoRoute(
+                      // path: 'dummy_shop',
+                      // builder: (BuildContext context, GoRouterState state) {
+                      //   return const DummyShop();
+                      // }),
+                ]),
             GoRoute(
               path: 'manual',
               builder: (BuildContext context, GoRouterState state) {

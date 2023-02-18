@@ -25,7 +25,7 @@ class _CreateShopState extends State<CreateShop> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20),
+            SizedBox(height: 250),
             Padding(
               padding: const EdgeInsets.only(left: 50, right: 50),
               child: Stack(
@@ -131,7 +131,7 @@ class _CreateShopState extends State<CreateShop> {
             SizedBox(height: 10),
 
             ///[カレンダーのようなものを配置]
-            
+
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(left: 50),

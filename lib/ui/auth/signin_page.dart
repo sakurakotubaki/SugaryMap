@@ -25,7 +25,7 @@ class _SignInPageState extends State<SignInPage> {
         child: Center(
           child: Column(
             children: [
-              const SizedBox(height: 20),
+              const SizedBox(height: 80),
               const Icon(Icons.lock_rounded, size: 100.0, color: Colors.grey),
               const SizedBox(height: 20),
               Container(

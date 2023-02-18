@@ -4,14 +4,14 @@ import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/theme/button_theme.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 
-class ShopReservation extends StatefulWidget {
-  const ShopReservation({Key? key}) : super(key: key);
+class DummyShop extends StatefulWidget {
+  const DummyShop({Key? key}) : super(key: key);
 
   @override
-  State<ShopReservation> createState() => _ShopReservationState();
+  State<DummyShop> createState() => _DummyShopState();
 }
 
-class _ShopReservationState extends State<ShopReservation> {
+class _DummyShopState extends State<DummyShop> {
   int counter = 0;
 
   void decrement() {
@@ -39,7 +39,7 @@ class _ShopReservationState extends State<ShopReservation> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('予約する'),
+        title: const Text('Dummyページで予約する'),
         backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
