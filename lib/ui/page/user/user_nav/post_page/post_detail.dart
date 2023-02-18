@@ -30,7 +30,6 @@ class _PostDetailState extends State<PostDetail> {
                 color: Colors.grey[200],
               ),
               Container(
-                alignment: const Alignment(0.0, 0.0),
                 width: 300,
                 height: 50,
                 child: Row(
@@ -42,7 +41,6 @@ class _PostDetailState extends State<PostDetail> {
                 ),
               ),
               Container(
-                alignment: const Alignment(0.0, 0.0),
                 width: 300,
                 height: 50,
                 child: Row(

@@ -27,11 +27,13 @@ class _PostPageState extends State<PostPage> {
         backgroundColor: MyButton.appButton.appColor,
         child: const Icon(Icons.add),
       ),
+      // スクロールさせてOverFlowを解消する.
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: <Widget>[
               SizedBox(height: 50),
+              // Containerをタップすると詳細ページへ画面遷移する.
               GestureDetector(
                 onTap: () {
                   GoRouter.of(context).go('/post/post_detail');

@@ -13,7 +13,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,29 +21,31 @@ class _SignUpPageState extends State<SignUpPage> {
         backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('新規登録'),
       ),
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          OutlinedButton(
-              onPressed: () {
-                context.goNamed(UserSignupPage.routeName);
-              },
-              child: const Text(
-                '一般ユーザーとして登録',
-                style: TextStyle(color: Colors.black),
-              )),
-          const SizedBox(height: 20),
-          OutlinedButton(
-              onPressed: () {
-                context.goNamed(ShopSignupPage.routeName);
-              },
-              child: const Text(
-                '店舗ユーザーとして登録',
-                style: TextStyle(color: Colors.black),
-              ))
-        ],
-      )),
+      body: SingleChildScrollView(
+        child: Center(
+            child: Column(
+          children: [
+            const SizedBox(height: 200),
+            OutlinedButton(
+                onPressed: () {
+                  context.goNamed(UserSignupPage.routeName);
+                },
+                child: const Text(
+                  '一般ユーザーとして登録',
+                  style: TextStyle(color: Colors.black),
+                )),
+            const SizedBox(height: 20),
+            OutlinedButton(
+                onPressed: () {
+                  context.goNamed(ShopSignupPage.routeName);
+                },
+                child: const Text(
+                  '店舗ユーザーとして登録',
+                  style: TextStyle(color: Colors.black),
+                ))
+          ],
+        )),
+      ),
     );
   }
 }
