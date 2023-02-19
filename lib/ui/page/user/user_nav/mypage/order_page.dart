@@ -13,8 +13,6 @@ class OrderHistory extends StatefulWidget {
 class _OrderHistoryState extends State<OrderHistory> {
   String dropdownValue = list.first;
 
-  List posts = ["パティスリーニキ", "サロンドego", "フランス屋"];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,21 +51,64 @@ class _OrderHistoryState extends State<OrderHistory> {
               ),
             ),
             // ダミーデータ.
-            const SizedBox(height: 20),
-            Expanded(
-                child: ListView.builder(
-                    itemCount: posts.length,
-                    itemBuilder: (BuildContext cotext, int index) {
-                      final post = posts[index];
-                      return ListTile(
-                        onTap: (() {
-                          GoRouter.of(context)
-                              .go('/mypage/order_history/order_cancel');
-                          print('fff');
-                        }),
-                        title: Text(post),
-                      );
-                    })),
+            SizedBox(height: 20),
+            Row(
+              children: [
+                Container(
+                  // 水平方向にContainerを寄せる.
+                  // 左端にスペースを20.0空ける.
+                  margin: EdgeInsets.symmetric(horizontal: 20.0),
+                  width: 100,
+                  height: 100,
+                  color: Colors.grey,
+                ),
+                SizedBox(width: 20),
+                // 左のグレーのBOXと同じサイズにすると、Textを上に寄せることができる.
+                Container(
+                  width: 100,
+                  height: 100,
+                  child: Column(
+                    // Textを全て左端に寄せる設定.
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    verticalDirection: VerticalDirection.down,
+                    children: [
+                      Text('おやつやユー'),
+                      SizedBox(height: 10),
+                      Text('５点の商品'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Row(
+              children: [
+                Container(
+                  // 水平方向にContainerを寄せる.
+                  // 左端にスペースを20.0空ける.
+                  margin: EdgeInsets.symmetric(horizontal: 20.0),
+                  width: 100,
+                  height: 100,
+                  color: Colors.grey,
+                ),
+                SizedBox(width: 20),
+                // 左のグレーのBOXと同じサイズにすると、Textを上に寄せることができる.
+                Container(
+                  width: 100,
+                  height: 100,
+                  child: Column(
+                    // Textを全て左端に寄せる設定.
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    verticalDirection: VerticalDirection.down,
+                    children: [
+                      Text('フランス屋'),
+                      SizedBox(height: 10),
+                      Text('2点の商品'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

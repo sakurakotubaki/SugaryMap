@@ -2,7 +2,7 @@ import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_detail.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dymmy_shot.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dymmy_shop.dart';
 
 
 import '../../ui/page/user/user_nav/mypage/order_cancel/order_page.dart';

@@ -22,7 +22,7 @@ class _ProductDetailState extends State<ProductDetail> {
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.redAccent,
           onPressed: () {
-            GoRouter.of(context).go('/product/product_detail/product_item');
+            GoRouter.of(context).go('/product/product_detail/product_add');
           },
           child: const Icon(Icons.add)),
       body: SingleChildScrollView(
