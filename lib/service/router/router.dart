@@ -1,9 +1,9 @@
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_buy.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_detail.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dymmy_shop.dart';
-
 
 import '../../ui/page/user/user_nav/mypage/order_cancel/order_page.dart';
 
@@ -175,14 +175,15 @@ final router = GoRouter(
                       path: 'dummy_detail',
                       builder: (BuildContext context, GoRouterState state) {
                         return const DummyDetail();
-                      }),
-
-                  // ダミーのショップ購入.
-                      // GoRoute(
-                      // path: 'dummy_shop',
-                      // builder: (BuildContext context, GoRouterState state) {
-                      //   return const DummyShop();
-                      // }),
+                      },
+                      routes: [
+                        GoRoute(
+              path: 'dummy_buy',
+              builder: (BuildContext context, GoRouterState state) {
+                return const DummyBuy();
+              },
+            ),
+                      ]),
                 ]),
             GoRoute(
               path: 'manual',

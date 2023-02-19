@@ -2,8 +2,6 @@ import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/theme/button_theme.dart';
 
-const List<String> list = <String>['１ヶ月前', '3ヶ月前', '６ヶ月前', '１年前', '３年前'];
-
 class OrderCancel extends StatefulWidget {
   const OrderCancel({Key? key}) : super(key: key);
 
@@ -12,10 +10,6 @@ class OrderCancel extends StatefulWidget {
 }
 
 class _OrderCancelState extends State<OrderCancel> {
-  String dropdownValue = list.first;
-
-  List posts = ["1 モンテリマール", "1 フォンダンショコラ", "1 フロランタン"];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,47 +22,102 @@ class _OrderCancelState extends State<OrderCancel> {
         child: Column(
           children: <Widget>[
             const SizedBox(height: 50),
+            Container(width: 350, child: Text('サロンドego')),
+            SizedBox(height: 10),
+            Container(width: 350, child: Text('住所:東京都品川区')),
+            SizedBox(height: 10),
+            Container(width: 350, child: Text('電話番号:07063452287')),
+            SizedBox(height: 10),
             Container(
-              alignment: const Alignment(0.5, 1.0),
-              child: DropdownButton<String>(
-                value: dropdownValue,
-                icon: const Icon(Icons.arrow_drop_down),
-                elevation: 16,
-                style: const TextStyle(color: Colors.grey),
-                underline: Container(
-                  height: 2,
-                  color: Colors.deepPurpleAccent,
-                ),
-                onChanged: (String? value) {
-                  // This is called when the user selects an item.
-                  setState(() {
-                    dropdownValue = value!;
-                  });
-                },
-                items: list.map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
+              width: 350,
+              child: Divider(
+                color: Colors.grey,
               ),
             ),
-            // ダミーデータ.
-            const SizedBox(height: 20),
-            Expanded(
-                child: ListView.builder(
-                    itemCount: posts.length,
-                    itemBuilder: (BuildContext cotext, int index) {
-                      final post = posts[index];
-                      return ListTile(
-                        onTap: (() {}),
-                        title: Text(post),
-                      );
-                    })),
             Container(
-              width: 300,
-              child: Column(
-                children: [Text('小計 ¥1440'), Text('合計 4')],
+              width: 350,
+              child: Row(
+                children: [
+                  Text('1'),
+                  SizedBox(width: 20),
+                  Text('モンテリマール'),
+                ],
+              ),
+            ),
+            Container(
+              width: 350,
+              child: Divider(
+                color: Colors.grey,
+              ),
+            ),
+            Container(
+              width: 350,
+              child: Row(
+                children: [
+                  Text('1'),
+                  SizedBox(width: 20),
+                  Text('フォンダンショコラ'),
+                ],
+              ),
+            ),
+            Container(
+              width: 350,
+              child: Divider(
+                color: Colors.grey,
+              ),
+            ),
+            Container(
+              width: 350,
+              child: Row(
+                children: [
+                  Text('1'),
+                  SizedBox(width: 20),
+                  Text('フロランタン'),
+                ],
+              ),
+            ),
+            Container(
+              width: 350,
+              child: Divider(
+                color: Colors.grey,
+              ),
+            ),
+            Container(
+              width: 350,
+              child: Row(
+                children: [
+                  Text('1'),
+                  SizedBox(width: 20),
+                  Text('マカロン'),
+                ],
+              ),
+            ),
+            Container(
+              width: 350,
+              child: Divider(
+                color: Colors.grey,
+              ),
+            ),
+            SizedBox(height: 30),
+            Container(
+              width: 350,
+              child: Row(
+                children: [
+                  Text('小計'),
+                  SizedBox(width: 20),
+                  Text('¥1440'),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              width: 350,
+              child: Row(
+                children: [
+                  Text('合計'),
+                  SizedBox(width: 20),
+                  Text('4'),
+                ],
               ),
             ),
             SizedBox(height: 50),
@@ -80,7 +129,6 @@ class _OrderCancelState extends State<OrderCancel> {
                   '予約をキャンセルする',
                   style: TextStyle(fontSize: 20),
                 )),
-            const SizedBox(height: 50),
           ],
         ),
       ),

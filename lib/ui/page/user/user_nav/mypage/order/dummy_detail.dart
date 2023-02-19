@@ -123,37 +123,42 @@ class _DummyDetailState extends State<DummyDetail> {
             Image.network(
                 'https://poi-static-map.cld.navitime.jp/02022/120998/image.png'),
             SizedBox(height: 50),
-            Container(
-              // 水平方向にContainerを寄せる.
-              margin: EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                // グレーの正方形を上に寄せる設定.
-                crossAxisAlignment: CrossAxisAlignment.start,
-                verticalDirection: VerticalDirection.down,
-                children: [
-                  Column(
-                    // Textを全て左端に寄せる設定.
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    verticalDirection: VerticalDirection.down,
-                    children: [
-                      Text('ショートケーキ５号'),
-                      SizedBox(height: 10),
-                      Text('直径15cm、4~6人分、\n茨城いちごとコクのある\n47%の生クリームのケーキ'),
-                      SizedBox(height: 10),
-                      Text('キャンセル可能日3日前まで'),
-                      SizedBox(height: 10),
-                      Text('残り8'),
-                      SizedBox(height: 10),
-                      Text('¥3200'),
-                    ],
-                  ),
-                  SizedBox(width: 20),
-                  Container(
-                      margin: const EdgeInsets.only(top: 1.0, right: 1.0),
-                      width: 100,
-                      height: 100,
-                      color: Colors.grey),
-                ],
+            GestureDetector(
+              onTap: () {
+                GoRouter.of(context).go('/mypage/bookmark/dummy_detail/dummy_buy');
+              },
+              child: Container(
+                // 水平方向にContainerを寄せる.
+                margin: EdgeInsets.symmetric(horizontal: 20.0),
+                child: Row(
+                  // グレーの正方形を上に寄せる設定.
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  verticalDirection: VerticalDirection.down,
+                  children: [
+                    Column(
+                      // Textを全て左端に寄せる設定.
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      verticalDirection: VerticalDirection.down,
+                      children: [
+                        Text('ショートケーキ５号'),
+                        SizedBox(height: 10),
+                        Text('直径15cm、4~6人分、\n茨城いちごとコクのある\n47%の生クリームのケーキ'),
+                        SizedBox(height: 10),
+                        Text('キャンセル可能日3日前まで'),
+                        SizedBox(height: 10),
+                        Text('残り8'),
+                        SizedBox(height: 10),
+                        Text('¥3200'),
+                      ],
+                    ),
+                    SizedBox(width: 20),
+                    Container(
+                        margin: const EdgeInsets.only(top: 1.0, right: 1.0),
+                        width: 100,
+                        height: 100,
+                        color: Colors.grey),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 20),

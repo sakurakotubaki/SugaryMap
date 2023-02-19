@@ -52,33 +52,38 @@ class _OrderHistoryState extends State<OrderHistory> {
             ),
             // ダミーデータ.
             SizedBox(height: 20),
-            Row(
-              children: [
-                Container(
-                  // 水平方向にContainerを寄せる.
-                  // 左端にスペースを20.0空ける.
-                  margin: EdgeInsets.symmetric(horizontal: 20.0),
-                  width: 100,
-                  height: 100,
-                  color: Colors.grey,
-                ),
-                SizedBox(width: 20),
-                // 左のグレーのBOXと同じサイズにすると、Textを上に寄せることができる.
-                Container(
-                  width: 100,
-                  height: 100,
-                  child: Column(
-                    // Textを全て左端に寄せる設定.
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    verticalDirection: VerticalDirection.down,
-                    children: [
-                      Text('おやつやユー'),
-                      SizedBox(height: 10),
-                      Text('５点の商品'),
-                    ],
+            GestureDetector(
+              onTap: () {
+                GoRouter.of(context).go('/mypage/order_history/order_cancel');
+              },
+              child: Row(
+                children: [
+                  Container(
+                    // 水平方向にContainerを寄せる.
+                    // 左端にスペースを20.0空ける.
+                    margin: EdgeInsets.symmetric(horizontal: 20.0),
+                    width: 100,
+                    height: 100,
+                    color: Colors.grey,
                   ),
-                ),
-              ],
+                  SizedBox(width: 20),
+                  // 左のグレーのBOXと同じサイズにすると、Textを上に寄せることができる.
+                  Container(
+                    width: 100,
+                    height: 100,
+                    child: Column(
+                      // Textを全て左端に寄せる設定.
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      verticalDirection: VerticalDirection.down,
+                      children: [
+                        Text('おやつやユー'),
+                        SizedBox(height: 10),
+                        Text('５点の商品'),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 20),
             Row(
