@@ -1,6 +1,6 @@
+import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
-import 'package:sugary_map/service/export/router_export.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -10,8 +10,8 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
 final router = GoRouter(
   navigatorKey: _rootNavigatorKey,
   // initialLocation: '/admin', // 最初に表示されるshop側のページ.
-  initialLocation: '/map',// 最初に表示されるuserページ.
-  // initialLocation: '/sign_in',// 最初に表示されるページ.
+  // initialLocation: '/map',// 最初に表示されるuserページ.
+  initialLocation: '/sign_in', // 最初に表示されるページ.
   routes: [
     GoRoute(
       name: SignInPage.routeName,
@@ -22,7 +22,7 @@ final router = GoRouter(
         GoRoute(
           name: SignUpPage.routeName,
           path: 'sign_up',
-          builder: (context, state) => SignUpPage(),
+          builder: (context, state) => const SignUpPage(),
           routes: [
             GoRoute(
               name: UserSignupPage.routeName,
@@ -62,7 +62,7 @@ final router = GoRouter(
           builder: (BuildContext context, GoRouterState state) {
             return const MapPage();
           },
-          routes: <RouteBase>[
+          routes: const <RouteBase>[
             // 内側のナビゲータに重ねて表示する詳細画面。
             // これは画面Aをカバーするが、アプリケーションシェルはカバーしない。
 
@@ -101,7 +101,7 @@ final router = GoRouter(
             GoRoute(
                 path: 'total',
                 pageBuilder: (context, state) {
-                  return MaterialPage(
+                  return const MaterialPage(
                       fullscreenDialog: true, child: TotalPage());
                 },
                 routes: [
@@ -206,7 +206,7 @@ final router = GoRouter(
               GoRoute(
                 path: 'history_tab',
                 builder: (context, state) {
-                  return HistoryTab();
+                  return const HistoryTab();
                 },
               ),
               GoRoute(

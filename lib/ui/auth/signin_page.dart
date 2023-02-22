@@ -1,10 +1,8 @@
-import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/ui/auth/signup_page.dart';
 
 class SignInPage extends StatefulWidget {
-  SignInPage({Key? key}) : super(key: key);
+  const SignInPage({Key? key}) : super(key: key);
 
   static const routeName = 'resetPage';
 
@@ -25,65 +23,65 @@ class _SignInPageState extends State<SignInPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.lock_rounded, size: 100.0, color: Colors.grey),
-            SizedBox(height: 20),
+            const Icon(Icons.lock_rounded, size: 100.0, color: Colors.grey),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(left: 50, right: 50),
               child: TextFormField(
                 decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
+                    contentPadding: const EdgeInsets.only(left: 20),
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: const BorderSide(color: Colors.grey)),
                     labelText: "メールアドレスを入力"),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(left: 50, right: 50),
               child: TextFormField(
                 decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
+                    contentPadding: const EdgeInsets.only(left: 20),
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: const BorderSide(color: Colors.grey)),
                     labelText: "パスワードを入力"),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SizedBox(
               width: 300,
               height: 40,
               child: OutlinedButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     '一般ユーザーでログイン',
                     style: TextStyle(color: Colors.black),
                   )),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SizedBox(
               width: 300,
               height: 40,
               child: OutlinedButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     '店舗ユーザーでログイン',
                     style: TextStyle(color: Colors.black),
                   )),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             TextButton(
                 onPressed: () {
                   context.goNamed(SignUpPage.routeName);
                 },
-                child: Text('新規登録')),
-            SizedBox(height: 10),
+                child: const Text('新規登録')),
+            const SizedBox(height: 10),
             TextButton(
                 onPressed: () {
                   context.goNamed(PasswordResetPage.routeName);
                 },
-                child: Text('パスワードを忘れた')),
+                child: const Text('パスワードを忘れた')),
           ],
         ),
       ),
