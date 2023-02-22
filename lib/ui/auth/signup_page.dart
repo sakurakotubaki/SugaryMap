@@ -18,31 +18,30 @@ class _SignUpPageState extends State<SignUpPage> {
       appBar: AppBar(
         title: const Text('新規登録'),
       ),
-      body: SingleChildScrollView(
-        child: Center(
-            child: Column(
-          children: [
-            const SizedBox(height: 250),
-            OutlinedButton(
-                onPressed: () {
-                  context.goNamed(UserSignupPage.routeName);
-                },
-                child: const Text(
-                  '一般ユーザーとして登録',
-                  style: TextStyle(color: Colors.black),
-                )),
-            const SizedBox(height: 20),
-            OutlinedButton(
-                onPressed: () {
-                  context.goNamed(ShopSignupPage.routeName);
-                },
-                child: const Text(
-                  '店舗ユーザーとして登録',
-                  style: TextStyle(color: Colors.black),
-                ))
-          ],
-        )),
-      ),
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          OutlinedButton(
+              onPressed: () {
+                context.goNamed(UserSignupPage.routeName);
+              },
+              child: const Text(
+                '一般ユーザーとして登録',
+                style: TextStyle(color: Colors.black),
+              )),
+          const SizedBox(height: 20),
+          OutlinedButton(
+            onPressed: () {
+              context.goNamed(ShopSignupPage.routeName);
+            },
+            child: const Text(
+              '店舗ユーザーとして登録',
+              style: TextStyle(color: Colors.black),
+            ),
+          )
+        ],
+      )),
     );
   }
 }

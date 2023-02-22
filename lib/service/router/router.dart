@@ -1,10 +1,8 @@
 import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
-import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_buy.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_detail.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dymmy_shop.dart';
 
 import '../../ui/page/user/user_nav/mypage/order_cancel/order_page.dart';
 
@@ -17,12 +15,12 @@ final router = GoRouter(
   navigatorKey: _rootNavigatorKey,
   // initialLocation: '/admin', // 最初に表示されるshop側のページ.
   // initialLocation: '/map',// 最初に表示されるuserページ.
-  initialLocation: '/sign_in', // 最初に表示されるページ.
+  initialLocation: '/sign_in/sign_up', // 最初に表示されるページ.
   routes: [
     GoRoute(
       name: SignInPage.routeName,
       path: '/sign_in',
-      builder: (context, state) => SignInPage(),
+      builder: (context, state) => const SignInPage(),
       routes: [
         // ユーザーのアカウント作成ページ.
         GoRoute(
