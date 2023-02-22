@@ -61,6 +61,8 @@ class _CreateUserState extends State<CreateUser> {
               width: 250,
               height: 50,
               child: ElevatedButton(
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {
                     context.go('/map');
                   },

@@ -201,6 +201,8 @@ class _UpdateShopState extends State<UpdateShop> {
               width: 200,
               height: 50,
               child: ElevatedButton(
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {
                     context.go('/admin');
                   },

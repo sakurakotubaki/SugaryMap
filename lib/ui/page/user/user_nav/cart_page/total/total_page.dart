@@ -131,6 +131,8 @@ class _TotalPageState extends State<TotalPage> {
               ),
               SizedBox(height: 50),
               ElevatedButton(
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {},
                   child: const Text(
                     '予約をする',

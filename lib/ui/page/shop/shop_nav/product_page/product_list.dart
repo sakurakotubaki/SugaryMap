@@ -82,12 +82,16 @@ class _ProductListState extends State<ProductList> {
                     child: Row(
                       children: [
                         ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black87),
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
                             child: Text('作成')),
                         const SizedBox(width: 50),
                         ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black87),
                             onPressed: () {
                               Navigator.of(context).pop();
                             },

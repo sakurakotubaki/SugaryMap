@@ -103,10 +103,10 @@ class _ProductAddState extends State<ProductAdd> {
               width: 200,
               height: 50,
               child: ElevatedButton(
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {},
-                  child: Text(
-                    '登録'
-                  )),
+                  child: Text('登録')),
             ),
             SizedBox(height: 50),
           ],

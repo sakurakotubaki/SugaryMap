@@ -20,9 +20,8 @@ class _SelectSignUpState extends State<SelectSignUp> {
       ),
       body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 250),
           OutlinedButton(
               onPressed: () {
                 context.goNamed(UserSignupPage.routeName);
