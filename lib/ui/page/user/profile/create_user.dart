@@ -22,12 +22,11 @@ class _CreateUserState extends State<CreateUser> {
         backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('ユーザー情報を登録'),
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 50),
-          Padding(
-            padding: const EdgeInsets.only(left: 50, right: 50),
-            child: Container(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(height: 50),
+            Container(
               clipBehavior: Clip.antiAlias,
               width: 160,
               height: 160,
@@ -36,47 +35,49 @@ class _CreateUserState extends State<CreateUser> {
                 color: Colors.grey,
               ),
             ),
-          ),
-          SizedBox(height: 50),
-          Padding(
-            padding: const EdgeInsets.only(left: 50, right: 50),
-            child: TextFormField(
-              decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(left: 20),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.grey)),
-                  labelText: "電話番号を入力"),
+            const SizedBox(height: 50),
+            Container(
+              width: 250,
+              child: TextFormField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 20),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.grey)),
+                    labelText: "電話番号を入力"),
+              ),
             ),
-          ),
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.only(left: 50, right: 50),
-            child: TextFormField(
-              decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(left: 20),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.grey)),
-                  labelText: "メールアドレスを入力"),
+            const SizedBox(height: 20),
+            Container(
+              width: 250,
+              child: TextFormField(
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 20),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.grey)),
+                    labelText: "メールアドレスを入力"),
+              ),
             ),
-          ),
-          SizedBox(height: 50),
-          SizedBox(
-            width: 200,
-            height: 50,
-            child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: MyButton.appButton.appColor),
-                onPressed: () {
-                  context.go('/map');
-                },
-                child: Text(
-                  '登録',
-                  style: TextStyle(color: MyText.textColor.appColor),
-                )),
-          )
-        ],
+            Container(),
+            const SizedBox(height: 50),
+            SizedBox(
+              width: 250,
+              height: 50,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: MyButton.appButton.appColor),
+                  onPressed: () {
+                    context.go('/map');
+                  },
+                  child: Text(
+                    '登録',
+                    style: TextStyle(color: MyText.textColor.appColor),
+                  )),
+            )
+          ],
+        ),
       ),
     );
   }

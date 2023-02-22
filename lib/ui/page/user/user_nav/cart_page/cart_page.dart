@@ -11,7 +11,11 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
-  List posts = ["パティスリーニキ", "サロンドego"];
+  List<String> itemList = [
+    "2 ショートケーキ ¥500",
+    "3 ガトーショコラ ¥500",
+    "3 シュークリーム ¥900"
+  ];
 
   void _showBottomSheetMenu(BuildContext context) {
     showModalBottomSheet(
@@ -28,6 +32,20 @@ class _CartPageState extends State<CartPage> {
                 children: [
                   SizedBox(height: 30),
                   Text("サロンド・エゴ"),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: itemList.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return ListTile(
+                          onTap: () => {
+                            GoRouter.of(context).go('/cart/cart_update'),
+                          },
+                          title: Text('${itemList[index]}'),
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 30),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: MyButton.appButton.appColor),
@@ -53,22 +71,68 @@ class _CartPageState extends State<CartPage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Text('カートに商品が入っていません!',
-            //     style: TextStyle(color: WarmingColor.textColor.appColor)),
-            Expanded(
-                child: ListView.builder(
-                    itemCount: posts.length,
-                    itemBuilder: (BuildContext cotext, int index) {
-                      final post = posts[index];
-                      return ListTile(
-                        onTap: (() {
-                          _showBottomSheetMenu(context);
-                        }),
-                        title: Text(post),
-                      );
-                    })),
+            SizedBox(height: 40),
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).go('/cart/total');
+                  },
+                  child: Container(
+                    // 水平方向にContainerを寄せる.
+                    // 左端にスペースを20.0空ける.
+                    margin: EdgeInsets.symmetric(horizontal: 20.0),
+                    width: 100,
+                    height: 100,
+                    color: Colors.grey,
+                  ),
+                ),
+                SizedBox(width: 20),
+                Container(
+                  width: 200,
+                  height: 100,
+                  child: Column(
+                    // Textを全て左端に寄せる設定.
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    verticalDirection: VerticalDirection.down,
+                    children: [
+                      Text('パティスリーニキ'),
+                      SizedBox(height: 10),
+                      Text('5点の商品'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Row(
+              children: [
+                Container(
+                  // 水平方向にContainerを寄せる.
+                  // 左端にスペースを20.0空ける.
+                  margin: EdgeInsets.symmetric(horizontal: 20.0),
+                  width: 100,
+                  height: 100,
+                  color: Colors.grey,
+                ),
+                SizedBox(width: 20),
+                Container(
+                  width: 200,
+                  height: 100,
+                  child: Column(
+                    // Textを全て左端に寄せる設定.
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    verticalDirection: VerticalDirection.down,
+                    children: [
+                      Text('おやつやユー'),
+                      SizedBox(height: 10),
+                      Text('3点の商品'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

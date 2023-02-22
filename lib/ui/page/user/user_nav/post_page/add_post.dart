@@ -3,16 +3,16 @@ import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/theme/button_theme.dart';
 import 'package:sugary_map/theme/text_color.dart';
 
-class AddPost extends StatefulWidget {
-  AddPost({Key? key}) : super(key: key);
+class PostAdd extends StatefulWidget {
+  PostAdd({Key? key}) : super(key: key);
 
-  static const routeName = 'AddPost';
+  static const routeName = 'PostAdd';
 
   @override
-  State<AddPost> createState() => _AddPostState();
+  State<PostAdd> createState() => _PostAddState();
 }
 
-class _AddPostState extends State<AddPost> {
+class _PostAddState extends State<PostAdd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,8 +44,8 @@ class _AddPostState extends State<AddPost> {
               ],
             ),
             SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -56,9 +56,8 @@ class _AddPostState extends State<AddPost> {
               ),
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(
-                  top: 20, bottom: 30, right: 50, left: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 maxLines: 5,
                 keyboardType: TextInputType.multiline,
@@ -67,8 +66,8 @@ class _AddPostState extends State<AddPost> {
               ),
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -78,8 +77,8 @@ class _AddPostState extends State<AddPost> {
                     labelText: "https://の後から入力"),
               ),
             ),
-            SizedBox(height: 10),
-            SizedBox(height: 40),
+            SizedBox(height: 30),
+            Container(), // 空のWidgetを置かないと左に全てよってしまう!
             SizedBox(
               width: 200,
               height: 50,

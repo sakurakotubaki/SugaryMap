@@ -1,7 +1,6 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/ui/auth/signin_page.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/order_page.dart';
 
 class MyPage extends StatefulWidget {
   const MyPage({Key? key}) : super(key: key);
@@ -15,6 +14,13 @@ class _MyPageState extends State<MyPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+              onPressed: () {
+                GoRouter.of(context).go('/mypage/user_notification');
+              },
+              icon: const Icon(Icons.notifications))
+        ],
         centerTitle: true,
         title: Text('マイページ'),
         backgroundColor: MyAppBar.appBar.appColor,
@@ -48,9 +54,9 @@ class _MyPageState extends State<MyPage> {
                       SizedBox(height: 20),
                       Row(
                         children: [
-                          const Text('称号'),
+                          Text('称号'),
                           SizedBox(width: 20),
-                          const Text('甘党'),
+                          Text('甘党'),
                         ],
                       ),
                     ],
@@ -63,7 +69,7 @@ class _MyPageState extends State<MyPage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/order');
+                      GoRouter.of(context).go('/mypage/order_history');
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),

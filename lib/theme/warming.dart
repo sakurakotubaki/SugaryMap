@@ -1,8 +1,8 @@
 import 'package:sugary_map/service/export/global_export.dart';
 
-enum WarmingColor {
+enum WarningColor {
   textColor(appColor: Colors.redAccent);
 
-  const WarmingColor({required this.appColor});
+  const WarningColor({required this.appColor});
   final Color appColor;
 }

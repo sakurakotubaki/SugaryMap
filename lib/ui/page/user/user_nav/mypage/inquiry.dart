@@ -15,26 +15,35 @@ class Inquiry extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SizedBox(height: 40),
-          Text("""
-          SugaryMapをご利用いただきあり
-          がとうございます。
-          トラブルやお困りごと、ご意見が
-          あればこちらから、ご連絡ください
-                """, style: TextStyle(fontSize: 20)),
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.only(left: 75),
+          const SizedBox(height: 40),
+          Container(
+            width: 350,
+            child: Text(
+                "SugaryMapをご利用いただきありがとうございます。\nトラブルやお困りごと、ご意見があればこちらから、ご連絡ください",
+                style: TextStyle(fontSize: 20)),
+          ),
+          const SizedBox(height: 20),
+          Container(),
+          Container(
+            width: 350,
             child: Row(
-              children: [
+              children: const [
                 Icon(Icons.mail),
                 SizedBox(width: 20),
                 Text('JboyCompany@gmail.com'),
               ],
             ),
           ),
-          SizedBox(height: 10),
-          Text('copyright©️ JboyHashimoto')
+          const SizedBox(height: 10),
+          Container(
+              width: 350,
+              child: Row(
+                children: const [
+                  Icon(Icons.copyright),
+                  SizedBox(width: 20),
+                  Text('copyright©️ JboyHashimoto'),
+                ],
+              ))
         ],
       ),
     );

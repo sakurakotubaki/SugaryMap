@@ -2,6 +2,7 @@ import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/theme/button_theme.dart';
 import 'package:sugary_map/theme/text_color.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/admin_page.dart';
 
 class CreateShop extends StatefulWidget {
   CreateShop({Key? key}) : super(key: key);
@@ -24,44 +25,37 @@ class _CreateShopState extends State<CreateShop> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
-              child: Stack(
-                children: [
-                  Container(
-                    clipBehavior: Clip.antiAlias,
-                    width: 160,
-                    height: 160,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.blueGrey,
-                    ),
+            SizedBox(height: 50),
+            Stack(
+              children: [
+                Container(
+                  clipBehavior: Clip.antiAlias,
+                  width: 160,
+                  height: 160,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.blueGrey,
                   ),
-                  Positioned(
-                    right: 10,
-                    bottom: 10,
-                    child: CircleAvatar(
-                        maxRadius: 30.0,
-                        backgroundColor: Colors.grey,
-                        child: Icon(
-                          Icons.camera_alt,
-                          size: 30,
-                          color: Colors.black,
-                        )),
-                  )
-                ],
-              ),
+                ),
+                Positioned(
+                  right: 10,
+                  bottom: 10,
+                  child: CircleAvatar(
+                      maxRadius: 30.0,
+                      backgroundColor: Colors.grey,
+                      child: Icon(
+                        Icons.camera_alt,
+                        size: 30,
+                        color: Colors.black,
+                      )),
+                )
+              ],
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: Align(
-                  alignment: Alignment.topLeft, child: Text('Twitterアカウントを登録')),
-            ),
+            Container(width: 300, child: Text('Twitterアカウントを登録')),
             SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -72,15 +66,10 @@ class _CreateShopState extends State<CreateShop> {
               ),
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: Align(
-                  alignment: Alignment.topLeft,
-                  child: Text('Instagramアカウントを登録')),
-            ),
+            Container(width: 300, child: Text('Instagramアカウントを登録')),
             SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -91,15 +80,10 @@ class _CreateShopState extends State<CreateShop> {
               ),
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: Align(
-                  alignment: Alignment.topLeft,
-                  child: Text('Facebookアカウントを登録')),
-            ),
+            Container(width: 300, child: Text('Facebookアカウントを登録')),
             SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -110,43 +94,28 @@ class _CreateShopState extends State<CreateShop> {
               ),
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child:
-                  Align(alignment: Alignment.topLeft, child: Text('ホームページを登録')),
-            ),
+            Container(width: 300, child: Text('ホームページを登録')),
             SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: Colors.grey)),
-                    labelText: "https://の後から入力"),
+                    labelText: "ホームページのURLを全て貼り付ける"),
               ),
             ),
             SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: Row(
-                children: [
-                  IconButton(
-                      onPressed: () {}, icon: Icon(Icons.calendar_month)),
-                  SizedBox(width: 10),
-                  Text('営業日を入力')
-                ],
-              ),
-            ),
+
+            ///[カレンダーのようなものを配置]
+
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: Align(alignment: Alignment.topLeft, child: Text('住所')),
-            ),
+            Text('住所'),
             SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -157,13 +126,10 @@ class _CreateShopState extends State<CreateShop> {
               ),
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: Align(alignment: Alignment.topLeft, child: Text('電話番号')),
-            ),
+            Container(width: 300, child: Text('電話番号')),
             SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -174,13 +140,10 @@ class _CreateShopState extends State<CreateShop> {
               ),
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: Align(alignment: Alignment.topLeft, child: Text('交通手段')),
-            ),
+            Container(width: 300, child: Text('交通手段')),
             SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -191,13 +154,10 @@ class _CreateShopState extends State<CreateShop> {
               ),
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: Align(alignment: Alignment.topLeft, child: Text('駐車場')),
-            ),
+            Container(width: 300, child: Text('駐車場')),
             SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -208,13 +168,10 @@ class _CreateShopState extends State<CreateShop> {
               ),
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child:
-                  Align(alignment: Alignment.topLeft, child: Text('お店の紹介を登録')),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            Container(width: 300, child: Text('お店の紹介を登録')),
+            Container(),
+            Container(
+              width: 300,
               child: TextFormField(
                 maxLines: 5,
                 keyboardType: TextInputType.multiline,
@@ -224,11 +181,7 @@ class _CreateShopState extends State<CreateShop> {
               ),
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: Align(
-                  alignment: Alignment.topLeft, child: Text('画像は４枚まで投稿できます')),
-            ),
+            Container(width: 300, child: Text('画像は４枚まで投稿できます')),
             SizedBox(height: 10),
             Stack(
               children: [
@@ -255,7 +208,9 @@ class _CreateShopState extends State<CreateShop> {
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       backgroundColor: MyButton.appButton.appColor),
-                  onPressed: () {},
+                  onPressed: () {
+                    context.go('/admin');
+                  },
                   child: Text(
                     '登録',
                     style: TextStyle(color: MyText.textColor.appColor),

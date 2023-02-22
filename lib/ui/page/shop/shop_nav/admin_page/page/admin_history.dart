@@ -10,35 +10,76 @@ class AdminHistory extends StatefulWidget {
 }
 
 class _AdminHistoryState extends State<AdminHistory> {
-  List items = [
-    "トラさん",
-    "むっくさん",
-    "おっさん",
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView.builder(
-                itemCount: items.length,
-                itemBuilder: (BuildContext context, int index) {
-                  final item = items[index];
-                  return ListTile(
-                    onTap: () {
-                      
-                    },
-                    title: Text(item),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
+        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(height: 20),
+          Container(
+              alignment: Alignment(-0.9, -1.0),
+              child: Text('2023年1月〜4月', style: TextStyle(fontSize: 20))),
+          SizedBox(height: 20),
+          Container(
+              alignment: Alignment(-0.8, -1.0),
+              child: Text(
+                '23 1月 10:00 鈴木茂様',
+                style: TextStyle(fontSize: 20),
+              )),
+          SizedBox(height: 10),
+          Container(
+              alignment: Alignment(-0.8, -1.0),
+              child: Text('ショートケーキ4号 １個', style: TextStyle(fontSize: 20))),
+          SizedBox(height: 10),
+          Container(
+              alignment: Alignment(-0.8, -1.0),
+              child: Text('ガトーショコラ３号 １個', style: TextStyle(fontSize: 20))),
+          SizedBox(height: 10),
+          Container(
+              alignment: Alignment(-0.8, -1.0),
+              child: Text('シュークリーム ３個', style: TextStyle(fontSize: 20))),
+          SizedBox(height: 10),
+          Container(
+              width: 350,
+              alignment: Alignment(-0.9, -1.0),
+              child: Text('キゥイアレルギーがありますので、ショートケーキには、使わないでください。',
+                  style: TextStyle(fontSize: 20))),
+          Divider(
+            thickness: 2,
+            indent: 20,
+            endIndent: 20,
+            color: Colors.black12,
+          ),
+          SizedBox(height: 20),
+          Container(
+              alignment: Alignment(-0.8, -1.0),
+              child: Text(
+                '24 1月 15:30 田中太郎様',
+                style: TextStyle(fontSize: 20),
+              )),
+          SizedBox(height: 10),
+          Container(
+              alignment: Alignment(-0.8, -1.0),
+              child: Text('ショートケーキ6号 １個', style: TextStyle(fontSize: 20))),
+          SizedBox(height: 10),
+          Container(
+              alignment: Alignment(-0.8, -1.0),
+              child: Text('フルーツタルト 2個', style: TextStyle(fontSize: 20))),
+          SizedBox(height: 10),
+          Container(
+              width: 350,
+              alignment: Alignment(-0.9, -1.0),
+              child: Text('メッセージプレートは、優ちゃんお誕生日おめでとうでお願いいたします。',
+                  style: TextStyle(fontSize: 20))),
+          Divider(
+            thickness: 2,
+            indent: 20,
+            endIndent: 20,
+            color: Colors.black12,
+          ),
+        ],
       ),
-    );
+    ));
   }
 }

@@ -24,8 +24,8 @@ class _MailUpdateState extends State<MailUpdate> {
           children: [
             Icon(Icons.mail_lock, size: 100.0, color: Colors.grey),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+            Container(
+              width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
@@ -40,10 +40,11 @@ class _MailUpdateState extends State<MailUpdate> {
               width: 300,
               height: 40,
               child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: MyButton.appButton.appColor),
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'メールアドレスを変更',
-                    style: TextStyle(color: MyButton.appButton.appColor),
                   )),
             ),
           ],

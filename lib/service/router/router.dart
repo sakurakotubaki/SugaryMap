@@ -1,6 +1,12 @@
 import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
+import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_buy.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_detail.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dymmy_shop.dart';
+
+import '../../ui/page/user/user_nav/mypage/order_cancel/order_page.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -38,9 +44,9 @@ final router = GoRouter(
         ),
         // パスワードのリセットページ.
         GoRoute(
-          name: PasswordResetPage.routeName,
-          path: 'reset_page',
-          builder: (context, state) => PasswordResetPage(),
+          name: ForgetPassword.routeName,
+          path: 'forget_password',
+          builder: (context, state) => ForgetPassword(),
         ),
       ],
     ),
@@ -58,22 +64,30 @@ final router = GoRouter(
       routes: <RouteBase>[
         /// 下部のナビゲーションバーに最初に表示される画面.
         GoRoute(
-          path: '/map',
-          builder: (BuildContext context, GoRouterState state) {
-            return const MapPage();
-          },
-          routes: const <RouteBase>[
-            // 内側のナビゲータに重ねて表示する詳細画面。
-            // これは画面Aをカバーするが、アプリケーションシェルはカバーしない。
-
-            // GoRoute(
-            //   path: 'details',
-            //   builder: (BuildContext context, GoRouterState state) {
-            //     return const DetailsScreen(label: 'A');
-            //   },
-            // ),
-          ],
-        ),
+            path: '/map',
+            builder: (BuildContext context, GoRouterState state) {
+              return const MapPage();
+            },
+            routes: [
+              GoRoute(
+                path: 'shop_info',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const ShopInfo();
+                },
+              ),
+              GoRoute(
+                  path: 'order_shop',
+                  builder: (BuildContext context, GoRouterState state) {
+                    return const OrderShop();
+                  },
+                  routes: [
+                    GoRoute(
+                        path: 'order_reservation',
+                        builder: (BuildContext context, GoRouterState state) {
+                          return const ShopReservation();
+                        }),
+                  ]),
+            ]),
         GoRoute(
           path: '/post',
           builder: (BuildContext context, GoRouterState state) {
@@ -81,11 +95,18 @@ final router = GoRouter(
           },
           routes: <RouteBase>[
             GoRoute(
-              path: 'details',
-              name: AddPost.routeName,
+              path: 'post_add',
+              name: PostAdd.routeName,
               parentNavigatorKey: _rootNavigatorKey,
               builder: (BuildContext context, GoRouterState state) {
-                return AddPost();
+                return PostAdd();
+              },
+            ),
+            GoRoute(
+              path: 'post_detail',
+              parentNavigatorKey: _rootNavigatorKey,
+              builder: (BuildContext context, GoRouterState state) {
+                return const PostDetail();
               },
             ),
           ],
@@ -111,6 +132,11 @@ final router = GoRouter(
                         return const Reserevation();
                       }),
                 ]),
+            GoRoute(
+                path: 'cart_update',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const CartUpdate();
+                })
           ],
         ),
 
@@ -122,17 +148,44 @@ final router = GoRouter(
           },
           routes: <RouteBase>[
             GoRoute(
-              path: 'order',
+              path: 'user_notification',
               builder: (BuildContext context, GoRouterState state) {
-                return const OrderPage();
+                return const UserNotification();
               },
             ),
             GoRoute(
-              path: 'bookmark',
-              builder: (BuildContext context, GoRouterState state) {
-                return const BookmarkPage();
-              },
-            ),
+                path: 'order_history',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const OrderHistory();
+                },
+                routes: [
+                  GoRoute(
+                      path: 'order_cancel',
+                      builder: (BuildContext context, GoRouterState state) {
+                        return const OrderCancel();
+                      }),
+                ]),
+            GoRoute(
+                path: 'bookmark',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const BookmarkPage();
+                },
+                routes: [
+                  // ダミーのショップ
+                  GoRoute(
+                      path: 'dummy_detail',
+                      builder: (BuildContext context, GoRouterState state) {
+                        return const DummyDetail();
+                      },
+                      routes: [
+                        GoRoute(
+                          path: 'dummy_buy',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return const DummyBuy();
+                          },
+                        ),
+                      ]),
+                ]),
             GoRoute(
               path: 'manual',
               builder: (BuildContext context, GoRouterState state) {
