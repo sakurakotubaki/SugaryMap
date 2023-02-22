@@ -26,9 +26,9 @@ final router = GoRouter(
       routes: [
         // ユーザーのアカウント作成ページ.
         GoRoute(
-          name: SignUpPage.routeName,
-          path: 'sign_up',
-          builder: (context, state) => const SignUpPage(),
+          name: SelectSignUp.routeName,
+          path: 'select_signup',
+          builder: (context, state) => const SelectSignUp(),
           routes: [
             GoRoute(
               name: UserSignupPage.routeName,
