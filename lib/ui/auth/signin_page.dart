@@ -23,26 +23,26 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(height: 80),
               const Icon(Icons.lock_rounded, size: 100.0, color: Colors.grey),
               const SizedBox(height: 20),
-              Container(
+              SizedBox(
                 width: 300,
                 child: TextFormField(
                   decoration: InputDecoration(
-                      contentPadding: EdgeInsets.only(left: 20),
+                      contentPadding: const EdgeInsets.only(left: 20),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(color: Colors.grey)),
+                          borderSide: const BorderSide(color: Colors.grey)),
                       labelText: "メールアドレスを入力"),
                 ),
               ),
               const SizedBox(height: 20),
-              Container(
+              SizedBox(
                 width: 300,
                 child: TextFormField(
                   decoration: InputDecoration(
-                      contentPadding: EdgeInsets.only(left: 20),
+                      contentPadding: const EdgeInsets.only(left: 20),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(color: Colors.grey)),
+                          borderSide: const BorderSide(color: Colors.grey)),
                       labelText: "パスワードを入力"),
                 ),
               ),

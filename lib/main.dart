@@ -7,11 +7,11 @@ import 'package:sugary_map/service/router/router.dart';
 //   runApp(const MyApp());
 // }
 void main() => runApp(
-  DevicePreview(
-    enabled: !kReleaseMode,
-    builder: (context) => MyApp(),
-  ),
-);
+      DevicePreview(
+        enabled: !kReleaseMode,
+        builder: (context) => const MyApp(),
+      ),
+    );
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -27,24 +27,16 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
       // ここまで....
       title: 'Sugary Map',
-<<<<<<< HEAD
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
-      // ),
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
-=======
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
 
-        // テーマを使いましょう
+      theme: ThemeData(
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.black87,
           foregroundColor: Colors.white,
           centerTitle: true,
         ),
       ),
->>>>>>> ac9d48ce2800743a9989b954756de4dc2b0d5b81
+
+      // テーマを使いましょう
     );
   }
 }
