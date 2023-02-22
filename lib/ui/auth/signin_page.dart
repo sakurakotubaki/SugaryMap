@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/router_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -15,8 +14,6 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('ログイン'),
       ),
       body: Center(

@@ -16,6 +16,13 @@ class MyApp extends StatelessWidget {
       title: 'Sugary Map',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+
+        // テーマを使いましょう
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.black87,
+          foregroundColor: Colors.white,
+          centerTitle: true,
+        ),
       ),
     );
   }

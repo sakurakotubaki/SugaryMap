@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/ui/auth/shop_signup_page.dart';
 import 'package:sugary_map/ui/auth/user_signup_page.dart';
 
@@ -19,8 +18,6 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('新規登録'),
       ),
       body: Center(
@@ -35,7 +32,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 '一般ユーザーとして登録',
                 style: TextStyle(color: Colors.black),
               )),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           OutlinedButton(
               onPressed: () {
                 context.goNamed(ShopSignupPage.routeName);
