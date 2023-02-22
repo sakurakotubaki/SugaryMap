@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/ui/page/shop/profile/create_shop.dart';
 
 class ShopSignupPage extends StatefulWidget {
@@ -16,8 +15,6 @@ class _ShopSignupPageState extends State<ShopSignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('店舗ユーザー新規登録'),
       ),
       body: Center(

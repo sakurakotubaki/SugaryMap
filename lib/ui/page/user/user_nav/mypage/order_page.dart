@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 
 const List<String> list = <String>['１ヶ月前', '3ヶ月前', '６ヶ月前', '１年前', '３年前'];
 
@@ -17,9 +16,7 @@ class _OrderHistoryState extends State<OrderHistory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text('注文履歴'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
         child: Column(

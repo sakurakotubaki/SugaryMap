@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 
 class ShopInquiry extends StatelessWidget {
   const ShopInquiry({Key? key}) : super(key: key);
@@ -8,8 +7,6 @@ class ShopInquiry extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('お問い合わせ'),
       ),
       body: Column(

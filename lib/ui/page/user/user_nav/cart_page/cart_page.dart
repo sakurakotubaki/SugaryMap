@@ -1,7 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
-import 'package:sugary_map/theme/warming.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -47,8 +44,6 @@ class _CartPageState extends State<CartPage> {
                   ),
                   SizedBox(height: 30),
                   ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: MyButton.appButton.appColor),
                       onPressed: () {
                         Navigator.of(context).pop();
                         GoRouter.of(context).go('/cart/total');
@@ -65,9 +60,7 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text('カート'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
         child: Column(

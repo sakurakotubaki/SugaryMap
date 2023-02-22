@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/ui/auth/signin_page.dart';
 
 class ShopSettingPage extends StatefulWidget {
@@ -15,8 +14,6 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('設定'),
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: SingleChildScrollView(
         child: Center(

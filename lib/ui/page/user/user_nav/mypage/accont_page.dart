@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 
 class AccontSettings extends StatefulWidget {
   const AccontSettings({Key? key}) : super(key: key);
@@ -13,9 +12,7 @@ class _AccontSettingsState extends State<AccontSettings> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text('アカウント設定'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: SingleChildScrollView(
         child: Center(

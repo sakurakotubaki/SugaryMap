@@ -1,8 +1,5 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
-import 'package:sugary_map/theme/text_color.dart';
 
 class CreateUser extends StatefulWidget {
   CreateUser({Key? key}) : super(key: key);
@@ -18,8 +15,6 @@ class _CreateUserState extends State<CreateUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('ユーザー情報を登録'),
       ),
       body: SingleChildScrollView(
@@ -66,14 +61,11 @@ class _CreateUserState extends State<CreateUser> {
               width: 250,
               height: 50,
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: MyButton.appButton.appColor),
                   onPressed: () {
                     context.go('/map');
                   },
                   child: Text(
                     '登録',
-                    style: TextStyle(color: MyText.textColor.appColor),
                   )),
             )
           ],

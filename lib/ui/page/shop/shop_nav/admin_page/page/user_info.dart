@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/page/user_details/item_history/item_history.dart';
 
 class UserInfo extends StatefulWidget {

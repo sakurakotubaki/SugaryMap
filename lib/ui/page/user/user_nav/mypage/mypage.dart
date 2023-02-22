@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/ui/auth/signin_page.dart';
 
 class MyPage extends StatefulWidget {
@@ -21,9 +20,7 @@ class _MyPageState extends State<MyPage> {
               },
               icon: const Icon(Icons.notifications))
         ],
-        centerTitle: true,
         title: Text('マイページ'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
         child: Column(

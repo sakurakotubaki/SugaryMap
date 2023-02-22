@@ -1,8 +1,6 @@
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 
 class DummyDetail extends StatefulWidget {
@@ -18,9 +16,7 @@ class _DummyDetailState extends State<DummyDetail> {
     final PageController controller = PageController();
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text('お店詳細'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: SingleChildScrollView(
         child: Column(

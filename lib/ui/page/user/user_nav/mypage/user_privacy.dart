@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 
 class UserPrivacy extends StatefulWidget {
   const UserPrivacy({Key? key}) : super(key: key);
@@ -14,8 +13,6 @@ class _UserPrivacyState extends State<UserPrivacy> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('プライバシーポリシー'),
-          centerTitle: true,
-          backgroundColor: MyAppBar.appBar.appColor,
         ),
         body: Center(
           child: Column(

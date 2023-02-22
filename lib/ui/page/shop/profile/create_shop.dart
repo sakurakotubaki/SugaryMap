@@ -1,7 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
-import 'package:sugary_map/theme/text_color.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/admin_page.dart';
 
 class CreateShop extends StatefulWidget {
@@ -18,8 +15,6 @@ class _CreateShopState extends State<CreateShop> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('店舗情報を登録'),
       ),
       body: SingleChildScrollView(
@@ -206,14 +201,11 @@ class _CreateShopState extends State<CreateShop> {
               width: 200,
               height: 50,
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: MyButton.appButton.appColor),
                   onPressed: () {
                     context.go('/admin');
                   },
                   child: Text(
                     '登録',
-                    style: TextStyle(color: MyText.textColor.appColor),
                   )),
             ),
             SizedBox(height: 50),
