@@ -27,14 +27,6 @@ class _DummyBuyState extends State<DummyBuy> {
   }
 
   @override
-  void dispose() {
-    // TODO: implement dispose
-    decrement();
-    increment();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

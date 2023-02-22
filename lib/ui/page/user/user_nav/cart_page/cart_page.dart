@@ -75,13 +75,18 @@ class _CartPageState extends State<CartPage> {
             SizedBox(height: 40),
             Row(
               children: [
-                Container(
-                  // 水平方向にContainerを寄せる.
-                  // 左端にスペースを20.0空ける.
-                  margin: EdgeInsets.symmetric(horizontal: 20.0),
-                  width: 100,
-                  height: 100,
-                  color: Colors.grey,
+                GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).go('/cart/total');
+                  },
+                  child: Container(
+                    // 水平方向にContainerを寄せる.
+                    // 左端にスペースを20.0空ける.
+                    margin: EdgeInsets.symmetric(horizontal: 20.0),
+                    width: 100,
+                    height: 100,
+                    color: Colors.grey,
+                  ),
                 ),
                 SizedBox(width: 20),
                 Container(
