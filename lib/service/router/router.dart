@@ -1,3 +1,4 @@
+import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
@@ -27,7 +28,7 @@ final router = GoRouter(
         GoRoute(
           name: SignUpPage.routeName,
           path: 'sign_up',
-          builder: (context, state) => SignUpPage(),
+          builder: (context, state) => const SignUpPage(),
           routes: [
             GoRoute(
               name: UserSignupPage.routeName,
@@ -121,7 +122,7 @@ final router = GoRouter(
             GoRoute(
                 path: 'total',
                 pageBuilder: (context, state) {
-                  return MaterialPage(
+                  return const MaterialPage(
                       fullscreenDialog: true, child: TotalPage());
                 },
                 routes: [
@@ -178,11 +179,11 @@ final router = GoRouter(
                       },
                       routes: [
                         GoRoute(
-              path: 'dummy_buy',
-              builder: (BuildContext context, GoRouterState state) {
-                return const DummyBuy();
-              },
-            ),
+                          path: 'dummy_buy',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return const DummyBuy();
+                          },
+                        ),
                       ]),
                 ]),
             GoRoute(
@@ -258,7 +259,7 @@ final router = GoRouter(
               GoRoute(
                 path: 'history_tab',
                 builder: (context, state) {
-                  return HistoryTab();
+                  return const HistoryTab();
                 },
               ),
               GoRoute(
