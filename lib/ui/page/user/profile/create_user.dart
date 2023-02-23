@@ -2,6 +2,7 @@ import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/ui/component/profile/custom_form_field.dart';
 import 'package:sugary_map/ui/component/profile/custom_input_number.dart';
+import 'package:sugary_map/ui/page/user/user_nav/map_page/map_page.dart';
 
 class CreateUser extends StatefulWidget {
   CreateUser({Key? key}) : super(key: key);
@@ -62,7 +63,7 @@ class _CreateUserState extends State<CreateUser> {
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {
-                    context.go('/map');
+                    context.goNamed(MapPage.routeName);
                   },
                   child: Text(
                     '登録',

@@ -3,7 +3,7 @@ import 'package:sugary_map/service/export/global_export.dart';
 class PostAdd extends StatefulWidget {
   PostAdd({Key? key}) : super(key: key);
 
-  static const routeName = 'PostAdd';
+  static const routeName = 'postAdd';
 
   @override
   State<PostAdd> createState() => _PostAddState();

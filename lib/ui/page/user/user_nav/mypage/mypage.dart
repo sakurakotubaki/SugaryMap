@@ -4,6 +4,8 @@ import 'package:sugary_map/ui/auth/signin_page.dart';
 class MyPage extends StatefulWidget {
   const MyPage({Key? key}) : super(key: key);
 
+  static const routeName = 'myPage';
+
   @override
   State<MyPage> createState() => _MyPageState();
 }

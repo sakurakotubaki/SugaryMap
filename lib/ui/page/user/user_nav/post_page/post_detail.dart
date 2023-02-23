@@ -4,6 +4,8 @@ import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 class PostDetail extends StatefulWidget {
   const PostDetail({Key? key}) : super(key: key);
 
+  static const routeName = 'postDetail';
+
   @override
   State<PostDetail> createState() => _PostDetailState();
 }

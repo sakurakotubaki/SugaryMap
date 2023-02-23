@@ -5,6 +5,8 @@ import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 class ShopReservation extends StatefulWidget {
   const ShopReservation({Key? key}) : super(key: key);
 
+  static const routeName = 'shopReservation';
+
   @override
   State<ShopReservation> createState() => _ShopReservationState();
 }

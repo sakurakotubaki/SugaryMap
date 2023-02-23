@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sugary_map/ui/page/user/user_nav/cart_page/cart_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/map_page/map_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/mypage.dart';
+import 'package:sugary_map/ui/page/user/user_nav/post_page/post_page.dart';
 
 class UserNavBar extends StatefulWidget {
   const UserNavBar({
@@ -64,16 +68,20 @@ class _UserNavBarState extends State<UserNavBar> {
   void _onItemTapped(int index, BuildContext context) {
     switch (index) {
       case 0:
-        GoRouter.of(context).go('/map');
+        // GoRouter.of(context).go('/map');
+        GoRouter.of(context).goNamed(MapPage.routeName);
         break;
       case 1:
-        GoRouter.of(context).go('/post');
+        // GoRouter.of(context).go('/post');
+        GoRouter.of(context).goNamed(PostPage.routeName);
         break;
       case 2:
-        GoRouter.of(context).go('/cart');
+        // GoRouter.of(context).go('/cart');
+        GoRouter.of(context).goNamed(CartPage.routeName);
         break;
       case 3:
-        GoRouter.of(context).go('/mypage');
+        // GoRouter.of(context).go('/mypage');
+        GoRouter.of(context).goNamed(MyPage.routeName);
         break;
     }
   }

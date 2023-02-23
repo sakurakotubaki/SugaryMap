@@ -3,6 +3,8 @@ import 'package:sugary_map/service/export/global_export.dart';
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
 
+  static const routeName = 'cartPage';
+
   @override
   State<CartPage> createState() => _CartPageState();
 }

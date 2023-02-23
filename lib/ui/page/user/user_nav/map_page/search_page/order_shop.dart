@@ -5,6 +5,8 @@ import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 class OrderShop extends StatefulWidget {
   const OrderShop({Key? key}) : super(key: key);
 
+  static const routeName = 'orderShop';
+
   @override
   State<OrderShop> createState() => _OrderShopState();
 }

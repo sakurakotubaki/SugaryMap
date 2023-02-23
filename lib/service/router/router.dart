@@ -64,6 +64,7 @@ final router = GoRouter(
       routes: <RouteBase>[
         /// 下部のナビゲーションバーに最初に表示される画面.
         GoRoute(
+            name: MapPage.routeName,
             path: '/map',
             builder: (BuildContext context, GoRouterState state) {
               return const MapPage();
@@ -76,12 +77,14 @@ final router = GoRouter(
                 },
               ),
               GoRoute(
+                  name: OrderShop.routeName,
                   path: 'order_shop',
                   builder: (BuildContext context, GoRouterState state) {
                     return const OrderShop();
                   },
                   routes: [
                     GoRoute(
+                      name: ShopReservation.routeName,
                         path: 'order_reservation',
                         builder: (BuildContext context, GoRouterState state) {
                           return const ShopReservation();
@@ -89,6 +92,7 @@ final router = GoRouter(
                   ]),
             ]),
         GoRoute(
+          name: PostPage.routeName,
           path: '/post',
           builder: (BuildContext context, GoRouterState state) {
             return const PostPage();
@@ -96,7 +100,7 @@ final router = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: 'post_add',
-              name: PostAdd.routeName,
+              // name: PostAdd.routeName,
               parentNavigatorKey: _rootNavigatorKey,
               builder: (BuildContext context, GoRouterState state) {
                 return PostAdd();
@@ -104,6 +108,7 @@ final router = GoRouter(
             ),
             GoRoute(
               path: 'post_detail',
+              // name: PostAdd.routeName,
               parentNavigatorKey: _rootNavigatorKey,
               builder: (BuildContext context, GoRouterState state) {
                 return const PostDetail();
@@ -115,6 +120,7 @@ final router = GoRouter(
         /// 下部のナビゲーションバーに表示される3つ目の画面。
         GoRoute(
           path: '/cart',
+          name: CartPage.routeName,
           builder: (BuildContext context, GoRouterState state) {
             return const CartPage();
           },
@@ -143,6 +149,7 @@ final router = GoRouter(
         /// 下部のナビゲーションバーに表示される3つ目の画面。
         GoRoute(
           path: '/mypage',
+          name: MyPage.routeName,
           builder: (BuildContext context, GoRouterState state) {
             return const MyPage();
           },

@@ -4,6 +4,8 @@ import 'package:sugary_map/service/export/global_export.dart';
 class MapPage extends StatefulWidget {
   const MapPage({Key? key}) : super(key: key);
 
+  static const routeName = 'mapPage';
+
   @override
   State<MapPage> createState() => _MapPageState();
 }

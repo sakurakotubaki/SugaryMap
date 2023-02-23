@@ -4,6 +4,8 @@ import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
 
+  static const routeName = 'searchPage';
+
   @override
   State<SearchPage> createState() => _SearchPageState();
 }
