@@ -25,111 +25,111 @@ class _TotalPageState extends State<TotalPage> {
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
                 ),
-                child: Center(
+                child: const Center(
                     child: Center(
                         child: Text('日時を指定', style: TextStyle(fontSize: 20)))),
               ),
-              SizedBox(height: 20),
-              Container(width: 350, child: Text('サロンドego')),
-              SizedBox(height: 10),
-              Container(width: 350, child: Text('住所:東京都品川区')),
-              SizedBox(height: 10),
-              Container(width: 350, child: Text('電話番号:07063452287')),
-              SizedBox(height: 10),
-              Container(
+              const SizedBox(height: 20),
+              const SizedBox(width: 350, child: Text('サロンドego')),
+              const SizedBox(height: 10),
+              const SizedBox(width: 350, child: Text('住所:東京都品川区')),
+              const SizedBox(height: 10),
+              const SizedBox(width: 350, child: Text('電話番号:07063452287')),
+              const SizedBox(height: 10),
+              const SizedBox(
                 width: 350,
                 child: Divider(
                   color: Colors.grey,
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 350,
                 child: Row(
-                  children: [
+                  children: const [
                     Text('1'),
                     SizedBox(width: 20),
                     Text('モンテリマール'),
                   ],
                 ),
               ),
-              Container(
+              const SizedBox(
                 width: 350,
                 child: Divider(
                   color: Colors.grey,
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 350,
                 child: Row(
-                  children: [
+                  children: const [
                     Text('1'),
                     SizedBox(width: 20),
                     Text('フォンダンショコラ'),
                   ],
                 ),
               ),
-              Container(
+              const SizedBox(
                 width: 350,
                 child: Divider(
                   color: Colors.grey,
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 350,
                 child: Row(
-                  children: [
+                  children: const [
                     Text('1'),
                     SizedBox(width: 20),
                     Text('フロランタン'),
                   ],
                 ),
               ),
-              Container(
+              const SizedBox(
                 width: 350,
                 child: Divider(
                   color: Colors.grey,
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 350,
                 child: Row(
-                  children: [
+                  children: const [
                     Text('1'),
                     SizedBox(width: 20),
                     Text('マカロン'),
                   ],
                 ),
               ),
-              Container(
+              const SizedBox(
                 width: 350,
                 child: Divider(
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(height: 20),
-              Container(
+              const SizedBox(height: 20),
+              SizedBox(
                 width: 350,
                 child: Row(
-                  children: [
+                  children: const [
                     Text('合計'),
                     SizedBox(width: 20),
                     Text('¥1440'),
                   ],
                 ),
               ),
-              SizedBox(height: 20),
-              Container(
+              const SizedBox(height: 20),
+              SizedBox(
                 width: 300,
                 child: TextFormField(
                   maxLines: 5,
                   keyboardType: TextInputType.multiline,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       hintText:
                           "(例)食物アレルギーでキゥイがダメ、メッセージプレートの内容が、英語でHappy Birthday",
                       border: OutlineInputBorder()),
                 ),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               ElevatedButton(
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.black87),
@@ -138,7 +138,7 @@ class _TotalPageState extends State<TotalPage> {
                     '予約をする',
                     style: TextStyle(fontSize: 20),
                   )),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             ],
           ),
         ),
