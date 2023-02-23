@@ -1,7 +1,7 @@
 import 'package:sugary_map/service/export/global_export.dart';
 
 class PostAdd extends StatefulWidget {
-  PostAdd({Key? key}) : super(key: key);
+  const PostAdd({Key? key}) : super(key: key);
 
   static const routeName = 'PostAdd';
 
@@ -19,7 +19,7 @@ class _PostAddState extends State<PostAdd> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Stack(
               children: [
                 Container(
@@ -27,7 +27,7 @@ class _PostAddState extends State<PostAdd> {
                   height: 150,
                   decoration: BoxDecoration(border: Border.all(width: 1)),
                 ),
-                Positioned(
+                const Positioned(
                   bottom: 55,
                   right: 55,
                   child: Icon(
@@ -38,41 +38,42 @@ class _PostAddState extends State<PostAdd> {
                 )
               ],
             ),
-            SizedBox(height: 40),
-            Container(
+            const SizedBox(height: 40),
+            SizedBox(
               width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
+                    contentPadding: const EdgeInsets.only(left: 20),
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: const BorderSide(color: Colors.grey)),
                     labelText: "店舗名を入力"),
               ),
             ),
-            SizedBox(height: 20),
-            Container(
+            const SizedBox(height: 20),
+            SizedBox(
               width: 300,
               child: TextFormField(
                 maxLines: 5,
                 keyboardType: TextInputType.multiline,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     hintText: "お店の口コミを書く", border: OutlineInputBorder()),
               ),
             ),
-            SizedBox(height: 20),
-            Container(
+            const SizedBox(height: 20),
+            // TODO(kenta-wakasa): 何を入力すればいいのかわからない。
+            SizedBox(
               width: 300,
               child: TextFormField(
                 decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
+                    contentPadding: const EdgeInsets.only(left: 20),
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: const BorderSide(color: Colors.grey)),
                     labelText: "https://の後から入力"),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Container(), // 空のWidgetを置かないと左に全てよってしまう!
             SizedBox(
               width: 200,
@@ -83,11 +84,11 @@ class _PostAddState extends State<PostAdd> {
                   onPressed: () {
                     context.go('/post');
                   },
-                  child: Text(
+                  child: const Text(
                     '投稿する',
                   )),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
           ],
         ),
       ),
