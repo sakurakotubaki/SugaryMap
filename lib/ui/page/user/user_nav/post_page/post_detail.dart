@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 
 class PostDetail extends StatefulWidget {
   const PostDetail({Key? key}) : super(key: key);
@@ -25,24 +24,24 @@ class _PostDetailState extends State<PostDetail> {
                 height: 150,
                 color: Colors.grey[200],
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 50,
                 child: Row(
-                  children: [
+                  children: const [
                     Text('投稿者'),
-                    const SizedBox(width: 20),
+                    SizedBox(width: 20),
                     Text('上田'),
                   ],
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 50,
                 child: Row(
-                  children: [
+                  children: const [
                     Text('いったお店'),
-                    const SizedBox(width: 20),
+                    SizedBox(width: 20),
                     Text('オーボン・ビュータン'),
                   ],
                 ),
@@ -53,7 +52,8 @@ class _PostDetailState extends State<PostDetail> {
                       alignment: const Alignment(-1.0, -1.0),
                       width: 300,
                       height: 100,
-                      child: Text('クラシックなフランス菓子を数多く扱う名店。\nおすすめは、ガトピレネーです。')),
+                      child:
+                          const Text('クラシックなフランス菓子を数多く扱う名店。\nおすすめは、ガトピレネーです。')),
                   Container(
                       alignment: const Alignment(-1.0, -1.0),
                       width: 300,
@@ -62,14 +62,17 @@ class _PostDetailState extends State<PostDetail> {
                         // テキストを左端に寄せる.
                         crossAxisAlignment: CrossAxisAlignment.start,
                         verticalDirection: VerticalDirection.down,
-                        children: [
+                        children: const [
+                          // TODO(kenta-wakasa): ここがURLのリンクになるのでは？
                           Text('東京都尾山台'),
                           SizedBox(height: 20),
+                          // TODO(kenta-wakasa): 電話番号も入力しないはず。
                           Text('090-9988-3477'),
                         ],
                       )),
                 ],
               ),
+              // TODO(kenta-wakasa): これも表示できないはず
               Image.network(
                   'https://poi-static-map.cld.navitime.jp/02022/120998/image.png'),
             ],
