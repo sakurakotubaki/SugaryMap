@@ -189,6 +189,7 @@ final router = GoRouter(
                   // ダミーのショップ
                   GoRoute(
                       path: 'dummy_detail',
+                      name: DummyDetail.routeName,
                       builder: (BuildContext context, GoRouterState state) {
                         return const DummyDetail();
                       },
@@ -211,9 +212,9 @@ final router = GoRouter(
             ),
             GoRoute(
                 path: 'account',
-                name: AccontSettings.routeName,
+                name: UserAccountSettings.routeName,
                 builder: (BuildContext context, GoRouterState state) {
-                  return const AccontSettings();
+                  return const UserAccountSettings();
                 },
                 routes: [
                   GoRoute(

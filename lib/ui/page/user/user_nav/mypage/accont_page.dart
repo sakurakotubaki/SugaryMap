@@ -3,16 +3,16 @@ import 'package:sugary_map/ui/page/user/user_nav/mypage/account/mail_reset_page.
 import 'package:sugary_map/ui/page/user/user_nav/mypage/account/password_reset_page.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/account/update_user.dart';
 
-class AccontSettings extends StatefulWidget {
-  const AccontSettings({Key? key}) : super(key: key);
+class UserAccountSettings extends StatefulWidget {
+  const UserAccountSettings({Key? key}) : super(key: key);
 
-  static const routeName = 'accontSettings';
+  static const routeName = 'userAccountSettings';
 
   @override
-  State<AccontSettings> createState() => _AccontSettingsState();
+  State<UserAccountSettings> createState() => _UserAccountSettingsState();
 }
 
-class _AccontSettingsState extends State<AccontSettings> {
+class _UserAccountSettingsState extends State<UserAccountSettings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

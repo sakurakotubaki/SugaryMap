@@ -21,8 +21,11 @@ class _ReserevationState extends State<Reserevation> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('予約が完了しました!'),
+            const Text('予約が完了致しました', style: TextStyle(fontSize: 20)),
+            const SizedBox(height: 50),
             ElevatedButton(
+                style:
+                    ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                 onPressed: () {
                   context.goNamed(CartPage.routeName);
                 },

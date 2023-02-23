@@ -56,20 +56,6 @@ class _PostDetailState extends State<PostDetail> {
                       width: 300,
                       height: 100,
                       child: Text('クラシックなフランス菓子を数多く扱う名店。\nおすすめは、ガトピレネーです。')),
-                  Container(
-                      alignment: const Alignment(-1.0, -1.0),
-                      width: 300,
-                      height: 100,
-                      child: Column(
-                        // テキストを左端に寄せる.
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        verticalDirection: VerticalDirection.down,
-                        children: [
-                          Text('東京都尾山台'),
-                          SizedBox(height: 20),
-                          Text('090-9988-3477'),
-                        ],
-                      )),
                 ],
               ),
               Image.network(
