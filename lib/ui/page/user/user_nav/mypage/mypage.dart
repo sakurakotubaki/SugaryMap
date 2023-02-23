@@ -11,6 +11,13 @@ class MyPage extends StatefulWidget {
 class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
+    // TODO(kenta-wakasa): 同じことを何回も書かないような工夫をしよう
+    const divider = Divider(
+      thickness: 2,
+      indent: 20,
+      endIndent: 20,
+      color: Colors.black12,
+    );
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -20,7 +27,7 @@ class _MyPageState extends State<MyPage> {
               },
               icon: const Icon(Icons.notifications))
         ],
-        title: Text('マイページ'),
+        title: const Text('マイページ'),
       ),
       body: Center(
         child: Column(
@@ -48,9 +55,9 @@ class _MyPageState extends State<MyPage> {
                   Column(
                     children: [
                       const Text('こんぶさん'),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Row(
-                        children: [
+                        children: const [
                           Text('称号'),
                           SizedBox(width: 20),
                           Text('甘党'),
@@ -68,12 +75,12 @@ class _MyPageState extends State<MyPage> {
                     onTap: () {
                       GoRouter.of(context).go('/mypage/order_history');
                     },
-                    child: ListTile(
+                    child: const ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('注文履歴'),
                     ),
                   ),
-                  Divider(
+                  const Divider(
                     thickness: 2,
                     indent: 20,
                     endIndent: 20,
@@ -83,97 +90,67 @@ class _MyPageState extends State<MyPage> {
                     onTap: () {
                       GoRouter.of(context).go('/mypage/bookmark');
                     },
-                    child: ListTile(
+                    child: const ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('お気に入り'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  divider,
                   GestureDetector(
                     onTap: () {
                       GoRouter.of(context).go('/mypage/manual');
                     },
-                    child: ListTile(
+                    child: const ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('使い方'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  divider,
                   GestureDetector(
                     onTap: () {
                       GoRouter.of(context).go('/mypage/account');
                     },
-                    child: ListTile(
+                    child: const ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('アカウント設定'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  divider,
                   GestureDetector(
                     onTap: () {
                       print('アカウント設定');
                     },
-                    child: ListTile(
+                    child: const ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('プライバシーポリシー'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  divider,
                   GestureDetector(
                     onTap: () {
                       GoRouter.of(context).go('/mypage/terms');
                     },
-                    child: ListTile(
+                    child: const ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('利用規約'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  divider,
                   GestureDetector(
                     onTap: () {
                       GoRouter.of(context).go('/mypage/inquiry');
                     },
-                    child: ListTile(
+                    child: const ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('お問い合わせ'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  divider,
                   GestureDetector(
                     onTap: () {
                       context.goNamed(SignInPage.routeName);
                     },
-                    child: ListTile(
+                    child: const ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('ログアウト'),
                     ),
