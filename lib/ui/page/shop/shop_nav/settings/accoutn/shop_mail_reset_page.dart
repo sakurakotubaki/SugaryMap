@@ -1,4 +1,5 @@
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 
 class ShopMailUpdate extends StatefulWidget {
   ShopMailUpdate({Key? key}) : super(key: key);
@@ -38,7 +39,9 @@ class _ShopMailUpdateState extends State<ShopMailUpdate> {
               width: 300,
               height: 40,
               child: OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.goNamed(ShopAccountSettings.routeName);
+                  },
                   child: Text(
                     'メールアドレスを変更',
                     style: TextStyle(color: Colors.black),

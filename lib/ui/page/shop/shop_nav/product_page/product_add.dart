@@ -1,4 +1,5 @@
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/product_page/product_detail.dart';
 
 class ProductAdd extends StatefulWidget {
   ProductAdd({Key? key}) : super(key: key);
@@ -107,7 +108,9 @@ class _ProductAddState extends State<ProductAdd> {
               child: ElevatedButton(
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.black87),
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).goNamed(ProductDetail.routeName);
+                  },
                   child: Text('登録')),
             ),
             SizedBox(height: 50),

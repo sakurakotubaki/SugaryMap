@@ -1,5 +1,6 @@
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/product_page/product_add.dart';
 
 class ProductDetail extends StatefulWidget {
   const ProductDetail({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _ProductDetailState extends State<ProductDetail> {
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.redAccent,
           onPressed: () {
-            GoRouter.of(context).go('/product/product_detail/product_add');
+            GoRouter.of(context).goNamed(ProductAdd.routeName);
           },
           child: const Icon(Icons.add)),
       body: SingleChildScrollView(

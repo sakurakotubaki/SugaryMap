@@ -1,4 +1,5 @@
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/product_page/product_detail.dart';
 
 class ProductList extends StatefulWidget {
   const ProductList({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class _ProductListState extends State<ProductList> {
             for (final item in items)
               ListTile(
                 onTap: () => {
-                  GoRouter.of(context).go('/product/product_detail'),
+                  GoRouter.of(context).goNamed(ProductDetail.routeName),
                 },
                 trailing: const Icon(Icons.arrow_forward_ios),
                 leading: const Icon(

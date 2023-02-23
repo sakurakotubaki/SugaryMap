@@ -1,5 +1,6 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/admin_page.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_account_page.dart';
 
 class UpdateShop extends StatefulWidget {
   UpdateShop({Key? key}) : super(key: key);
@@ -204,7 +205,7 @@ class _UpdateShopState extends State<UpdateShop> {
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {
-                    context.go('/admin');
+                    context.goNamed(ShopAccountSettings.routeName);
                   },
                   child: Text(
                     '保存',
