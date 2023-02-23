@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 
 class UserNotification extends StatelessWidget {
   const UserNotification({Key? key}) : super(key: key);
@@ -8,8 +7,6 @@ class UserNotification extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('通知'),
       ),
       body: Column(

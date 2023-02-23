@@ -1,6 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
 
 class MailUpdate extends StatefulWidget {
   MailUpdate({Key? key}) : super(key: key);
@@ -14,8 +12,6 @@ class _MailUpdateState extends State<MailUpdate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('メールアドレスの変更'),
       ),
       body: Center(
@@ -40,8 +36,8 @@ class _MailUpdateState extends State<MailUpdate> {
               width: 300,
               height: 40,
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: MyButton.appButton.appColor),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {},
                   child: const Text(
                     'メールアドレスを変更',

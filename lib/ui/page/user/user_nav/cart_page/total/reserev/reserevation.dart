@@ -1,7 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
-import 'package:sugary_map/theme/warming.dart';
 
 class Reserevation extends StatefulWidget {
   const Reserevation({Key? key}) : super(key: key);
@@ -14,9 +11,7 @@ class _ReserevationState extends State<Reserevation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text('カート'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
         child: Column(
@@ -24,8 +19,6 @@ class _ReserevationState extends State<Reserevation> {
           children: <Widget>[
             const Text('予約が完了しました!'),
             ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: MyButton.appButton.appColor),
                 onPressed: () {
                   context.go('/cart');
                 },

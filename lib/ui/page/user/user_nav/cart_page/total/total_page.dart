@@ -1,7 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
-import 'package:sugary_map/theme/warming.dart';
 
 class TotalPage extends StatefulWidget {
   const TotalPage({Key? key}) : super(key: key);
@@ -14,9 +11,7 @@ class _TotalPageState extends State<TotalPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text('お会計'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -136,8 +131,8 @@ class _TotalPageState extends State<TotalPage> {
               ),
               SizedBox(height: 50),
               ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: MyButton.appButton.appColor),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {},
                   child: const Text(
                     '予約をする',

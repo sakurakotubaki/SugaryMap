@@ -1,5 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 
 class ShopPasswordUpdate extends StatefulWidget {
   ShopPasswordUpdate({Key? key}) : super(key: key);
@@ -13,8 +12,6 @@ class _ShopPasswordUpdateState extends State<ShopPasswordUpdate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('パスワードの変更'),
       ),
       body: Center(

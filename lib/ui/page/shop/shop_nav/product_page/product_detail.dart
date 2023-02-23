@@ -1,7 +1,5 @@
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
 
 class ProductDetail extends StatefulWidget {
   const ProductDetail({Key? key}) : super(key: key);
@@ -16,8 +14,6 @@ class _ProductDetailState extends State<ProductDetail> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('商品管理'),
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.redAccent,

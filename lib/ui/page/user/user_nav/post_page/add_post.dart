@@ -1,7 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
-import 'package:sugary_map/theme/text_color.dart';
 
 class PostAdd extends StatefulWidget {
   PostAdd({Key? key}) : super(key: key);
@@ -17,8 +14,6 @@ class _PostAddState extends State<PostAdd> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('新しい口コミを投稿する'),
       ),
       body: SingleChildScrollView(
@@ -83,14 +78,13 @@ class _PostAddState extends State<PostAdd> {
               width: 200,
               height: 50,
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: MyButton.appButton.appColor),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {
                     context.go('/post');
                   },
                   child: Text(
                     '投稿する',
-                    style: TextStyle(color: MyText.textColor.appColor),
                   )),
             ),
             SizedBox(height: 50),

@@ -1,7 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
-import 'package:sugary_map/theme/text_color.dart';
 
 class ProductAdd extends StatefulWidget {
   ProductAdd({Key? key}) : super(key: key);
@@ -15,8 +12,6 @@ class _ProductAddState extends State<ProductAdd> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('商品の追加'),
       ),
       body: SingleChildScrollView(
@@ -108,13 +103,10 @@ class _ProductAddState extends State<ProductAdd> {
               width: 200,
               height: 50,
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: MyButton.appButton.appColor),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {},
-                  child: Text(
-                    '登録',
-                    style: TextStyle(color: MyText.textColor.appColor),
-                  )),
+                  child: Text('登録')),
             ),
             SizedBox(height: 50),
           ],

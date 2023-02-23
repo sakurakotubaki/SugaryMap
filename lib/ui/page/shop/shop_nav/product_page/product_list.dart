@@ -1,6 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
 
 class ProductList extends StatefulWidget {
   const ProductList({Key? key}) : super(key: key);
@@ -17,8 +15,6 @@ class _ProductListState extends State<ProductList> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('商品管理'),
-          centerTitle: true,
-          backgroundColor: MyAppBar.appBar.appColor,
         ),
         floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.redAccent,
@@ -87,7 +83,7 @@ class _ProductListState extends State<ProductList> {
                       children: [
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                backgroundColor: MyButton.appButton.appColor),
+                                backgroundColor: Colors.black87),
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
@@ -95,7 +91,7 @@ class _ProductListState extends State<ProductList> {
                         const SizedBox(width: 50),
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                backgroundColor: MyButton.appButton.appColor),
+                                backgroundColor: Colors.black87),
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
