@@ -1,8 +1,9 @@
-import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({Key? key}) : super(key: key);
+
+  static const name = 'map';
 
   @override
   State<MapPage> createState() => _MapPageState();
@@ -30,7 +31,7 @@ class _MapPageState extends State<MapPage> {
       ),
       body: Center(
         child: Column(
-          children: <Widget>[],
+          children: const <Widget>[],
         ),
       ),
     );

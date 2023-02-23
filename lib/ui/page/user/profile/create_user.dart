@@ -1,5 +1,6 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/map_page/map_page.dart';
 
 class CreateUser extends StatefulWidget {
   const CreateUser({Key? key}) : super(key: key);
@@ -67,7 +68,7 @@ class _CreateUserState extends State<CreateUser> {
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {
-                    context.go('/map');
+                    context.goNamed(MapPage.name);
                   },
                   child: const Text(
                     '登録',

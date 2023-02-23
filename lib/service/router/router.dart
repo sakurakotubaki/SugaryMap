@@ -52,7 +52,7 @@ final router = GoRouter(
     GoRoute(
       name: CreateUser.routeName,
       path: '/create_user',
-      builder: (context, state) => CreateUser(),
+      builder: (context, state) => const CreateUser(),
     ),
     ShellRoute(
       navigatorKey: _shellNavigatorKey,
@@ -63,6 +63,7 @@ final router = GoRouter(
         /// 下部のナビゲーションバーに最初に表示される画面.
         GoRoute(
             path: '/map',
+            name: MapPage.name,
             builder: (BuildContext context, GoRouterState state) {
               return const MapPage();
             },
