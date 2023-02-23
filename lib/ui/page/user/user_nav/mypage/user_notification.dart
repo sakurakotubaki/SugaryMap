@@ -10,15 +10,11 @@ class UserNotification extends StatelessWidget {
         title: const Text('通知'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           const SizedBox(height: 40),
-          Expanded(
-              child: ListView(
-            children: [
-              Text('予約しました'),
-              Text('予約をキャンセルがキャンセルされました'),
-            ],
-          ))
+          Text('予約しました'),
+          Text('予約がキャンセルされました'),
         ],
       ),
     );

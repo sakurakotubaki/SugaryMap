@@ -31,32 +31,12 @@ class _CreateUserState extends State<CreateUser> {
               ),
             ),
             const SizedBox(height: 50),
-            Container(
-              width: 250,
-              child: TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey)),
-                    labelText: "電話番号を入力"),
-              ),
-            ),
+            CustomFormField(labelText: '名前を入力'),
             const SizedBox(height: 20),
-            Container(
-              width: 250,
-              child: TextFormField(
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey)),
-                    labelText: "メールアドレスを入力"),
-              ),
-            ),
+            CustomFormField(labelText: '電話番号を入力'),
+            const SizedBox(height: 20),
             Container(),
-            const SizedBox(height: 50),
+            const SizedBox(height: 30),
             SizedBox(
               width: 250,
               height: 50,
@@ -72,6 +52,31 @@ class _CreateUserState extends State<CreateUser> {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CustomFormField extends StatelessWidget {
+  const CustomFormField({
+    Key? key,
+    required this.labelText,
+  }) : super(key: key);
+
+  final String labelText;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 250,
+      child: TextFormField(
+        keyboardType: TextInputType.number,
+        decoration: InputDecoration(
+            contentPadding: EdgeInsets.only(left: 20),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.grey)),
+            labelText: labelText),
       ),
     );
   }
