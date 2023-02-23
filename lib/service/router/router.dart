@@ -72,6 +72,7 @@ final router = GoRouter(
             routes: [
               GoRoute(
                 path: 'shop_info',
+                name: ShopInfo.routeName,
                 builder: (BuildContext context, GoRouterState state) {
                   return const ShopInfo();
                 },
@@ -84,7 +85,7 @@ final router = GoRouter(
                   },
                   routes: [
                     GoRoute(
-                      name: ShopReservation.routeName,
+                        name: ShopReservation.routeName,
                         path: 'order_reservation',
                         builder: (BuildContext context, GoRouterState state) {
                           return const ShopReservation();
@@ -100,7 +101,7 @@ final router = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: 'post_add',
-              // name: PostAdd.routeName,
+              name: PostAdd.routeName,
               parentNavigatorKey: _rootNavigatorKey,
               builder: (BuildContext context, GoRouterState state) {
                 return PostAdd();
@@ -108,7 +109,7 @@ final router = GoRouter(
             ),
             GoRoute(
               path: 'post_detail',
-              // name: PostAdd.routeName,
+              name: PostDetail.routeName,
               parentNavigatorKey: _rootNavigatorKey,
               builder: (BuildContext context, GoRouterState state) {
                 return const PostDetail();
@@ -127,6 +128,7 @@ final router = GoRouter(
           routes: <RouteBase>[
             GoRoute(
                 path: 'total',
+                name: TotalPage.routeName,
                 pageBuilder: (context, state) {
                   return const MaterialPage(
                       fullscreenDialog: true, child: TotalPage());
@@ -134,12 +136,14 @@ final router = GoRouter(
                 routes: [
                   GoRoute(
                       path: 'reserve',
+                      name: Reserevation.routeName,
                       builder: (BuildContext context, GoRouterState state) {
                         return const Reserevation();
                       }),
                 ]),
             GoRoute(
                 path: 'cart_update',
+                name: CartUpdate.routeName,
                 builder: (BuildContext context, GoRouterState state) {
                   return const CartUpdate();
                 })
@@ -156,24 +160,28 @@ final router = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: 'user_notification',
+              name: UserNotification.routeName,
               builder: (BuildContext context, GoRouterState state) {
                 return const UserNotification();
               },
             ),
             GoRoute(
                 path: 'order_history',
+                name: OrderHistory.routeName,
                 builder: (BuildContext context, GoRouterState state) {
                   return const OrderHistory();
                 },
                 routes: [
                   GoRoute(
                       path: 'order_cancel',
+                      name: OrderCancel.routeName,
                       builder: (BuildContext context, GoRouterState state) {
                         return const OrderCancel();
                       }),
                 ]),
             GoRoute(
                 path: 'bookmark',
+                name: BookmarkPage.routeName,
                 builder: (BuildContext context, GoRouterState state) {
                   return const BookmarkPage();
                 },
@@ -187,6 +195,7 @@ final router = GoRouter(
                       routes: [
                         GoRoute(
                           path: 'dummy_buy',
+                          name: DummyBuy.routeName,
                           builder: (BuildContext context, GoRouterState state) {
                             return const DummyBuy();
                           },
@@ -195,43 +204,50 @@ final router = GoRouter(
                 ]),
             GoRoute(
               path: 'manual',
+              name: ManualPage.routeName,
               builder: (BuildContext context, GoRouterState state) {
                 return const ManualPage();
               },
             ),
             GoRoute(
                 path: 'account',
+                name: AccontSettings.routeName,
                 builder: (BuildContext context, GoRouterState state) {
                   return const AccontSettings();
                 },
                 routes: [
                   GoRoute(
-                    path: 'user_email',
+                    path: 'user_email_update',
+                    name: UserEmailUpdate.routeName,
                     builder: (BuildContext context, GoRouterState state) {
-                      return MailUpdate();
+                      return UserEmailUpdate();
                     },
                   ),
                   GoRoute(
-                    path: 'user_password',
+                    path: 'user_password_update',
+                    name: UserPasswordUpdate.routeName,
                     builder: (BuildContext context, GoRouterState state) {
-                      return PasswordUpdate();
+                      return UserPasswordUpdate();
                     },
                   ),
                   GoRoute(
                     path: 'update_user',
+                    name: UpdateUser.routeName,
                     builder: (BuildContext context, GoRouterState state) {
                       return UpdateUser();
                     },
                   ),
                 ]),
             GoRoute(
-              path: 'inquiry',
+              path: 'user_inquiry',
+              name: UserInquiry.routeName,
               builder: (BuildContext context, GoRouterState state) {
-                return const Inquiry();
+                return const UserInquiry();
               },
             ),
             GoRoute(
-              path: 'terms',
+              path: 'user_terms',
+              name: UserTerms.routeName,
               builder: (BuildContext context, GoRouterState state) {
                 return const UserTerms();
               },

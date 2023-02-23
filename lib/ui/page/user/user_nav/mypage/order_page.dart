@@ -5,6 +5,8 @@ const List<String> list = <String>['１ヶ月前', '3ヶ月前', '６ヶ月前',
 class OrderHistory extends StatefulWidget {
   const OrderHistory({Key? key}) : super(key: key);
 
+  static const routeName = 'orderHistory';
+
   @override
   State<OrderHistory> createState() => _OrderHistoryState();
 }

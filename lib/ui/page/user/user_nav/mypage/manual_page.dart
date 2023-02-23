@@ -3,6 +3,8 @@ import 'package:sugary_map/service/export/global_export.dart';
 class ManualPage extends StatelessWidget {
   const ManualPage({Key? key}) : super(key: key);
 
+  static const routeName = 'manualPage';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

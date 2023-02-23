@@ -2,6 +2,9 @@ import 'package:sugary_map/service/export/global_export.dart';
 
 class TotalPage extends StatefulWidget {
   const TotalPage({Key? key}) : super(key: key);
+
+  static const routeName = 'totalPage';
+
   @override
   State<TotalPage> createState() => _TotalPageState();
 }

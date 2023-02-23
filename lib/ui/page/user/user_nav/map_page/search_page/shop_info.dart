@@ -5,6 +5,8 @@ import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 class ShopInfo extends StatefulWidget {
   const ShopInfo({Key? key}) : super(key: key);
 
+  static const routeName = 'shopInfo';
+
   @override
   State<ShopInfo> createState() => _ShopInfoState();
 }

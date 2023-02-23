@@ -1,14 +1,16 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/ui/component/auth/custom_form_field.dart';
 
-class MailUpdate extends StatefulWidget {
-  MailUpdate({Key? key}) : super(key: key);
+class UserEmailUpdate extends StatefulWidget {
+  UserEmailUpdate({Key? key}) : super(key: key);
+
+  static const routeName = 'userEmailUpdate';
 
   @override
-  State<MailUpdate> createState() => _MailUpdateState();
+  State<UserEmailUpdate> createState() => _UserEmailUpdateState();
 }
 
-class _MailUpdateState extends State<MailUpdate> {
+class _UserEmailUpdateState extends State<UserEmailUpdate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

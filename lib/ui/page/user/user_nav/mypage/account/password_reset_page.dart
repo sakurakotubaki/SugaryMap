@@ -1,14 +1,16 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/ui/component/auth/custom_form_field.dart';
 
-class PasswordUpdate extends StatefulWidget {
-  PasswordUpdate({Key? key}) : super(key: key);
+class UserPasswordUpdate extends StatefulWidget {
+  UserPasswordUpdate({Key? key}) : super(key: key);
+
+  static const routeName = 'userPasswordUpdate';
 
   @override
-  State<PasswordUpdate> createState() => _PasswordUpdateState();
+  State<UserPasswordUpdate> createState() => _UserPasswordUpdateState();
 }
 
-class _PasswordUpdateState extends State<PasswordUpdate> {
+class _UserPasswordUpdateState extends State<UserPasswordUpdate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

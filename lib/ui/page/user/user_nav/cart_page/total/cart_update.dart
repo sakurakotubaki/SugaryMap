@@ -5,6 +5,8 @@ import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 class CartUpdate extends StatefulWidget {
   const CartUpdate({Key? key}) : super(key: key);
 
+  static const routeName = 'cartUpdate';
+
   @override
   State<CartUpdate> createState() => _CartUpdateState();
 }

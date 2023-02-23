@@ -2,6 +2,9 @@ import 'package:sugary_map/service/export/global_export.dart';
 
 class Reserevation extends StatefulWidget {
   const Reserevation({Key? key}) : super(key: key);
+
+  static const routeName = 'reserevation';
+
   @override
   State<Reserevation> createState() => _ReserevationState();
 }

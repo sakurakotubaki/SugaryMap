@@ -3,6 +3,8 @@ import 'package:sugary_map/service/export/global_export.dart';
 class UserNotification extends StatelessWidget {
   const UserNotification({Key? key}) : super(key: key);
 
+  static const routeName = 'userNotification';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

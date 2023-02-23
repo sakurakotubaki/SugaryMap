@@ -1,7 +1,9 @@
 import 'package:sugary_map/service/export/global_export.dart';
 
-class Inquiry extends StatelessWidget {
-  const Inquiry({Key? key}) : super(key: key);
+class UserInquiry extends StatelessWidget {
+  const UserInquiry({Key? key}) : super(key: key);
+
+  static const routeName = 'userInquiry';
 
   @override
   Widget build(BuildContext context) {

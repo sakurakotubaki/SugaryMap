@@ -3,6 +3,8 @@ import 'package:sugary_map/service/export/global_export.dart';
 class AccontSettings extends StatefulWidget {
   const AccontSettings({Key? key}) : super(key: key);
 
+  static const routeName = 'accontSettings';
+
   @override
   State<AccontSettings> createState() => _AccontSettingsState();
 }

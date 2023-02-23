@@ -3,6 +3,8 @@ import 'package:sugary_map/service/export/global_export.dart';
 class OrderCancel extends StatefulWidget {
   const OrderCancel({Key? key}) : super(key: key);
 
+  static const routeName = 'orderCancel';
+
   @override
   State<OrderCancel> createState() => _OrderCancelState();
 }
