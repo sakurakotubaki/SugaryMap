@@ -3,6 +3,8 @@ import 'package:sugary_map/service/export/global_export.dart';
 class ShopMailUpdate extends StatefulWidget {
   ShopMailUpdate({Key? key}) : super(key: key);
 
+  static const routeName = 'shopMailUpdate';
+
   @override
   State<ShopMailUpdate> createState() => _ShopMailUpdateState();
 }

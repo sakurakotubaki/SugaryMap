@@ -3,6 +3,8 @@ import 'package:sugary_map/service/export/global_export.dart';
 class ShopAccountSettings extends StatefulWidget {
   const ShopAccountSettings({Key? key}) : super(key: key);
 
+  static const routeName = 'shopAccountSettings';
+
   @override
   State<ShopAccountSettings> createState() => _ShopAccountSettingsState();
 }

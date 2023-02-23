@@ -4,7 +4,7 @@ import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/admin_page.dart';
 class UpdateShop extends StatefulWidget {
   UpdateShop({Key? key}) : super(key: key);
 
-  static const routeName = 'UpdateShop';
+  static const routeName = 'updateShop';
 
   @override
   State<UpdateShop> createState() => _UpdateShopState();

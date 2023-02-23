@@ -275,18 +275,21 @@ final router = GoRouter(
       routes: <RouteBase>[
         GoRoute(
             path: '/admin',
+            name: AdminPage.routeName,
             builder: (context, state) {
               return const AdminPage();
             },
             routes: [
               GoRoute(
                 path: 'history_tab',
+                name: HistoryTab.routeName,
                 builder: (context, state) {
                   return const HistoryTab();
                 },
               ),
               GoRoute(
                 path: 'user_info',
+                name: UserInfo.routeName,
                 builder: (context, state) {
                   return UserInfo();
                 },
@@ -294,18 +297,21 @@ final router = GoRouter(
             ]),
         GoRoute(
             path: '/product',
+            name: ProductList.routeName,
             builder: (context, state) {
               return const ProductList();
             },
             routes: [
               GoRoute(
                   path: 'product_detail',
+                  name: ProductDetail.routeName,
                   builder: (context, state) {
                     return const ProductDetail();
                   },
                   routes: [
                     GoRoute(
                       path: 'product_add',
+                      name: ProductAdd.routeName,
                       pageBuilder: (context, state) {
                         return MaterialPage(
                             fullscreenDialog: true, child: ProductAdd());
@@ -313,6 +319,7 @@ final router = GoRouter(
                     ),
                     GoRoute(
                       path: 'product_edit',
+                      name: ProductEdit.routeName,
                       builder: (context, state) {
                         return ProductEdit();
                       },
@@ -321,36 +328,42 @@ final router = GoRouter(
             ]),
         GoRoute(
             path: '/setting',
+            name: ShopSettingPage.routeName,
             builder: (context, state) {
               return const ShopSettingPage();
             },
             routes: [
               GoRoute(
                 path: 'shop_manual',
+                name: ShopManualPage.routeName,
                 builder: (context, state) {
                   return const ShopManualPage();
                 },
               ),
               GoRoute(
                   path: 'shop_account',
+                  name: ShopAccountSettings.routeName,
                   builder: (context, state) {
                     return const ShopAccountSettings();
                   },
                   routes: [
                     GoRoute(
                       path: 'shop_mail',
+                      name: ShopMailUpdate.routeName,
                       builder: (context, state) {
                         return ShopMailUpdate();
                       },
                     ),
                     GoRoute(
                       path: 'shop_password',
+                      name: ShopPasswordUpdate.routeName,
                       builder: (context, state) {
                         return ShopPasswordUpdate();
                       },
                     ),
                     GoRoute(
                       path: 'update_shop',
+                      name: UpdateShop.routeName,
                       builder: (context, state) {
                         return UpdateShop();
                       },
@@ -358,18 +371,21 @@ final router = GoRouter(
                   ]),
               GoRoute(
                 path: 'shop_privacy',
+                name: ShopPrivacy.routeName,
                 builder: (context, state) {
                   return const ShopPrivacy();
                 },
               ),
               GoRoute(
                 path: 'shop_terms',
+                name: ShopTerms.routeName,
                 builder: (context, state) {
                   return const ShopTerms();
                 },
               ),
               GoRoute(
                 path: 'shop_inquiry',
+                name: ShopInquiry.routeName,
                 builder: (context, state) {
                   return const ShopInquiry();
                 },

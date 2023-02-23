@@ -3,6 +3,8 @@ import 'package:sugary_map/service/export/global_export.dart';
 class ProductList extends StatefulWidget {
   const ProductList({Key? key}) : super(key: key);
 
+  static const routeName = 'productList';
+
   @override
   State<ProductList> createState() => _ProductListState();
 }

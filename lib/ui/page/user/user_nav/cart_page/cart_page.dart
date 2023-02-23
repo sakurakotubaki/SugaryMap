@@ -1,4 +1,5 @@
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/cart_page/total/total_page.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -48,7 +49,8 @@ class _CartPageState extends State<CartPage> {
                   ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pop();
-                        GoRouter.of(context).go('/cart/total');
+                        // GoRouter.of(context).go('/cart/total');
+                        GoRouter.of(context).goNamed(TotalPage.routeName);
                       },
                       child: Text('お会計に進む'))
                 ],

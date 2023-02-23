@@ -4,6 +4,8 @@ import 'package:sugary_map/service/export/global_export.dart';
 class ProductDetail extends StatefulWidget {
   const ProductDetail({Key? key}) : super(key: key);
 
+  static const routeName = 'productDetail';
+
   @override
   State<ProductDetail> createState() => _ProductDetailState();
 }

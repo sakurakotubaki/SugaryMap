@@ -4,6 +4,8 @@ import 'package:sugary_map/ui/auth/signin_page.dart';
 class ShopSettingPage extends StatefulWidget {
   const ShopSettingPage({Key? key}) : super(key: key);
 
+  static const routeName = 'shopSettingPage';
+
   @override
   State<ShopSettingPage> createState() => _ShopSettingPageState();
 }

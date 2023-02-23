@@ -5,6 +5,8 @@ import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/page/user_info.dart'
 class AdminPage extends StatefulWidget {
   const AdminPage({Key? key}) : super(key: key);
 
+  static const routeName = 'adminPage';
+
   @override
   State<AdminPage> createState() => _AdminPageState();
 }

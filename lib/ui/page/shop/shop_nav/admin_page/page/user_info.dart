@@ -4,6 +4,8 @@ import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/page/user_details/it
 class UserInfo extends StatefulWidget {
   UserInfo({Key? key}) : super(key: key);
 
+  static const routeName = 'userInfo';
+
   @override
   State<UserInfo> createState() => _UserInfoState();
 }

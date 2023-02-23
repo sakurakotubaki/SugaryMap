@@ -3,6 +3,7 @@ import 'package:sugary_map/service/export/global_export.dart';
 class ShopTerms extends StatelessWidget {
   const ShopTerms({Key? key}) : super(key: key);
 
+  static const routeName = 'shopTerms';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -7,6 +7,8 @@ import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/page/user_info.dart'
 class HistoryTab extends StatefulWidget {
   const HistoryTab({Key? key}) : super(key: key);
 
+  static const routeName = 'historyTab';
+
   @override
   State<HistoryTab> createState() => _HistoryTabState();
 }

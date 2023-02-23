@@ -3,6 +3,8 @@ import 'package:sugary_map/service/export/global_export.dart';
 class ShopPasswordUpdate extends StatefulWidget {
   ShopPasswordUpdate({Key? key}) : super(key: key);
 
+  static const routeName = 'shopPasswordUpdate';
+
   @override
   State<ShopPasswordUpdate> createState() => _ShopPasswordUpdateState();
 }
