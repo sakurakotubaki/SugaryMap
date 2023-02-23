@@ -15,7 +15,7 @@ final router = GoRouter(
   navigatorKey: _rootNavigatorKey,
   // initialLocation: '/admin', // 最初に表示されるshop側のページ.
   // initialLocation: '/map',// 最初に表示されるuserページ.
-  initialLocation: '/sign_in/sign_up', // 最初に表示されるページ.
+  initialLocation: '/sign_in/select_signup', // 最初に表示されるページ.
   routes: [
     GoRoute(
       name: SignInPage.routeName,
@@ -31,7 +31,7 @@ final router = GoRouter(
             GoRoute(
               name: UserSignupPage.routeName,
               path: 'user_sign_up',
-              builder: (context, state) => UserSignupPage(),
+              builder: (context, state) => const UserSignupPage(),
             ),
             GoRoute(
               name: ShopSignupPage.routeName,

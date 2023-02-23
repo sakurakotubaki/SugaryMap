@@ -2,7 +2,7 @@ import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
 
 class CreateUser extends StatefulWidget {
-  CreateUser({Key? key}) : super(key: key);
+  const CreateUser({Key? key}) : super(key: key);
 
   static const routeName = 'createUser';
 
@@ -31,28 +31,31 @@ class _CreateUserState extends State<CreateUser> {
               ),
             ),
             const SizedBox(height: 50),
-            Container(
+            SizedBox(
               width: 250,
               child: TextFormField(
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
+                    contentPadding: const EdgeInsets.only(left: 20),
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: const BorderSide(color: Colors.grey)),
                     labelText: "電話番号を入力"),
               ),
             ),
             const SizedBox(height: 20),
-            Container(
+
+            /// メールアドレスは2回入力させる必要ないのでは？
+            SizedBox(
               width: 250,
               child: TextFormField(
                 decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey)),
-                    labelText: "メールアドレスを入力"),
+                  contentPadding: const EdgeInsets.only(left: 20),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(color: Colors.grey)),
+                  labelText: "メールアドレスを入力",
+                ),
               ),
             ),
             Container(),
@@ -66,7 +69,7 @@ class _CreateUserState extends State<CreateUser> {
                   onPressed: () {
                     context.go('/map');
                   },
-                  child: Text(
+                  child: const Text(
                     '登録',
                   )),
             )
