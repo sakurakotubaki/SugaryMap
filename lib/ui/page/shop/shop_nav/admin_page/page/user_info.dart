@@ -21,7 +21,7 @@ class _UserInfoState extends State<UserInfo> {
                 color: Colors.grey[300],
                 child: TextField(
                   decoration: const InputDecoration(
-                      prefixIcon: Icon(Icons.search), hintText: '店舗を検索'),
+                      prefixIcon: Icon(Icons.search), hintText: '顧客を検索'),
                   onChanged: (value) {},
                 ),
               ),

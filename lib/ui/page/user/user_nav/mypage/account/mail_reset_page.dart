@@ -1,4 +1,5 @@
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/component/auth/custom_form_field.dart';
 
 class MailUpdate extends StatefulWidget {
   MailUpdate({Key? key}) : super(key: key);
@@ -20,17 +21,7 @@ class _MailUpdateState extends State<MailUpdate> {
           children: [
             Icon(Icons.mail_lock, size: 100.0, color: Colors.grey),
             SizedBox(height: 20),
-            Container(
-              width: 300,
-              child: TextFormField(
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey)),
-                    labelText: "メールアドレスを入力"),
-              ),
-            ),
+            CustomAuthForm(labelText: 'メールアドレスを入力'),
             SizedBox(height: 20),
             SizedBox(
               width: 300,

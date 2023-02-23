@@ -9,13 +9,17 @@ class UserNotification extends StatelessWidget {
       appBar: AppBar(
         title: const Text('通知'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          const SizedBox(height: 40),
-          Text('予約しました'),
-          Text('予約がキャンセルされました'),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(left: 30, top: 30),
+        child: Container(
+            width: 300,
+            child: ListView(
+              children: [
+                Text('商品を予約しました', style: TextStyle(fontSize: 20)),
+                SizedBox(height: 10),
+                Text('予約がキャンセルされました', style: TextStyle(fontSize: 20)),
+              ],
+            )),
       ),
     );
   }

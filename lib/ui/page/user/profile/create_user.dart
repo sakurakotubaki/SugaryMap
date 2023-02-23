@@ -1,5 +1,7 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/component/profile/custom_form_field.dart';
+import 'package:sugary_map/ui/component/profile/custom_input_number.dart';
 
 class CreateUser extends StatefulWidget {
   CreateUser({Key? key}) : super(key: key);
@@ -21,19 +23,35 @@ class _CreateUserState extends State<CreateUser> {
         child: Column(
           children: [
             const SizedBox(height: 50),
-            Container(
-              clipBehavior: Clip.antiAlias,
-              width: 160,
-              height: 160,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.grey,
-              ),
+            Stack(
+              children: [
+                Container(
+                  clipBehavior: Clip.antiAlias,
+                  width: 160,
+                  height: 160,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey[400],
+                  ),
+                ),
+                Positioned(
+                  right: 10,
+                  bottom: 10,
+                  child: CircleAvatar(
+                      maxRadius: 30.0,
+                      backgroundColor: Colors.grey,
+                      child: Icon(
+                        Icons.camera_alt,
+                        size: 30,
+                        color: Colors.black,
+                      )),
+                )
+              ],
             ),
             const SizedBox(height: 50),
             CustomFormField(labelText: '名前を入力'),
             const SizedBox(height: 20),
-            CustomFormField(labelText: '電話番号を入力'),
+            CustomInputNumber(labelText: '電話番号を入力'),
             const SizedBox(height: 20),
             Container(),
             const SizedBox(height: 30),
@@ -52,31 +70,6 @@ class _CreateUserState extends State<CreateUser> {
             )
           ],
         ),
-      ),
-    );
-  }
-}
-
-class CustomFormField extends StatelessWidget {
-  const CustomFormField({
-    Key? key,
-    required this.labelText,
-  }) : super(key: key);
-
-  final String labelText;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 250,
-      child: TextFormField(
-        keyboardType: TextInputType.number,
-        decoration: InputDecoration(
-            contentPadding: EdgeInsets.only(left: 20),
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: Colors.grey)),
-            labelText: labelText),
       ),
     );
   }

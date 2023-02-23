@@ -27,9 +27,9 @@ class _CreateShopState extends State<CreateShop> {
                   clipBehavior: Clip.antiAlias,
                   width: 160,
                   height: 160,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.blueGrey,
+                    color: Colors.grey[400],
                   ),
                 ),
                 Positioned(
