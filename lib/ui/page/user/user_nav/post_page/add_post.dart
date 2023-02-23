@@ -1,4 +1,5 @@
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/post_page/post_page.dart';
 
 class PostAdd extends StatefulWidget {
   PostAdd({Key? key}) : super(key: key);
@@ -69,7 +70,7 @@ class _PostAddState extends State<PostAdd> {
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: Colors.grey)),
-                    labelText: "https://の後から入力"),
+                    labelText: "お店のURLを貼り付ける"),
               ),
             ),
             SizedBox(height: 30),
@@ -81,7 +82,7 @@ class _PostAddState extends State<PostAdd> {
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {
-                    context.go('/post');
+                    context.goNamed(PostPage.routeName);
                   },
                   child: Text(
                     '投稿する',

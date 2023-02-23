@@ -204,7 +204,7 @@ class _CreateShopState extends State<CreateShop> {
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {
-                    context.go('/admin');
+                    context.goNamed(AdminPage.routeName);
                   },
                   child: Text(
                     '登録',

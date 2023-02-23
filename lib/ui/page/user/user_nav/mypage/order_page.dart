@@ -1,4 +1,5 @@
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/order_cancel/order_page.dart';
 
 const List<String> list = <String>['１ヶ月前', '3ヶ月前', '６ヶ月前', '１年前', '３年前'];
 
@@ -53,7 +54,7 @@ class _OrderHistoryState extends State<OrderHistory> {
             SizedBox(height: 20),
             GestureDetector(
               onTap: () {
-                GoRouter.of(context).go('/mypage/order_history/order_cancel');
+                GoRouter.of(context).goNamed(OrderCancel.routeName);
               },
               child: Row(
                 children: [

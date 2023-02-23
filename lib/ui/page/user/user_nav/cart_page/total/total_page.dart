@@ -1,4 +1,5 @@
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/cart_page/total/reserev/reserevation.dart';
 
 class TotalPage extends StatefulWidget {
   const TotalPage({Key? key}) : super(key: key);
@@ -136,7 +137,9 @@ class _TotalPageState extends State<TotalPage> {
               ElevatedButton(
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.black87),
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).goNamed(Reserevation.routeName);
+                  },
                   child: const Text(
                     '予約をする',
                     style: TextStyle(fontSize: 20),

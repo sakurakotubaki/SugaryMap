@@ -1,5 +1,6 @@
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/cart_page/cart_page.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 
 class ShopReservation extends StatefulWidget {
@@ -74,7 +75,9 @@ class _ShopReservationState extends State<ShopReservation> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.goNamed(CartPage.routeName);
+                },
                 child: const Text('カートに追加する')),
           ],
         ),

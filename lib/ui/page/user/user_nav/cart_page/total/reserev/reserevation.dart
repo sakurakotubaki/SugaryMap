@@ -1,4 +1,5 @@
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/cart_page/cart_page.dart';
 
 class Reserevation extends StatefulWidget {
   const Reserevation({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class _ReserevationState extends State<Reserevation> {
             const Text('予約が完了しました!'),
             ElevatedButton(
                 onPressed: () {
-                  context.go('/cart');
+                  context.goNamed(CartPage.routeName);
                 },
                 child: const Text('カートに戻る')),
             const SizedBox(height: 40),

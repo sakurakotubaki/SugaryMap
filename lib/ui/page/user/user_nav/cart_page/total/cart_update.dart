@@ -1,5 +1,6 @@
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/cart_page/cart_page.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 
 class CartUpdate extends StatefulWidget {
@@ -85,7 +86,9 @@ class _CartUpdateState extends State<CartUpdate> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  GoRouter.of(context).goNamed(CartPage.routeName);
+                },
                 child: const Text('カートを更新する')),
           ],
         ),

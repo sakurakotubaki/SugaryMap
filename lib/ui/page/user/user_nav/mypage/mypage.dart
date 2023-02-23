@@ -1,5 +1,6 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/ui/auth/signin_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/user_notification.dart';
 
 class MyPage extends StatefulWidget {
   const MyPage({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _MyPageState extends State<MyPage> {
         actions: [
           IconButton(
               onPressed: () {
-                GoRouter.of(context).go('/mypage/user_notification');
+                GoRouter.of(context).goNamed(UserNotification.routeName);
               },
               icon: const Icon(Icons.notifications))
         ],

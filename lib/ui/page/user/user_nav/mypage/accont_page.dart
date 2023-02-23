@@ -1,4 +1,7 @@
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/account/mail_reset_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/account/password_reset_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/account/update_user.dart';
 
 class AccontSettings extends StatefulWidget {
   const AccontSettings({Key? key}) : super(key: key);
@@ -34,7 +37,7 @@ class _AccontSettingsState extends State<AccontSettings> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context).go('/mypage/account/user_email');
+                        GoRouter.of(context).goNamed(UserEmailUpdate.routeName);
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
@@ -49,8 +52,7 @@ class _AccontSettingsState extends State<AccontSettings> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context)
-                            .go('/mypage/account/user_password');
+                        GoRouter.of(context).goNamed(UserPasswordUpdate.routeName);
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
@@ -65,7 +67,7 @@ class _AccontSettingsState extends State<AccontSettings> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context).go('/mypage/account/update_user');
+                        GoRouter.of(context).goNamed(UpdateUser.routeName);
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),

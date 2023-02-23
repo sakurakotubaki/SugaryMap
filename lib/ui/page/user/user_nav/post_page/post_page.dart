@@ -34,45 +34,51 @@ class _PostPageState extends State<PostPage> {
               // Containerをタップすると詳細ページへ画面遷移する.
               GestureDetector(
                 onTap: () {
-                  GoRouter.of(context).go('/post/post_detail');
+                  GoRouter.of(context).goNamed(PostDetail.routeName);
                 },
-                child: Container(
-                  // 水平方向にContainerを寄せる.
-                  // 左端にスペースを20.0空ける.
-                  margin: EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.grey,
-                      ),
-                      SizedBox(width: 20),
-                      Column(
-                        // Textを全て左端に寄せる設定.
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        verticalDirection: VerticalDirection.down,
+                child: Column(
+                  children: [
+                    Container(
+                      // 水平方向にContainerを寄せる.
+                      // 左端にスペースを20.0空ける.
+                      margin: EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Row(
                         children: [
-                          Text('上田 2023/01/04'),
-                          Text('称号 甘党'),
+                          CircleAvatar(
+                            backgroundColor: Colors.grey,
+                          ),
+                          SizedBox(width: 20),
+                          Column(
+                            // Textを全て左端に寄せる設定.
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            verticalDirection: VerticalDirection.down,
+                            children: [
+                              Text('上田 2023/01/04'),
+                              Text('称号 甘党'),
+                            ],
+                          )
                         ],
-                      )
-                    ],
-                  ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      width: 350,
+                      height: 200,
+                      color: Colors.grey[200],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.file_upload_outlined)),
+                        IconButton(
+                            onPressed: () {}, icon: Icon(Icons.favorite)),
+                        TextButton(onPressed: () {}, child: Text('12')),
+                      ],
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(height: 20),
-              Container(
-                width: 350,
-                height: 200,
-                color: Colors.grey[200],
-              ),
-              SizedBox(height: 10),
-              Row(
-                children: [
-                  IconButton(
-                      onPressed: () {}, icon: Icon(Icons.file_upload_outlined)),
-                  IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
-                  TextButton(onPressed: () {}, child: Text('12')),
-                ],
               ),
               Container(
                   alignment: Alignment(-0.7, -0.7),
