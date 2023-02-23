@@ -64,72 +64,62 @@ class _CartPageState extends State<CartPage> {
       ),
       body: Center(
         child: Column(
-          children: <Widget>[
-            const SizedBox(height: 40),
-            Row(
-              children: [
-                // TODO(kenta-wakasa): 全体に対してやったほうが良さそう
-                GestureDetector(
-                  onTap: () {
-                    GoRouter.of(context).go('/cart/total');
-                  },
-                  child: Container(
-                    // 水平方向にContainerを寄せる.
-                    // 左端にスペースを20.0空ける.
-                    margin: const EdgeInsets.symmetric(horizontal: 20.0),
-                    width: 100,
-                    height: 100,
-                    color: Colors.grey,
-                  ),
-                ),
-                const SizedBox(width: 20),
-                SizedBox(
-                  width: 200,
-                  height: 100,
-                  child: Column(
-                    // Textを全て左端に寄せる設定.
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    verticalDirection: VerticalDirection.down,
-                    children: const [
-                      Text('パティスリーニキ'),
-                      SizedBox(height: 10),
-                      Text('5点の商品'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Row(
-              children: [
-                Container(
-                  // 水平方向にContainerを寄せる.
-                  // 左端にスペースを20.0空ける.
-                  margin: const EdgeInsets.symmetric(horizontal: 20.0),
-                  width: 100,
-                  height: 100,
-                  color: Colors.grey,
-                ),
-                const SizedBox(width: 20),
-                SizedBox(
-                  width: 200,
-                  height: 100,
-                  child: Column(
-                    // Textを全て左端に寄せる設定.
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    verticalDirection: VerticalDirection.down,
-                    children: const [
-                      Text('おやつやユー'),
-                      SizedBox(height: 10),
-                      Text('3点の商品'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+          children: const <Widget>[
+            SizedBox(height: 40),
+            PostParts(shopName: "Kenzirou", shopCount: 3),
+            SizedBox(height: 20),
+            PostParts(shopName: "Ego", shopCount: 5),
           ],
         ),
       ),
+    );
+  }
+}
+
+class PostParts extends StatelessWidget {
+  const PostParts({
+    super.key,
+    required this.shopName,
+    required this.shopCount,
+  });
+
+  final String shopName;
+  final int shopCount;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        // TODO(kenta-wakasa): 全体に対してやったほうが良さそう
+        GestureDetector(
+          onTap: () {
+            GoRouter.of(context).go('/cart/total');
+          },
+          child: Container(
+            // 水平方向にContainerを寄せる.
+            // 左端にスペースを20.0空ける.
+            margin: const EdgeInsets.symmetric(horizontal: 20.0),
+            width: 100,
+            height: 100,
+            color: Colors.grey,
+          ),
+        ),
+        const SizedBox(width: 20),
+        SizedBox(
+          width: 200,
+          height: 100,
+          child: Column(
+            // Textを全て左端に寄せる設定.
+            crossAxisAlignment: CrossAxisAlignment.start,
+            verticalDirection: VerticalDirection.down,
+            children: [
+              Text(shopName),
+              const SizedBox(height: 10),
+              Text('$shopCount点の商品'),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
