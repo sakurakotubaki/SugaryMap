@@ -87,6 +87,7 @@ class _DummyBuyState extends State<DummyBuy> {
                       ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {},
                   child: const Text('カートに追加する')),
+              SizedBox(height: 20),
             ],
           ),
         ),

@@ -107,7 +107,7 @@ class _CreateShopState extends State<CreateShop> {
             ///[カレンダーのようなものを配置]
 
             SizedBox(height: 20),
-            Text('住所'),
+            Container(width: 300, child: Text('住所')),
             SizedBox(height: 10),
             Container(
               width: 300,
