@@ -29,7 +29,7 @@ class UserInquiry extends StatelessWidget {
               children: const [
                 Icon(Icons.mail),
                 SizedBox(width: 20),
-                Text('JboyCompany@gmail.com'),
+                Text('jboy33company@gmail.com'),
               ],
             ),
           ),
