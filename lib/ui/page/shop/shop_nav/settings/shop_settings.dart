@@ -1,4 +1,4 @@
-import 'package:sugary_map/repository/privacy_class.dart';
+import 'package:sugary_map/constant/privacy_const.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/ui/auth/signin_page.dart';
@@ -20,8 +20,6 @@ class ShopSettingPage extends StatefulWidget {
 class _ShopSettingPageState extends State<ShopSettingPage> {
   @override
   Widget build(BuildContext context) {
-    final privacyClass = PrivacyClass();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('設定'),
@@ -59,7 +57,7 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
                     CustomDivider(),
                     GestureDetector(
                       onTap: () {
-                        privacyClass.showPrivacy();
+                        launchUrl(Uri.parse(privacyUrl));
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
@@ -69,7 +67,7 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
                     CustomDivider(),
                     GestureDetector(
                       onTap: () {
-                        privacyClass.showTerms();
+                        launchUrl(Uri.parse(termsUrl));
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),

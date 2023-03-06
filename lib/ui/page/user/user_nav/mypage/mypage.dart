@@ -1,4 +1,4 @@
-import 'package:sugary_map/repository/privacy_class.dart';
+import 'package:sugary_map/constant/privacy_const.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/ui/auth/signin_page.dart';
@@ -10,6 +10,7 @@ import 'package:sugary_map/ui/page/user/user_nav/mypage/manual_page.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order_page.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/user_notification.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/user_terms.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyPage extends StatefulWidget {
   const MyPage({Key? key}) : super(key: key);
@@ -23,8 +24,6 @@ class MyPage extends StatefulWidget {
 class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
-    final privacyClass = PrivacyClass();
-
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -121,7 +120,7 @@ class _MyPageState extends State<MyPage> {
                   CustomDivider(),
                   GestureDetector(
                     onTap: () {
-                      privacyClass.showPrivacy();
+                      launchUrl(Uri.parse(privacyUrl));
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
@@ -131,7 +130,7 @@ class _MyPageState extends State<MyPage> {
                   CustomDivider(),
                   GestureDetector(
                     onTap: () {
-                      privacyClass.showTerms();
+                      launchUrl(Uri.parse(termsUrl));
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
