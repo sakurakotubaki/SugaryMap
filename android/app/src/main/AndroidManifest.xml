@@ -1,5 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jboy.sugary.sugary_map">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+<!-- ここから url_launcherをAndroidで使うための記述-->
+<queries>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:scheme="https" />
+    </intent>
+    <!--#docregion android-queries-->
+  </queries>
+<!-- ここまで -->
+
    <application
         android:label="sugary_map"
         android:name="${applicationName}"

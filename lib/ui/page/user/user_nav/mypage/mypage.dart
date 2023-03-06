@@ -1,3 +1,4 @@
+import 'package:sugary_map/constant/privacy_const.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/ui/auth/signin_page.dart';
@@ -9,6 +10,7 @@ import 'package:sugary_map/ui/page/user/user_nav/mypage/manual_page.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order_page.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/user_notification.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/user_terms.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyPage extends StatefulWidget {
   const MyPage({Key? key}) : super(key: key);
@@ -118,7 +120,7 @@ class _MyPageState extends State<MyPage> {
                   CustomDivider(),
                   GestureDetector(
                     onTap: () {
-
+                      launchUrl(Uri.parse(privacyUrl));
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
@@ -128,7 +130,7 @@ class _MyPageState extends State<MyPage> {
                   CustomDivider(),
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).goNamed(UserTerms.routeName);
+                      launchUrl(Uri.parse(termsUrl));
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
