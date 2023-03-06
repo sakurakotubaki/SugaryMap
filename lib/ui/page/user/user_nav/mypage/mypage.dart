@@ -1,3 +1,4 @@
+import 'package:sugary_map/repository/privacy_class.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/ui/auth/signin_page.dart';
@@ -22,6 +23,8 @@ class MyPage extends StatefulWidget {
 class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
+    final privacyClass = PrivacyClass();
+
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -118,7 +121,7 @@ class _MyPageState extends State<MyPage> {
                   CustomDivider(),
                   GestureDetector(
                     onTap: () {
-
+                      privacyClass.showPrivacy();
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
@@ -128,7 +131,7 @@ class _MyPageState extends State<MyPage> {
                   CustomDivider(),
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).goNamed(UserTerms.routeName);
+                      privacyClass.showTerms();
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),

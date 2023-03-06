@@ -1,9 +1,12 @@
+import 'package:sugary_map/repository/privacy_class.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/ui/auth/signin_page.dart';
+import 'package:sugary_map/ui/component/global/custom_divider.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/accoutn/shop_mail_reset_page.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_account_page.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_inquiry.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ShopSettingPage extends StatefulWidget {
   const ShopSettingPage({Key? key}) : super(key: key);
@@ -17,6 +20,8 @@ class ShopSettingPage extends StatefulWidget {
 class _ShopSettingPageState extends State<ShopSettingPage> {
   @override
   Widget build(BuildContext context) {
+    final privacyClass = PrivacyClass();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('設定'),
@@ -40,12 +45,7 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
                         title: Text('使い方'),
                       ),
                     ),
-                    Divider(
-                      thickness: 2,
-                      indent: 20,
-                      endIndent: 20,
-                      color: Colors.black12,
-                    ),
+                    CustomDivider(),
                     GestureDetector(
                       onTap: () {
                         GoRouter.of(context)
@@ -56,42 +56,27 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
                         title: Text('アカウント設定'),
                       ),
                     ),
-                    Divider(
-                      thickness: 2,
-                      indent: 20,
-                      endIndent: 20,
-                      color: Colors.black12,
-                    ),
+                    CustomDivider(),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context).goNamed(ShopPrivacy.routeName);
+                        privacyClass.showPrivacy();
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
                         title: Text('プライバシーポリシー'),
                       ),
                     ),
-                    Divider(
-                      thickness: 2,
-                      indent: 20,
-                      endIndent: 20,
-                      color: Colors.black12,
-                    ),
+                    CustomDivider(),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context).goNamed(ShopTerms.routeName);
+                        privacyClass.showTerms();
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
                         title: Text('利用規約'),
                       ),
                     ),
-                    Divider(
-                      thickness: 2,
-                      indent: 20,
-                      endIndent: 20,
-                      color: Colors.black12,
-                    ),
+                    CustomDivider(),
                     GestureDetector(
                       onTap: () {
                         GoRouter.of(context).goNamed(ShopInquiry.routeName);
@@ -101,12 +86,7 @@ class _ShopSettingPageState extends State<ShopSettingPage> {
                         title: Text('お問い合わせ'),
                       ),
                     ),
-                    Divider(
-                      thickness: 2,
-                      indent: 20,
-                      endIndent: 20,
-                      color: Colors.black12,
-                    ),
+                    CustomDivider(),
                     GestureDetector(
                       onTap: () {
                         context.goNamed(SignInPage.routeName);
