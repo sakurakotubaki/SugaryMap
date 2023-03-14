@@ -1,21 +1,23 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/account/mail_reset_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/account/password_reset_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/account/update_user.dart';
 
-class AccontSettings extends StatefulWidget {
-  const AccontSettings({Key? key}) : super(key: key);
+class UserAccountSettings extends StatefulWidget {
+  const UserAccountSettings({Key? key}) : super(key: key);
+
+  static const routeName = 'userAccountSettings';
 
   @override
-  State<AccontSettings> createState() => _AccontSettingsState();
+  State<UserAccountSettings> createState() => _UserAccountSettingsState();
 }
 
-class _AccontSettingsState extends State<AccontSettings> {
+class _UserAccountSettingsState extends State<UserAccountSettings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text('アカウント設定'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -35,7 +37,7 @@ class _AccontSettingsState extends State<AccontSettings> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context).go('/mypage/account/user_email');
+                        GoRouter.of(context).goNamed(UserEmailUpdate.routeName);
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
@@ -50,8 +52,7 @@ class _AccontSettingsState extends State<AccontSettings> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context)
-                            .go('/mypage/account/user_password');
+                        GoRouter.of(context).goNamed(UserPasswordUpdate.routeName);
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
@@ -66,7 +67,7 @@ class _AccontSettingsState extends State<AccontSettings> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context).go('/mypage/account/update_user');
+                        GoRouter.of(context).goNamed(UpdateUser.routeName);
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),

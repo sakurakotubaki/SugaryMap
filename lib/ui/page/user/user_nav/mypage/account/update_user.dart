@@ -1,8 +1,7 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
-import 'package:sugary_map/theme/text_color.dart';
+import 'package:sugary_map/ui/component/profile/custom_form_field.dart';
+import 'package:sugary_map/ui/component/profile/custom_input_number.dart';
 
 class UpdateUser extends StatefulWidget {
   UpdateUser({Key? key}) : super(key: key);
@@ -18,60 +17,52 @@ class _UpdateUserState extends State<UpdateUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('ユーザー情報を更新'),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: 50),
-            Container(
-              clipBehavior: Clip.antiAlias,
-              width: 160,
-              height: 160,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.grey,
-              ),
+            Stack(
+              children: [
+                Container(
+                  clipBehavior: Clip.antiAlias,
+                  width: 160,
+                  height: 160,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey[400],
+                  ),
+                ),
+                Positioned(
+                  right: 10,
+                  bottom: 10,
+                  child: CircleAvatar(
+                      maxRadius: 30.0,
+                      backgroundColor: Colors.grey,
+                      child: Icon(
+                        Icons.camera_alt,
+                        size: 30,
+                        color: Colors.black,
+                      )),
+                )
+              ],
             ),
             SizedBox(height: 50),
-            Container(
-              width: 300,
-              child: TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey)),
-                    labelText: "電話番号をハイフンなしで入力"),
-              ),
-            ),
+            CustomFormField(labelText: '名前を入力'),
             const SizedBox(height: 20),
-            Container(
-              width: 300,
-              child: TextFormField(
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey)),
-                    labelText: "メールアドレスを入力"),
-              ),
-            ),
+            CustomInputNumber(labelText: '電話番号をハイフンなしで入力'),
             const SizedBox(height: 50),
             Container(),
             SizedBox(
               width: 300,
               height: 50,
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: MyButton.appButton.appColor),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {},
                   child: Text(
                     '保存',
-                    style: TextStyle(color: MyText.textColor.appColor),
                   )),
             )
           ],

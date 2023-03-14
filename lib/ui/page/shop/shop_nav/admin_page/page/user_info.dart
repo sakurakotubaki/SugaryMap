@@ -1,9 +1,10 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/page/user_details/item_history/item_history.dart';
 
 class UserInfo extends StatefulWidget {
   UserInfo({Key? key}) : super(key: key);
+
+  static const routeName = 'userInfo';
 
   @override
   State<UserInfo> createState() => _UserInfoState();
@@ -22,7 +23,7 @@ class _UserInfoState extends State<UserInfo> {
                 color: Colors.grey[300],
                 child: TextField(
                   decoration: const InputDecoration(
-                      prefixIcon: Icon(Icons.search), hintText: '店舗を検索'),
+                      prefixIcon: Icon(Icons.search), hintText: '顧客を検索'),
                   onChanged: (value) {},
                 ),
               ),

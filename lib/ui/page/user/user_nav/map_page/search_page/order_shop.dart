@@ -1,11 +1,11 @@
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 
 class OrderShop extends StatefulWidget {
   const OrderShop({Key? key}) : super(key: key);
+
+  static const routeName = 'orderShop';
 
   @override
   State<OrderShop> createState() => _OrderShopState();
@@ -18,9 +18,7 @@ class _OrderShopState extends State<OrderShop> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text('お店詳細'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
         child: Column(

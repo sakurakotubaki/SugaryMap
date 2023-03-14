@@ -1,9 +1,21 @@
+import 'package:sugary_map/constant/privacy_const.dart';
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
+import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/ui/auth/signin_page.dart';
+import 'package:sugary_map/ui/component/global/custom_divider.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_account_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/bookmark_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/inquiry.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/manual_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/order_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/user_notification.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/user_terms.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyPage extends StatefulWidget {
   const MyPage({Key? key}) : super(key: key);
+
+  static const routeName = 'myPage';
 
   @override
   State<MyPage> createState() => _MyPageState();
@@ -17,13 +29,11 @@ class _MyPageState extends State<MyPage> {
         actions: [
           IconButton(
               onPressed: () {
-                GoRouter.of(context).go('/mypage/user_notification');
+                GoRouter.of(context).goNamed(UserNotification.routeName);
               },
               icon: const Icon(Icons.notifications))
         ],
-        centerTitle: true,
         title: Text('マイページ'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
         child: Column(
@@ -69,109 +79,75 @@ class _MyPageState extends State<MyPage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/order_history');
+                      GoRouter.of(context).goNamed(OrderHistory.routeName);
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('注文履歴'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  CustomDivider(),
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/bookmark');
+                      GoRouter.of(context).goNamed(BookmarkPage.routeName);
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('お気に入り'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  CustomDivider(),
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/manual');
+                      GoRouter.of(context).goNamed(ManualPage.routeName);
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('使い方'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  CustomDivider(),
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/account');
+                      GoRouter.of(context)
+                          .goNamed(UserAccountSettings.routeName);
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('アカウント設定'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  CustomDivider(),
                   GestureDetector(
                     onTap: () {
-                      print('アカウント設定');
+                      launchUrl(Uri.parse(privacyUrl));
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('プライバシーポリシー'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  CustomDivider(),
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/terms');
+                      launchUrl(Uri.parse(termsUrl));
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('利用規約'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  CustomDivider(),
                   GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).go('/mypage/inquiry');
+                      GoRouter.of(context).goNamed(UserInquiry.routeName);
                     },
                     child: ListTile(
                       trailing: Icon(Icons.arrow_forward_ios),
                       title: Text('お問い合わせ'),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    indent: 20,
-                    endIndent: 20,
-                    color: Colors.black12,
-                  ),
+                  CustomDivider(),
                   GestureDetector(
                     onTap: () {
                       context.goNamed(SignInPage.routeName);

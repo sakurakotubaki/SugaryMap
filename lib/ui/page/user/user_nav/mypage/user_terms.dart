@@ -1,15 +1,14 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 
 class UserTerms extends StatelessWidget {
   const UserTerms({Key? key}) : super(key: key);
+
+  static const routeName = 'userTerms';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('利用規約'),
       ),
       body: Column(

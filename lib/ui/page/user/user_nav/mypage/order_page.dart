@@ -1,10 +1,12 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
+import 'package:sugary_map/ui/page/user/user_nav/mypage/order_cancel/order_page.dart';
 
 const List<String> list = <String>['１ヶ月前', '3ヶ月前', '６ヶ月前', '１年前', '３年前'];
 
 class OrderHistory extends StatefulWidget {
   const OrderHistory({Key? key}) : super(key: key);
+
+  static const routeName = 'orderHistory';
 
   @override
   State<OrderHistory> createState() => _OrderHistoryState();
@@ -17,9 +19,7 @@ class _OrderHistoryState extends State<OrderHistory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text('注文履歴'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
         child: Column(
@@ -54,7 +54,7 @@ class _OrderHistoryState extends State<OrderHistory> {
             SizedBox(height: 20),
             GestureDetector(
               onTap: () {
-                GoRouter.of(context).go('/mypage/order_history/order_cancel');
+                GoRouter.of(context).goNamed(OrderCancel.routeName);
               },
               child: Row(
                 children: [

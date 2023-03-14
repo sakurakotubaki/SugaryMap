@@ -1,9 +1,9 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
 
 class OrderCancel extends StatefulWidget {
   const OrderCancel({Key? key}) : super(key: key);
+
+  static const routeName = 'orderCancel';
 
   @override
   State<OrderCancel> createState() => _OrderCancelState();
@@ -14,9 +14,7 @@ class _OrderCancelState extends State<OrderCancel> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text('注文履歴詳細'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
         child: Column(
@@ -122,8 +120,8 @@ class _OrderCancelState extends State<OrderCancel> {
             ),
             SizedBox(height: 50),
             ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: MyButton.appButton.appColor),
+                style:
+                    ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                 onPressed: () {},
                 child: const Text(
                   '予約をキャンセルする',

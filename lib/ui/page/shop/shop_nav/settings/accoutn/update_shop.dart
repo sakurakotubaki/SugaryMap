@@ -1,13 +1,11 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
-import 'package:sugary_map/theme/text_color.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/admin_page.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_account_page.dart';
 
 class UpdateShop extends StatefulWidget {
   UpdateShop({Key? key}) : super(key: key);
 
-  static const routeName = 'UpdateShop';
+  static const routeName = 'updateShop';
 
   @override
   State<UpdateShop> createState() => _UpdateShopState();
@@ -18,8 +16,6 @@ class _UpdateShopState extends State<UpdateShop> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('店舗情報を更新'),
       ),
       body: SingleChildScrollView(
@@ -32,9 +28,9 @@ class _UpdateShopState extends State<UpdateShop> {
                   clipBehavior: Clip.antiAlias,
                   width: 160,
                   height: 160,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.blueGrey,
+                    color: Colors.grey[400],
                   ),
                 ),
                 Positioned(
@@ -112,7 +108,7 @@ class _UpdateShopState extends State<UpdateShop> {
             ///[カレンダーのようなものを配置]
 
             SizedBox(height: 20),
-            Text('住所'),
+            Container(width: 300, child: Text('住所')),
             SizedBox(height: 10),
             Container(
               width: 300,
@@ -206,14 +202,13 @@ class _UpdateShopState extends State<UpdateShop> {
               width: 200,
               height: 50,
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: MyButton.appButton.appColor),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {
-                    context.go('/admin');
+                    context.goNamed(ShopAccountSettings.routeName);
                   },
                   child: Text(
                     '保存',
-                    style: TextStyle(color: MyText.textColor.appColor),
                   )),
             ),
             SizedBox(height: 50),

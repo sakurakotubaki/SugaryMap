@@ -1,11 +1,12 @@
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
+import 'package:sugary_map/ui/page/user/user_nav/cart_page/cart_page.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 
 class CartUpdate extends StatefulWidget {
   const CartUpdate({Key? key}) : super(key: key);
+
+  static const routeName = 'cartUpdate';
 
   @override
   State<CartUpdate> createState() => _CartUpdateState();
@@ -30,9 +31,7 @@ class _CartUpdateState extends State<CartUpdate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text('予約を更新する'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: Center(
         child: Column(
@@ -87,9 +86,9 @@ class _CartUpdateState extends State<CartUpdate> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: MyButton.appButton.appColor),
-                onPressed: () {},
+                onPressed: () {
+                  GoRouter.of(context).goNamed(CartPage.routeName);
+                },
                 child: const Text('カートを更新する')),
           ],
         ),

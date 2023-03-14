@@ -1,5 +1,5 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
+import 'package:sugary_map/ui/component/global/custom_divider.dart';
 
 class ItemHistory extends StatefulWidget {
   ItemHistory({Key? key}) : super(key: key);
@@ -40,12 +40,7 @@ class _ItemHistoryState extends State<ItemHistory> {
               alignment: Alignment(-0.9, -1.0),
               child: Text('キゥイアレルギーがありますので、ショートケーキには、使わないでください。',
                   style: TextStyle(fontSize: 20))),
-          Divider(
-            thickness: 2,
-            indent: 20,
-            endIndent: 20,
-            color: Colors.black12,
-          ),
+          CustomDivider(),
           SizedBox(height: 20),
           Container(
               alignment: Alignment(-0.8, -1.0),
@@ -61,12 +56,7 @@ class _ItemHistoryState extends State<ItemHistory> {
               alignment: Alignment(-0.9, -1.0),
               child: Text('メッセージプレートは、優ちゃんお誕生日おめでとうでお願いいたします。',
                   style: TextStyle(fontSize: 20))),
-          Divider(
-            thickness: 2,
-            indent: 20,
-            endIndent: 20,
-            color: Colors.black12,
-          ),
+          CustomDivider(),
         ],
       ),
     ));

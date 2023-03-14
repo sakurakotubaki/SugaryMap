@@ -1,20 +1,20 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
+import 'package:sugary_map/ui/component/auth/custom_form_field.dart';
 
-class PasswordUpdate extends StatefulWidget {
-  PasswordUpdate({Key? key}) : super(key: key);
+class UserPasswordUpdate extends StatefulWidget {
+  UserPasswordUpdate({Key? key}) : super(key: key);
+
+  static const routeName = 'userPasswordUpdate';
 
   @override
-  State<PasswordUpdate> createState() => _PasswordUpdateState();
+  State<UserPasswordUpdate> createState() => _UserPasswordUpdateState();
 }
 
-class _PasswordUpdateState extends State<PasswordUpdate> {
+class _UserPasswordUpdateState extends State<UserPasswordUpdate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('パスワードの変更'),
       ),
       body: Center(
@@ -23,17 +23,7 @@ class _PasswordUpdateState extends State<PasswordUpdate> {
           children: [
             Icon(Icons.lock_reset, size: 100.0, color: Colors.grey),
             SizedBox(height: 20),
-            Container(
-              width: 300,
-              child: TextFormField(
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 20),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey)),
-                    labelText: "メールアドレスを入力"),
-              ),
-            ),
+            CustomAuthForm(labelText: 'メールアドレスを入力'),
             SizedBox(height: 20),
             SizedBox(
               width: 300,

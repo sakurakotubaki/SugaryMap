@@ -1,12 +1,10 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
-import 'package:sugary_map/theme/text_color.dart';
+import 'package:sugary_map/ui/page/user/user_nav/post_page/post_page.dart';
 
 class PostAdd extends StatefulWidget {
   PostAdd({Key? key}) : super(key: key);
 
-  static const routeName = 'PostAdd';
+  static const routeName = 'postAdd';
 
   @override
   State<PostAdd> createState() => _PostAddState();
@@ -17,8 +15,6 @@ class _PostAddState extends State<PostAdd> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('新しい口コミを投稿する'),
       ),
       body: SingleChildScrollView(
@@ -74,7 +70,7 @@ class _PostAddState extends State<PostAdd> {
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: Colors.grey)),
-                    labelText: "https://の後から入力"),
+                    labelText: "お店のURLを貼り付ける"),
               ),
             ),
             SizedBox(height: 30),
@@ -83,14 +79,13 @@ class _PostAddState extends State<PostAdd> {
               width: 200,
               height: 50,
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: MyButton.appButton.appColor),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {
-                    context.go('/post');
+                    context.goNamed(PostPage.routeName);
                   },
                   child: Text(
                     '投稿する',
-                    style: TextStyle(color: MyText.textColor.appColor),
                   )),
             ),
             SizedBox(height: 50),

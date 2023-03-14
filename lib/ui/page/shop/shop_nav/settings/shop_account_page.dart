@@ -1,8 +1,12 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
+import 'package:sugary_map/service/export/shop_nabbar_export.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/accoutn/shop_mail_reset_page.dart';
+import 'package:sugary_map/ui/page/shop/shop_nav/settings/accoutn/shop_password_reset_page.dart';
 
 class ShopAccountSettings extends StatefulWidget {
   const ShopAccountSettings({Key? key}) : super(key: key);
+
+  static const routeName = 'shopAccountSettings';
 
   @override
   State<ShopAccountSettings> createState() => _ShopAccountSettingsState();
@@ -13,9 +17,7 @@ class _ShopAccountSettingsState extends State<ShopAccountSettings> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text('アカウント設定'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -36,8 +38,7 @@ class _ShopAccountSettingsState extends State<ShopAccountSettings> {
                     SizedBox(height: 20),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context)
-                            .go('/setting/shop_account/shop_mail');
+                        GoRouter.of(context).goNamed(ShopMailUpdate.routeName);
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
@@ -53,7 +54,7 @@ class _ShopAccountSettingsState extends State<ShopAccountSettings> {
                     GestureDetector(
                       onTap: () {
                         GoRouter.of(context)
-                            .go('/setting/shop_account/shop_password');
+                            .goNamed(ShopPasswordUpdate.routeName);
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
@@ -68,8 +69,7 @@ class _ShopAccountSettingsState extends State<ShopAccountSettings> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context)
-                            .go('/setting/shop_account/update_shop');
+                        GoRouter.of(context).goNamed(UpdateShop.routeName);
                       },
                       child: ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),

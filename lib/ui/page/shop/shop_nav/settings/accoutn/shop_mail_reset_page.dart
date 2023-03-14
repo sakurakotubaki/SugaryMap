@@ -1,8 +1,10 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
+import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 
 class ShopMailUpdate extends StatefulWidget {
   ShopMailUpdate({Key? key}) : super(key: key);
+
+  static const routeName = 'shopMailUpdate';
 
   @override
   State<ShopMailUpdate> createState() => _ShopMailUpdateState();
@@ -13,8 +15,6 @@ class _ShopMailUpdateState extends State<ShopMailUpdate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('メールアドレスの変更'),
       ),
       body: Center(
@@ -39,7 +39,9 @@ class _ShopMailUpdateState extends State<ShopMailUpdate> {
               width: 300,
               height: 40,
               child: OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.goNamed(ShopAccountSettings.routeName);
+                  },
                   child: Text(
                     'メールアドレスを変更',
                     style: TextStyle(color: Colors.black),

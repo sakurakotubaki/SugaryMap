@@ -1,10 +1,10 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
+
+  static const routeName = 'searchPage';
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -17,15 +17,13 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text('口コミ'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (() {
           context.goNamed(PostAdd.routeName);
         }),
-        backgroundColor: MyButton.appButton.appColor,
+        backgroundColor: Colors.black87,
         child: const Icon(Icons.add),
       ),
       body: Center(

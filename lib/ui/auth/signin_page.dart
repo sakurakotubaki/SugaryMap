@@ -19,6 +19,7 @@ class _SignInPageState extends State<SignInPage> {
       body: SingleChildScrollView(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 80),
               const Icon(Icons.lock_rounded, size: 100.0, color: Colors.grey),
@@ -71,7 +72,7 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(height: 20),
               TextButton(
                   onPressed: () {
-                    context.goNamed(SignUpPage.routeName);
+                    context.goNamed(SelectSignUp.routeName);
                   },
                   child: const Text('新規登録')),
               const SizedBox(height: 10),
@@ -80,6 +81,7 @@ class _SignInPageState extends State<SignInPage> {
                     context.goNamed(ForgetPassword.routeName);
                   },
                   child: const Text('パスワードを忘れた')),
+              const SizedBox(height: 20),
             ],
           ),
         ),

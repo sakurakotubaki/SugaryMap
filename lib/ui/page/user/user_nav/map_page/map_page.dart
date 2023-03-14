@@ -1,10 +1,10 @@
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({Key? key}) : super(key: key);
+
+  static const routeName = 'mapPage';
 
   @override
   State<MapPage> createState() => _MapPageState();
@@ -23,8 +23,6 @@ class _MapPageState extends State<MapPage> {
             onChanged: (value) {},
           ),
         ),
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {},

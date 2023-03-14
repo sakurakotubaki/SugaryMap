@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 
 class ShopNavBar extends StatefulWidget {
   const ShopNavBar({
@@ -57,13 +58,16 @@ class _ShopNavBarState extends State<ShopNavBar> {
   void _onItemTapped(int index, BuildContext context) {
     switch (index) {
       case 0:
-        GoRouter.of(context).go('/admin');
+        // GoRouter.of(context).go('/admin');
+        GoRouter.of(context).goNamed(AdminPage.routeName);
         break;
       case 1:
-        GoRouter.of(context).go('/product');
+        // GoRouter.of(context).go('/product');
+        GoRouter.of(context).goNamed(ProductList.routeName);
         break;
       case 2:
-        GoRouter.of(context).go('/setting');
+        // GoRouter.of(context).go('/setting');
+        GoRouter.of(context).goNamed(ShopSettingPage.routeName);
         break;
     }
   }

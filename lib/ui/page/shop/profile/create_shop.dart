@@ -1,7 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
-import 'package:sugary_map/theme/text_color.dart';
 import 'package:sugary_map/ui/page/shop/shop_nav/admin_page/admin_page.dart';
 
 class CreateShop extends StatefulWidget {
@@ -18,8 +15,6 @@ class _CreateShopState extends State<CreateShop> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('店舗情報を登録'),
       ),
       body: SingleChildScrollView(
@@ -32,9 +27,9 @@ class _CreateShopState extends State<CreateShop> {
                   clipBehavior: Clip.antiAlias,
                   width: 160,
                   height: 160,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.blueGrey,
+                    color: Colors.grey[400],
                   ),
                 ),
                 Positioned(
@@ -112,7 +107,7 @@ class _CreateShopState extends State<CreateShop> {
             ///[カレンダーのようなものを配置]
 
             SizedBox(height: 20),
-            Text('住所'),
+            Container(width: 300, child: Text('住所')),
             SizedBox(height: 10),
             Container(
               width: 300,
@@ -206,14 +201,13 @@ class _CreateShopState extends State<CreateShop> {
               width: 200,
               height: 50,
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: MyButton.appButton.appColor),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {
-                    context.go('/admin');
+                    context.goNamed(AdminPage.routeName);
                   },
                   child: Text(
                     '登録',
-                    style: TextStyle(color: MyText.textColor.appColor),
                   )),
             ),
             SizedBox(height: 50),

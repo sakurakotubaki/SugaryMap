@@ -1,10 +1,10 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
-import 'package:sugary_map/theme/button_theme.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/add_post.dart';
 
 class PostDetail extends StatefulWidget {
   const PostDetail({Key? key}) : super(key: key);
+
+  static const routeName = 'postDetail';
 
   @override
   State<PostDetail> createState() => _PostDetailState();
@@ -15,9 +15,7 @@ class _PostDetailState extends State<PostDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text('口コミ詳細'),
-        backgroundColor: MyAppBar.appBar.appColor,
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -58,20 +56,6 @@ class _PostDetailState extends State<PostDetail> {
                       width: 300,
                       height: 100,
                       child: Text('クラシックなフランス菓子を数多く扱う名店。\nおすすめは、ガトピレネーです。')),
-                  Container(
-                      alignment: const Alignment(-1.0, -1.0),
-                      width: 300,
-                      height: 100,
-                      child: Column(
-                        // テキストを左端に寄せる.
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        verticalDirection: VerticalDirection.down,
-                        children: [
-                          Text('東京都尾山台'),
-                          SizedBox(height: 20),
-                          Text('090-9988-3477'),
-                        ],
-                      )),
                 ],
               ),
               Image.network(

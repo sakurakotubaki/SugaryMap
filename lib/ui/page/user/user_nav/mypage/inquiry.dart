@@ -1,15 +1,14 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/theme/appbar_theme.dart';
 
-class Inquiry extends StatelessWidget {
-  const Inquiry({Key? key}) : super(key: key);
+class UserInquiry extends StatelessWidget {
+  const UserInquiry({Key? key}) : super(key: key);
+
+  static const routeName = 'userInquiry';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: MyAppBar.appBar.appColor,
         title: const Text('お問い合わせ'),
       ),
       body: Column(
@@ -30,7 +29,7 @@ class Inquiry extends StatelessWidget {
               children: const [
                 Icon(Icons.mail),
                 SizedBox(width: 20),
-                Text('JboyCompany@gmail.com'),
+                Text('jboy33company@gmail.com'),
               ],
             ),
           ),
