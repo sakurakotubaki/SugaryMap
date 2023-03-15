@@ -1,26 +1,32 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/router/router.dart';
 
-// void main() {
-//   runApp(const MyApp());
-// }
-void main() => runApp(
-      DevicePreview(
-        enabled: !kReleaseMode,
-        builder: (context) => const MyApp(),
-      ),
-    );
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-class MyApp extends StatelessWidget {
+  runApp(const ProviderScope(child: MyApp()));
+}
+
+// void main() => runApp(
+//       DevicePreview(
+//         enabled: !kReleaseMode,
+//         builder: (context) => const MyApp(),
+//       ),
+//     );
+
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final goRouter = ref.watch(goRouterProvider);
+
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routerConfig: router,
+      routerConfig: goRouter,
       // DevicePreviewの設定.
       useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
