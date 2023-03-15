@@ -1,16 +1,16 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/ui/page/shop/profile/create_shop.dart';
 
-class ShopSignupPage extends StatefulWidget {
-  ShopSignupPage({Key? key}) : super(key: key);
+class ShopSignUpPage extends StatefulWidget {
+  ShopSignUpPage({Key? key}) : super(key: key);
 
-  static const routeName = 'shopSignUp';
+  static const routeName = 'shopSignUpPage';
 
   @override
-  State<ShopSignupPage> createState() => _ShopSignupPageState();
+  State<ShopSignUpPage> createState() => _ShopSignUpPageState();
 }
 
-class _ShopSignupPageState extends State<ShopSignupPage> {
+class _ShopSignUpPageState extends State<ShopSignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

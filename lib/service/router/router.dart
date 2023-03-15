@@ -3,6 +3,7 @@ import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/auth_page/pages/select_signup.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_buy.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_detail.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dymmy_shop.dart';
@@ -38,9 +39,9 @@ final goRouterProvider = Provider<GoRouter>((ref) {
               builder: (context, state) => UserSignupPage(),
             ),
             GoRoute(
-              name: ShopSignupPage.routeName,
+              name: ShopSignUpPage.routeName,
               path: 'shop_sign_up',
-              builder: (context, state) => ShopSignupPage(),
+              builder: (context, state) => ShopSignUpPage(),
             ),
           ],
         ),
