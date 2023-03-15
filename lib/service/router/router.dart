@@ -1,7 +1,9 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/auth_page/pages/select_signup.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_buy.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_detail.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dymmy_shop.dart';
@@ -13,7 +15,8 @@ final GlobalKey<NavigatorState> _rootNavigatorKey =
 final GlobalKey<NavigatorState> _shellNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'shell');
 
-final router = GoRouter(
+final goRouterProvider = Provider<GoRouter>((ref) {
+  return GoRouter(
   navigatorKey: _rootNavigatorKey,
   // initialLocation: '/admin', // 最初に表示されるshop側のページ.
   // initialLocation: '/map',// 最初に表示されるuserページ.
@@ -36,9 +39,9 @@ final router = GoRouter(
               builder: (context, state) => UserSignupPage(),
             ),
             GoRoute(
-              name: ShopSignupPage.routeName,
+              name: ShopSignUpPage.routeName,
               path: 'shop_sign_up',
-              builder: (context, state) => ShopSignupPage(),
+              builder: (context, state) => ShopSignUpPage(),
             ),
           ],
         ),
@@ -396,3 +399,4 @@ final router = GoRouter(
     ),
   ],
 );
+});
