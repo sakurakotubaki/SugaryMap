@@ -6,16 +6,15 @@ import 'package:sugary_map/service/router/router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // DevicePreviewなし
+  // runApp(const ProviderScope(child: MyApp()));
 
-  runApp(const ProviderScope(child: MyApp()));
+  // DevicePreviewあり
+  runApp(DevicePreview(
+        enabled: !kReleaseMode,
+        builder: (context) => const ProviderScope(child: MyApp()),
+      ),);
 }
-
-// void main() => runApp(
-//       DevicePreview(
-//         enabled: !kReleaseMode,
-//         builder: (context) => const MyApp(),
-//       ),
-//     );
 
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
