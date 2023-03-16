@@ -1,4 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/service/export/shop_nabbar_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
@@ -30,13 +30,13 @@ final goRouterProvider = Provider<GoRouter>((ref) {
         // ユーザーのアカウント作成ページ.
         GoRoute(
           name: SelectSignUp.routeName,
-          path: 'select_signup',
+          path: 'select_sign_up',
           builder: (context, state) => const SelectSignUp(),
           routes: [
             GoRoute(
-              name: UserSignupPage.routeName,
+              name: UserSignUpPage.routeName,
               path: 'user_sign_up',
-              builder: (context, state) => UserSignupPage(),
+              builder: (context, state) => UserSignUpPage(),
             ),
             GoRoute(
               name: ShopSignUpPage.routeName,

@@ -1,17 +1,13 @@
 import 'package:sugary_map/service/export/global_export.dart';
 
-class ForgetPassword extends StatefulWidget {
-  ForgetPassword({Key? key}) : super(key: key);
 
-  static const routeName = 'reset';
+class ForgetPassword extends ConsumerWidget {
+  const ForgetPassword({super.key});
+
+  static const routeName = 'forgetPassword';
 
   @override
-  State<ForgetPassword> createState() => _ForgetPasswordState();
-}
-
-class _ForgetPasswordState extends State<ForgetPassword> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('パスワードのリセット'),
