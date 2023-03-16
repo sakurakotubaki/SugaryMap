@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
 
-class CustomInputNumber extends StatelessWidget {
-  const CustomInputNumber({
-    Key? key, required this.labelText,
+class CustomFormField extends StatelessWidget {
+  const CustomFormField({
+    Key? key,
+    required this.labelText, required this.nameController,
   }) : super(key: key);
 
   final String labelText;
+  final TextEditingController nameController;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 300,
       child: TextFormField(
-        keyboardType: TextInputType.number,
+        controller: nameController,
+        validator: (value) {
+          if (value!.isEmpty) {
+            return '名前を入力してください';
+          }
+        },
         decoration: InputDecoration(
             contentPadding: EdgeInsets.only(left: 20),
             enabledBorder: OutlineInputBorder(
