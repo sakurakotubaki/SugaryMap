@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable, no_leading_underscores_for_local_identifiers
+// ignore_for_file: unused_local_variable, no_leading_underscores_for_local_identifiers, unused_import, prefer_single_quotes, prefer_const_constructors
 
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/ui/auth_page/auth_service/user_signup_class.dart';
@@ -58,7 +58,6 @@ class UserSignUpPage extends ConsumerWidget {
               height: 40,
               child: OutlinedButton(
                   onPressed: () async {
-                    // context.goNamed(CreateUser.routeName);
                     userSignUp.userSignUp(
                         _email.text, _password.text, context);
                   },
