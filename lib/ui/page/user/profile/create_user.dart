@@ -3,6 +3,7 @@
 import 'package:flutter/services.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
+import 'package:sugary_map/ui/auth_page/data_service/user_data_service.dart';
 import 'package:sugary_map/ui/page/user/profile/component/custom_form_field.dart';
 import 'package:sugary_map/ui/page/user/profile/component/custom_input_number.dart';
 import 'package:sugary_map/ui/page/user/profile/component/user_profile_provider.dart';
@@ -15,9 +16,10 @@ class CreateUser extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final globalKey = ref.watch(userProfileFormKeyProvider);
+    final userGlobalKey = ref.watch(userProfileFormKeyProvider);
     final nameController = ref.watch(userNameProvider);
     final phoneController = ref.watch(phoneNumberProvider);
+    final newUser = ref.read(userDataServiceClassProvider.notifier).state;
 
     return Scaffold(
       appBar: AppBar(
@@ -25,7 +27,7 @@ class CreateUser extends ConsumerWidget {
       ),
       body: SingleChildScrollView(
         child: Form(
-          key: globalKey,
+          key: userGlobalKey,
           child: Column(
             children: [
               const SizedBox(height: 50),
@@ -57,46 +59,46 @@ class CreateUser extends ConsumerWidget {
               const SizedBox(height: 50),
               // CustomFormField(labelText: '名前を入力', nameController: nameController),
               SizedBox(
-                    width: 300,
-                    child: TextFormField(
-                      controller: nameController,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return '名前を入力してください';
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.only(left: 20),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(color: Colors.grey)),
-                          labelText: "名前を入力"),
-                    ),
-                  ),
+                width: 300,
+                child: TextFormField(
+                  controller: nameController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return '名前を入力してください';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.only(left: 20),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(color: Colors.grey)),
+                      labelText: "名前を入力"),
+                ),
+              ),
               const SizedBox(height: 20),
               // CustomInputNumber(
               //   labelText: '電話番号を入力',
               //   phoneController: phoneController,
               // ),
               SizedBox(
-                  width: 300,
-                  child: TextFormField(
-                    controller: phoneController,
-                    keyboardType: TextInputType.number,
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return '電話番号を入力してください';
-                      }
-                    },
-                    decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.only(left: 20),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Colors.grey)),
-                        labelText: "電話番号を入力"),
-                  ),
+                width: 300,
+                child: TextFormField(
+                  controller: phoneController,
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return '電話番号を入力してください';
+                    }
+                  },
+                  decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.only(left: 20),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(color: Colors.grey)),
+                      labelText: "電話番号を入力"),
                 ),
+              ),
               const SizedBox(height: 20),
               Container(),
               const SizedBox(height: 30),
@@ -104,11 +106,13 @@ class CreateUser extends ConsumerWidget {
                 width: 250,
                 height: 50,
                 child: ElevatedButton(
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: Colors.black87),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black87),
                     onPressed: () {
-                      if (globalKey.currentState!.validate()) {
-                        context.goNamed(MapPage.routeName);
+                      if (userGlobalKey.currentState!.validate()) {
+                        // context.goNamed(MapPage.routeName);
+                        newUser.newUserProfile(
+                            nameController.text, phoneController.text);
                       }
                     },
                     child: Text(

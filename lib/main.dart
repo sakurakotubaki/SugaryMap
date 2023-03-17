@@ -1,7 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/router/router.dart';
 

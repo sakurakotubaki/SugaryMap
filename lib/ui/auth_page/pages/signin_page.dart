@@ -1,10 +1,11 @@
-// ignore_for_file: prefer_single_quotes, unused_import, unnecessary_import
+// ignore_for_file: prefer_single_quotes, unused_import, unnecessary_import, no_leading_underscores_for_local_identifiers, unused_local_variable
 
 import 'dart:developer';
 
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
-import 'package:sugary_map/ui/auth_page/auth_validator/formstate_provider.dart';
+import 'package:sugary_map/ui/auth_page/auth_service/user_signin_class.dart';
+import 'package:sugary_map/ui/auth_page/auth_validator/form_validator_provider.dart';
 import 'package:sugary_map/ui/auth_page/auth_validator/signIn_validator.dart';
 import 'package:sugary_map/ui/auth_page/pages/forget_password.dart';
 import 'package:sugary_map/ui/auth_page/pages/select_signup.dart';
@@ -16,9 +17,10 @@ class SignInPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final globalKey = ref.watch(signinFormKeyProvider);
+    final globalKey = ref.watch(signInFormKeyProvider);
     final _email = ref.watch(emailProvider);
     final _password = ref.watch(passwordProvider);
+    final userSignIn = ref.read(userSignInClassServiceProvider.notifier).state;
 
     return Scaffold(
       appBar: AppBar(
@@ -99,7 +101,8 @@ class SignInPage extends ConsumerWidget {
                   child: OutlinedButton(
                       onPressed: () {
                         if (globalKey.currentState!.validate()) {
-                          log(_email.text);
+                          userSignIn.userSignIn(
+                              _email.text, _password.text, context);
                         }
                       },
                       child: const Text(

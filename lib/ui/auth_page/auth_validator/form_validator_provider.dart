@@ -1,8 +1,8 @@
 import 'package:sugary_map/service/export/global_export.dart';
 
-final signinFormKeyProvider = Provider((ref) => GlobalKey<FormState>());
-final signupFormKeyProvider = Provider((ref) => GlobalKey<FormState>());
-final shopSignupFormKeyProvider = Provider((ref) => GlobalKey<FormState>());
+final signInFormKeyProvider = Provider((ref) => GlobalKey<FormState>());
+final userSignUpFormKeyProvider = Provider((ref) => GlobalKey<FormState>());
+final shopSignUpFormKeyProvider = Provider((ref) => GlobalKey<FormState>());
 
 final emailProvider = StateProvider.autoDispose((ref) {
   return TextEditingController(text: '');

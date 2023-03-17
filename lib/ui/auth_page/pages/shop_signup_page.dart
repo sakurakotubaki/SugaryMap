@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, sized_box_for_whitespace, prefer_const_constructors, prefer_single_quotes
 
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/ui/auth_page/auth_validator/formstate_provider.dart';
+import 'package:sugary_map/ui/auth_page/auth_validator/form_validator_provider.dart';
 import 'package:sugary_map/ui/page/shop/profile/create_shop.dart';
 
 class ShopSignUpPage extends ConsumerWidget {
@@ -11,7 +11,7 @@ class ShopSignUpPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final globalKey = ref.watch(shopSignupFormKeyProvider);
+    final globalKey = ref.watch(shopSignUpFormKeyProvider);
     final _email = ref.watch(emailProvider);
     final _password = ref.watch(passwordProvider);
 
