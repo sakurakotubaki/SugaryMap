@@ -26,7 +26,7 @@ class UserDataServiceClass {
     await ref.read(fireStoreProvider).collection('user').doc(uid).set({
       'createdAt': Timestamp.fromDate(DateTime.now()),
       'name': nameController,
-      'phoneNumber': phoneController,
+      'phoneNumber': int.parse(phoneController),
     });
   }
 }

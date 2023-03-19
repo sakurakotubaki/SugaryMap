@@ -1,4 +1,4 @@
-// ignore_for_file: no_leading_underscores_for_local_identifiers
+// ignore_for_file: no_leading_underscores_for_local_identifiers, unused_local_variable, use_build_context_synchronously
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:sugary_map/service/export/global_export.dart';
@@ -15,37 +15,37 @@ class UserSignInClass {
   Ref ref;
   UserSignInClass(this.ref);
 
-  Future<void> userSignIn(String _email, String _password, BuildContext context) async {
+  Future<void> userSignIn(
+      String _email, String _password, BuildContext context) async {
     try {
-    await ref
-        .read(firebaseAuthProvider)
-        .signInWithEmailAndPassword(email: _email, password: _password);
-    } on FirebaseAuthException catch (e) {
-if (e.code == 'invalid-email') {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('メールアドレスのフォーマットが正しくありません'),
-          ),
-        );
-      } else if (e.code == 'user-disabled') {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('現在指定したメールアドレスは使用できません'),
-          ),
-        );
-      } else if (e.code == 'user-not-found') {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('指定したメールアドレスは登録されていません'),
-          ),
-        );
-      } else if (e.code == 'wrong-password') {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('パスワードが間違っています'),
-          ),
-        );
+      if(_email.isEmpty) {
+        throw('メールアドレスが正しく入力されていません');
       }
+
+      if(_password.isEmpty) {
+        throw('パスワードが正しく入力されていません');
+      }
+      ref
+          .read(firebaseAuthProvider)
+          .signInWithEmailAndPassword(email: _email, password: _password);
+    } catch (e) {
+      showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        // throwのエラーメッセージがダイアログで表示される.
+                        title: Text(e.toString()),
+                        actions: <Widget>[
+                          ElevatedButton(
+                            child: const Text('OK'),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
     }
   }
 }

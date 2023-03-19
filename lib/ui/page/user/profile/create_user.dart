@@ -1,9 +1,9 @@
-// ignore_for_file: unused_local_variable, unnecessary_import, unused_import
+// ignore_for_file: unused_local_variable, unnecessary_import, unused_import, prefer_single_quotes
 
 import 'package:flutter/services.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
-import 'package:sugary_map/ui/auth_page/data_service/user_data_service.dart';
+import 'package:sugary_map/ui/page/user/profile/data_service/user_data_service.dart';
 import 'package:sugary_map/ui/page/user/profile/component/custom_form_field.dart';
 import 'package:sugary_map/ui/page/user/profile/component/custom_input_number.dart';
 import 'package:sugary_map/ui/page/user/profile/component/user_profile_provider.dart';
@@ -57,7 +57,6 @@ class CreateUser extends ConsumerWidget {
                 ],
               ),
               const SizedBox(height: 50),
-              // CustomFormField(labelText: '名前を入力', nameController: nameController),
               SizedBox(
                 width: 300,
                 child: TextFormField(
@@ -77,10 +76,6 @@ class CreateUser extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              // CustomInputNumber(
-              //   labelText: '電話番号を入力',
-              //   phoneController: phoneController,
-              // ),
               SizedBox(
                 width: 300,
                 child: TextFormField(
@@ -108,9 +103,8 @@ class CreateUser extends ConsumerWidget {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black87),
-                    onPressed: () {
+                    onPressed: () async {
                       if (userGlobalKey.currentState!.validate()) {
-                        // context.goNamed(MapPage.routeName);
                         newUser.newUserProfile(
                             nameController.text, phoneController.text);
                       }

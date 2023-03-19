@@ -58,8 +58,8 @@ class UserSignUpPage extends ConsumerWidget {
               height: 40,
               child: OutlinedButton(
                   onPressed: () async {
-                    userSignUp.userSignUp(
-                        _email.text, _password.text, context);
+                    userSignUp.userSignUp(_email.text, _password.text, context);
+                    context.goNamed(CreateUser.routeName);
                   },
                   child: const Text(
                     '一般ユーザー新規登録',

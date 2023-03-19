@@ -414,6 +414,8 @@ final goRouterProvider = Provider<GoRouter>((ref) {
         // !=をつけると変数がbool型になる。
         final isUser = userState.valueOrNull?.data() != null;
 
+        final isShop = shopState.valueOrNull?.data() != null;
+
         // ユーザープロフィールが入力済みです。
         final userProfileCompleted =
             userState.valueOrNull?.data()?['name'] != null;
@@ -422,7 +424,6 @@ final goRouterProvider = Provider<GoRouter>((ref) {
         final shopProfileCompleted =
             shopState.valueOrNull?.data()?['name'] != null;
 
-        final isShop = shopState.valueOrNull?.data() != null;
 
         // ユーザーがスタートページへ来ようとしていて、ログインしてなければ素通りさせる。
         if (isStart && !isAuth) {
@@ -433,7 +434,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
           return null;
         }
 
-        // ログインしていてuserコレクションが取得できれば、HomePageへ
+        // ログインしていてuserコレクションが取得できれば、MapPageへ
         if (isAuth && userProfileCompleted) {
           return '/map';
           // ログインしていてshopコレクションが取得できればお店のページへ
@@ -441,7 +442,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
           return '/admin';
           // ログインしているけど、shopのコレクションのデータがなければshop作成ページへ
         } else if (isAuth && !isShop) {
-          return '//create_shop';
+          return '/create_shop';
           // ログインしているけど、コレクションのデータがなければユーザー登録ページへ
         } else if (isAuth && !isUser) {
           return '/create_user';
