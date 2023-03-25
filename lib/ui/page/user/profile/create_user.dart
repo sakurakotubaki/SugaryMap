@@ -107,6 +107,7 @@ class CreateUser extends ConsumerWidget {
                       if (userGlobalKey.currentState!.validate()) {
                         newUser.newUserProfile(
                             nameController.text, phoneController.text);
+                        context.goNamed(MapPage.routeName);
                       }
                     },
                     child: Text(

@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, unnecessary_import
+
 import 'package:sugary_map/constant/privacy_const.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';

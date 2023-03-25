@@ -11,10 +11,12 @@ Future<void> main() async {
   // runApp(const ProviderScope(child: MyApp()));
 
   // DevicePreviewあり
-  runApp(DevicePreview(
-        enabled: !kReleaseMode,
-        builder: (context) => const ProviderScope(child: MyApp()),
-      ),);
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const ProviderScope(child: MyApp()),
+    ),
+  );
 }
 
 class MyApp extends ConsumerWidget {
@@ -33,7 +35,7 @@ class MyApp extends ConsumerWidget {
       builder: DevicePreview.appBuilder,
       // ここまで....
       title: 'Sugary Map',
-
+      // テーマを使いましょう
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.black87,
@@ -41,8 +43,6 @@ class MyApp extends ConsumerWidget {
           centerTitle: true,
         ),
       ),
-
-      // テーマを使いましょう
     );
   }
 }
