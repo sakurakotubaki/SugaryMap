@@ -1,4 +1,4 @@
-// ignore_for_file: duplicate_import, unused_import
+// ignore_for_file: duplicate_import, unused_import, body_might_complete_normally_nullable
 
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
@@ -286,15 +286,15 @@ final goRouterProvider = Provider<GoRouter>((ref) {
 
               // ログインしていてuserコレクションが取得できれば、MapPageへ
               if (isAuth && userProfileCompleted) {
-                return '/map';
+                return MapPage.routeName;
                 // ログインしていてshopコレクションが取得できればお店のページへ
               } else if (isAuth && !isUser) {
-                return '/create_user';
+                return CreateUser.routeName;
                 // ログインしていない状態で、コレクションが取得できなければ、
                 // ! bool値を反転
                 // ログインボタンと新規登録のボタンがあるページへ移動する。
               } else if (!isAuth && !isUser) {
-                return '/sign_in';
+                return SignInPage.routeName;
               }
             });
 });
