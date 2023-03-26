@@ -12,13 +12,13 @@ import 'package:sugary_map/ui/auth_page/pages/forget_password.dart';
 class SignInPage extends ConsumerWidget {
   const SignInPage({super.key});
 
-  static const routeName = 'signInPage';
+  static const routeName = '/signInPage';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final _email = ref.watch(emailProvider);
     final _password = ref.watch(passwordProvider);
-    final userSignIn = ref.read(userSignInClassServiceProvider.notifier).state;
+    final userSignIn = ref.read(userSignInClassServiceProvider);
 
     return Scaffold(
       appBar: AppBar(

@@ -7,7 +7,7 @@ final firebaseAuthProvider = Provider<FirebaseAuth>((ref) {
   return FirebaseAuth.instance;
 });
 
-final userSignInClassServiceProvider = StateProvider<UserSignInClass>((ref) {
+final userSignInClassServiceProvider = Provider<UserSignInClass>((ref) {
   return UserSignInClass(ref);
 });
 

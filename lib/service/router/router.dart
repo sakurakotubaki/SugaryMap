@@ -265,7 +265,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
             redirect: (BuildContext context, GoRouterState state) {
               if (authState.isLoading || authState.hasError) return null;
               // SignInPageへリダイレクトする
-              final isStart = state.location == SignInPage.routeName;
+              final isStart = state.location == '/sign_in';
 
               final isAuth = authState.valueOrNull != null;
               // !=をつけると変数がbool型になる。
@@ -286,15 +286,15 @@ final goRouterProvider = Provider<GoRouter>((ref) {
 
               // ログインしていてuserコレクションが取得できれば、MapPageへ
               if (isAuth && userProfileCompleted) {
-                return MapPage.routeName;
+                return '/map';
                 // ログインしていてshopコレクションが取得できればお店のページへ
               } else if (isAuth && !isUser) {
-                return CreateUser.routeName;
+                return '/create_user';
                 // ログインしていない状態で、コレクションが取得できなければ、
                 // ! bool値を反転
                 // ログインボタンと新規登録のボタンがあるページへ移動する。
               } else if (!isAuth && !isUser) {
-                return SignInPage.routeName;
+                return '/sign_in';
               }
             });
 });
