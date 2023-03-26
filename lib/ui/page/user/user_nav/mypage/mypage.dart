@@ -5,7 +5,6 @@ import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/ui/auth_page/pages/signin_page.dart';
 import 'package:sugary_map/ui/component/global/custom_divider.dart';
-import 'package:sugary_map/ui/page/shop/shop_nav/settings/shop_account_page.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/bookmark_page.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/inquiry.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/manual_page.dart';

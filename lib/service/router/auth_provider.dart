@@ -16,10 +16,3 @@ final userInfoProvider = StreamProvider((ref) {
   final fetch = docRef.doc(uid).snapshots();
   return fetch;
 });
-
-final shopInfoProvider = StreamProvider((ref) {
-  final uid = FirebaseAuth.instance.currentUser?.uid;
-  final docRef = FirebaseFirestore.instance.collection('shop');
-  final fetch = docRef.doc(uid).snapshots();
-  return fetch;
-});

@@ -8,7 +8,6 @@ import 'package:sugary_map/ui/auth_page/auth_service/user_signin_class.dart';
 import 'package:sugary_map/ui/auth_page/auth_validator/auth_controller.dart';
 import 'package:sugary_map/ui/auth_page/auth_validator/signIn_validator.dart';
 import 'package:sugary_map/ui/auth_page/pages/forget_password.dart';
-import 'package:sugary_map/ui/auth_page/pages/select_signup.dart';
 
 class SignInPage extends ConsumerWidget {
   const SignInPage({super.key});
@@ -68,28 +67,14 @@ class SignInPage extends ConsumerWidget {
                           _email.text, _password.text, context);
                     },
                     child: const Text(
-                      '一般ユーザーでログイン',
-                      style: TextStyle(color: Colors.black),
-                    )),
-              ),
-              const SizedBox(height: 20),
-              SizedBox(
-                width: 300,
-                height: 40,
-                child: OutlinedButton(
-                    onPressed: () async {
-                      userSignIn.userSignIn(
-                          _email.text, _password.text, context);
-                    },
-                    child: const Text(
-                      '店舗ユーザーでログイン',
+                      'ログイン',
                       style: TextStyle(color: Colors.black),
                     )),
               ),
               const SizedBox(height: 20),
               TextButton(
                   onPressed: () {
-                    context.goNamed(SelectSignUp.routeName);
+                    context.goNamed(UserSignUpPage.routeName);
                   },
                   child: const Text('新規登録')),
               const SizedBox(height: 10),
