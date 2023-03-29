@@ -7,7 +7,7 @@ import 'package:sugary_map/ui/page/user/profile/data_service/user_data_service.d
 import 'package:sugary_map/ui/page/user/profile/component/custom_form_field.dart';
 import 'package:sugary_map/ui/page/user/profile/component/custom_input_number.dart';
 import 'package:sugary_map/ui/page/user/profile/component/user_profile_provider.dart';
-import 'package:sugary_map/ui/page/user/user_nav/map_page/map_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/map_page/home_page.dart';
 
 class CreateUser extends ConsumerWidget {
   const CreateUser({super.key});
@@ -76,24 +76,15 @@ class CreateUser extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              SizedBox(
-                width: 300,
-                child: TextFormField(
-                  controller: phoneController,
-                  keyboardType: TextInputType.number,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return '電話番号を入力してください';
-                    }
-                  },
-                  decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.only(left: 20),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(color: Colors.grey)),
-                      labelText: "電話番号を入力"),
-                ),
+              Container(
+              width: 300,
+              child: TextFormField(
+                maxLines: 5,
+                keyboardType: TextInputType.multiline,
+                decoration: const InputDecoration(
+                    hintText: "プロフィール情報を入力してください", border: OutlineInputBorder()),
               ),
+            ),
               const SizedBox(height: 20),
               Container(),
               const SizedBox(height: 30),
@@ -107,7 +98,6 @@ class CreateUser extends ConsumerWidget {
                       if (userGlobalKey.currentState!.validate()) {
                         newUser.newUserProfile(
                             nameController.text, phoneController.text);
-                        context.goNamed(MapPage.routeName);
                       }
                     },
                     child: Text(

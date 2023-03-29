@@ -5,6 +5,8 @@ import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/service/export/user_nabbar_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/service/router/auth_provider.dart';
+import 'package:sugary_map/ui/page/user/user_nav/map_page/home_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/notification_page/notification_page.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
