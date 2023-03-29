@@ -3,11 +3,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 
-final firebaseAuthProvider = Provider<FirebaseAuth>((ref) {
-  return FirebaseAuth.instance;
-});
+import 'firebase_auth_provider.dart';
 
-final shopSignUpClassProvider = StateProvider<ShopSignUpClass>((ref) {
+final shopSignUpClassProvider = Provider<ShopSignUpClass>((ref) {
   return ShopSignUpClass(ref);
 });
 

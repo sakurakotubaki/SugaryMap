@@ -1,13 +1,10 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:sugary_map/service/export/global_export.dart';
 
-final firebaseAuthProvider = Provider<FirebaseAuth>((ref) {
-  return FirebaseAuth.instance;
-});
+import 'firebase_auth_provider.dart';
 
-final passwordResetClassProvider = StateProvider<PasswordResetClass>((ref) {
+final passwordResetClassProvider = Provider<PasswordResetClass>((ref) {
   return PasswordResetClass(ref);
 });
 

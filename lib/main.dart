@@ -38,9 +38,10 @@ class MyApp extends ConsumerWidget {
       // テーマを使いましょう
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.black87,
-          foregroundColor: Colors.white,
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
           centerTitle: true,
+          elevation: 0,
         ),
       ),
     );

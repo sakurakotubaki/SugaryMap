@@ -1,5 +1,3 @@
-export 'package:sugary_map/ui/page/user/user_nav/cart_page/cart_page.dart';
-export 'package:sugary_map/ui/page/user/user_nav/map_page/map_page.dart';
 export 'package:sugary_map/ui/page/user/user_nav/mypage/mypage.dart';
 export 'package:sugary_map/ui/page/user/user_nav/post_page/post_page.dart';
 export 'package:sugary_map/ui/page/user/user_nav/user_navbar.dart';
@@ -11,13 +9,7 @@ export 'package:sugary_map/ui/page/user/user_nav/mypage/account/password_reset_p
 export 'package:sugary_map/ui/page/user/user_nav/mypage/inquiry.dart';
 export 'package:sugary_map/ui/page/user/user_nav/mypage/manual_page.dart';
 export 'package:sugary_map/ui/page/user/user_nav/mypage/user_terms.dart';
-export 'package:sugary_map/ui/page/user/user_nav/cart_page/total/reserev/reserevation.dart';
-export 'package:sugary_map/ui/page/user/user_nav/cart_page/total/total_page.dart';
 export 'package:sugary_map/ui/page/user/user_nav/mypage/account/update_user.dart';
 export 'package:sugary_map/ui/page/user/user_nav/mypage/order_page.dart';
 export 'package:sugary_map/ui/page/user/user_nav/mypage/user_notification.dart';
 export 'package:sugary_map/ui/page/user/user_nav/post_page/post_detail.dart';
-export 'package:sugary_map/ui/page/user/user_nav/cart_page/total/cart_update.dart';
-export 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/order/shop_reservation.dart';
-export 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/order_shop.dart';
-export 'package:sugary_map/ui/page/user/user_nav/map_page/search_page/shop_info.dart';

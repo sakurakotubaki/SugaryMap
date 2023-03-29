@@ -14,7 +14,7 @@ class UserSignUpPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final _email = ref.watch(emailProvider);
     final _password = ref.watch(passwordProvider);
-    final userSignUp = ref.read(userSignUpClassProvider.notifier).state;
+    final userSignUp = ref.read(userSignUpClassProvider);
 
     return Scaffold(
       appBar: AppBar(

@@ -12,7 +12,7 @@ class ForgetPassword extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final _email = ref.watch(emailProvider);
-    final resetPassword = ref.read(passwordResetClassProvider.notifier).state;
+    final resetPassword = ref.read(passwordResetClassProvider);
 
     return Scaffold(
       appBar: AppBar(
