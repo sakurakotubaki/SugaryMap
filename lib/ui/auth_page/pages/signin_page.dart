@@ -21,15 +21,12 @@ class SignInPage extends ConsumerWidget {
     final userSignIn = ref.read(userSignInClassServiceProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ログイン'),
-      ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 80),
+              const SizedBox(height: 150),
               const Icon(Icons.lock_rounded, size: 100.0, color: Colors.grey),
               const SizedBox(height: 20),
               SizedBox(
@@ -74,7 +71,7 @@ class SignInPage extends ConsumerWidget {
               const SizedBox(height: 20),
               TextButton(
                   onPressed: () {
-                    context.goNamed(UserSignUpPage.routeName);
+                    context.goNamed(SignUpPage.routeName);
                   },
                   child: const Text('新規登録')),
               const SizedBox(height: 10),
