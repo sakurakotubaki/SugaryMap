@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sugary_map/ui/page/user/user_nav/cart_page/cart_page.dart';
-import 'package:sugary_map/ui/page/user/user_nav/map_page/map_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/notification_page/notification_page.dart';
+import 'package:sugary_map/ui/page/user/user_nav/map_page/home_page.dart';
 import 'package:sugary_map/ui/page/user/user_nav/mypage/mypage.dart';
 import 'package:sugary_map/ui/page/user/user_nav/post_page/post_page.dart';
 
@@ -43,16 +43,16 @@ class _UserNavBarState extends State<UserNavBar> {
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.pin_drop),
-            label: 'お店',
+            icon: Icon(Icons.home),
+            label: 'ホーム',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.comment),
             label: '口コミ',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'カート',
+            icon: Icon(Icons.notifications),
+            label: '通知',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -68,19 +68,15 @@ class _UserNavBarState extends State<UserNavBar> {
   void _onItemTapped(int index, BuildContext context) {
     switch (index) {
       case 0:
-        // GoRouter.of(context).go('/map');
-        GoRouter.of(context).goNamed(MapPage.routeName);
+        GoRouter.of(context).goNamed(HomePage.routeName);
         break;
       case 1:
-        // GoRouter.of(context).go('/post');
         GoRouter.of(context).goNamed(PostPage.routeName);
         break;
       case 2:
-        // GoRouter.of(context).go('/cart');
-        GoRouter.of(context).goNamed(CartPage.routeName);
+        GoRouter.of(context).goNamed(NotificationPage.routeName);
         break;
       case 3:
-        // GoRouter.of(context).go('/mypage');
         GoRouter.of(context).goNamed(MyPage.routeName);
         break;
     }

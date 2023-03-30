@@ -1,7 +1,7 @@
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
-import 'package:sugary_map/ui/component/profile/custom_form_field.dart';
-import 'package:sugary_map/ui/component/profile/custom_input_number.dart';
+import 'package:sugary_map/ui/page/user/profile/component/custom_form_field.dart';
+import 'package:sugary_map/ui/page/user/profile/component/custom_input_number.dart';
 
 class UpdateUser extends StatefulWidget {
   UpdateUser({Key? key}) : super(key: key);
@@ -49,9 +49,9 @@ class _UpdateUserState extends State<UpdateUser> {
               ],
             ),
             SizedBox(height: 50),
-            CustomFormField(labelText: '名前を入力'),
+            // CustomFormField(labelText: '名前を入力', nameController: ),
             const SizedBox(height: 20),
-            CustomInputNumber(labelText: '電話番号をハイフンなしで入力'),
+            // CustomInputNumber(labelText: '電話番号をハイフンなしで入力'),
             const SizedBox(height: 50),
             Container(),
             SizedBox(
