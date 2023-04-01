@@ -44,6 +44,8 @@ app.*.map.json
 /android/app/release
 /android/app/google-services.json
 .fvm/flutter_sdk
+/android/secret.properties
 
 # iOS
+/ios/Runner/Environment.swift
 /ios/Runner/GoogleService-Info.plist
