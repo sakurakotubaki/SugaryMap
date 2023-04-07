@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sugary_map/ui/auth_page/pages/forget_password.dart';
+import 'package:sugary_map/ui/auth_page/pages/signin_page.dart';
+import 'package:sugary_map/ui/auth_page/pages/signup_page.dart';
 import 'package:sugary_map/ui/page/user/navigation_page/map_page/home_page.dart';
+import 'package:sugary_map/ui/page/user/navigation_page/map_page/test_map.dart';
 import 'package:sugary_map/ui/page/user/navigation_page/mypage/mypage.dart';
 import 'package:sugary_map/ui/page/user/navigation_page/notification_page/notification_page.dart';
 import 'package:sugary_map/ui/page/user/navigation_page/post_page/post_page.dart';
@@ -17,38 +21,70 @@ final goRouterProvider = Provider<GoRouter>((ref) {
     navigatorKey: _rootNavigatorKey,
     initialLocation: '/home',
     routes: <RouteBase>[
-ShellRoute(
-      navigatorKey: _shellNavigatorKey,
-      builder: (BuildContext context, GoRouterState state, Widget child) {
-        return ScaffoldWithNavBar(child: child);
-      },
-      routes: <RouteBase>[
-        GoRoute(
-          path: '/home',
-          builder: (BuildContext context, GoRouterState state) {
-            return const HomePage();
-          },
-        ),
-        GoRoute(
-          path: '/post',
-          builder: (BuildContext context, GoRouterState state) {
-            return const PostPage();
-          },
-        ),
-        GoRoute(
-          path: '/notification',
-          builder: (BuildContext context, GoRouterState state) {
-            return const NotificationPage();
-          },
-        ),
-        GoRoute(
-          path: '/my_page',
-          builder: (BuildContext context, GoRouterState state) {
-            return const MyPage();
-          },
-        ),
-      ],
-    ),
+      // 通常の画面遷移のルート
+
+      // ボトムナビゲーションバーのルート
+      ShellRoute(
+        navigatorKey: _shellNavigatorKey,
+        builder: (BuildContext context, GoRouterState state, Widget child) {
+          return ScaffoldWithNavBar(child: child);
+        },
+        routes: <RouteBase>[
+          GoRoute(
+              path: '/home',
+              builder: (BuildContext context, GoRouterState state) {
+                return const HomePage();
+              },
+              routes: [
+                GoRoute(
+                  name: TestMap.rootName,
+                  path: 'test_map',
+                  builder: (BuildContext context, GoRouterState state) {
+                    return const TestMap();
+                  },
+                )
+              ]),
+          GoRoute(
+            path: '/post',
+            builder: (BuildContext context, GoRouterState state) {
+              return const PostPage();
+            },
+          ),
+          GoRoute(
+            path: '/notification',
+            builder: (BuildContext context, GoRouterState state) {
+              return const NotificationPage();
+            },
+          ),
+          GoRoute(
+              path: '/my_page',
+              builder: (BuildContext context, GoRouterState state) {
+                return const MyPage();
+              },
+              routes: [
+                GoRoute(
+                    name: SignInPage.routeName,
+                    path: 'sign_in',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return const SignInPage();
+                    },
+                    routes: [
+                      GoRoute(
+                          name: SignUpPage.routeName,
+                          path: 'sign_up',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return const SignUpPage();
+                          }),
+                      GoRoute(
+                          name: ForgetPassword.routeName,
+                          path: 'forget',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return const ForgetPassword();
+                          }),
+                    ]),
+              ]),
+        ],
+      ),
     ],
   );
 });

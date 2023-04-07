@@ -1,5 +1,6 @@
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:sugary_map/service/export/global_export.dart';
+import 'package:sugary_map/ui/page/user/navigation_page/map_page/test_map.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,25 +15,30 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        // AppBar検索Form.
-        title: Card(
-          child: TextField(
-            decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.search), hintText: '店舗を検索'),
-            onChanged: (value) {},
+          // AppBar検索Form.
+          // title: GestureDetector(
+          //   onTap: () {
+          //     print('Tab Call');
+          //   },
+          //   child: Card(
+          //     child: TextField(
+          //       decoration: const InputDecoration(
+          //           prefixIcon: Icon(Icons.search), hintText: '店舗を検索'),
+          //     ),
+          //   ),
+          // ),
           ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
-        label: const Text('自分の現在地を表示'),
-        icon: const Icon(Icons.pin_drop),
-        backgroundColor: Colors.amber[300],
-      ),
       body: Center(
         child: Column(
-          children: <Widget>[],
+          children: [
+            TextButton(
+                onPressed: () {
+                  context.goNamed(TestMap.rootName);
+                },
+                child: Text('show test'))
+          ],
         ),
       ),
     );

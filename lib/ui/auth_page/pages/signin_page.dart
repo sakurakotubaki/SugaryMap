@@ -5,8 +5,7 @@ import 'dart:developer';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/ui/auth_page/auth_service/user_signin_class.dart';
-import 'package:sugary_map/ui/auth_page/auth_validator/auth_controller.dart';
-import 'package:sugary_map/ui/auth_page/auth_validator/signIn_validator.dart';
+import 'package:sugary_map/ui/auth_page/auth_controller/auth_controller.dart';
 import 'package:sugary_map/ui/auth_page/pages/forget_password.dart';
 
 class SignInPage extends ConsumerWidget {
@@ -21,6 +20,8 @@ class SignInPage extends ConsumerWidget {
     final userSignIn = ref.read(userSignInClassServiceProvider);
 
     return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
