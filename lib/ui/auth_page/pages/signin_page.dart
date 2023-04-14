@@ -5,8 +5,7 @@ import 'dart:developer';
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/service/export/router_export.dart';
 import 'package:sugary_map/ui/auth_page/auth_service/user_signin_class.dart';
-import 'package:sugary_map/ui/auth_page/auth_validator/auth_controller.dart';
-import 'package:sugary_map/ui/auth_page/auth_validator/signIn_validator.dart';
+import 'package:sugary_map/ui/auth_page/auth_controller/auth_controller.dart';
 import 'package:sugary_map/ui/auth_page/pages/forget_password.dart';
 
 class SignInPage extends ConsumerWidget {
@@ -21,15 +20,14 @@ class SignInPage extends ConsumerWidget {
     final userSignIn = ref.read(userSignInClassServiceProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ログイン'),
-      ),
+      backgroundColor: Colors.white,
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 80),
+              const SizedBox(height: 150),
               const Icon(Icons.lock_rounded, size: 100.0, color: Colors.grey),
               const SizedBox(height: 20),
               SizedBox(
@@ -74,7 +72,7 @@ class SignInPage extends ConsumerWidget {
               const SizedBox(height: 20),
               TextButton(
                   onPressed: () {
-                    context.goNamed(UserSignUpPage.routeName);
+                    context.goNamed(SignUpPage.routeName);
                   },
                   child: const Text('新規登録')),
               const SizedBox(height: 10),

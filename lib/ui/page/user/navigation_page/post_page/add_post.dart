@@ -1,5 +1,5 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/ui/page/user/user_nav/post_page/post_page.dart';
+import 'package:sugary_map/ui/page/user/navigation_page/post_page/post_page.dart';
 
 class PostAdd extends StatefulWidget {
   PostAdd({Key? key}) : super(key: key);

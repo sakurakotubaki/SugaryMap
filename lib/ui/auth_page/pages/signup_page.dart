@@ -2,13 +2,13 @@
 
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/ui/auth_page/auth_service/user_signup_class.dart';
-import 'package:sugary_map/ui/auth_page/auth_validator/auth_controller.dart';
+import 'package:sugary_map/ui/auth_page/auth_controller/auth_controller.dart';
 import 'package:sugary_map/ui/page/user/profile/create_user.dart';
 
-class UserSignUpPage extends ConsumerWidget {
-  const UserSignUpPage({super.key});
+class SignUpPage extends ConsumerWidget {
+  const SignUpPage({super.key});
 
-  static const routeName = 'userSignUpPage';
+  static const routeName = 'signUpPage';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -17,9 +17,8 @@ class UserSignUpPage extends ConsumerWidget {
     final userSignUp = ref.read(userSignUpClassProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('一般ユーザー新規登録'),
-      ),
+      backgroundColor: Colors.white,
+      appBar: AppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

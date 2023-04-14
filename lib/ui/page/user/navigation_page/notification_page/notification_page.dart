@@ -3,7 +3,7 @@ import 'package:sugary_map/service/export/global_export.dart';
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key}) : super(key: key);
 
-  static const routeName = 'notificationPage';
+  static const routeName = '/notificationPage';
 
   @override
   State<NotificationPage> createState() => _NotificationPageState();

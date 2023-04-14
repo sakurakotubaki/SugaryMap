@@ -1,7 +1,7 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/account/mail_reset_page.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/account/password_reset_page.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/account/update_user.dart';
+import 'package:sugary_map/ui/page/user/navigation_page/mypage/account/mail_reset_page.dart';
+import 'package:sugary_map/ui/page/user/navigation_page/mypage/account/password_reset_page.dart';
+import 'package:sugary_map/ui/page/user/navigation_page/mypage/account/update_user.dart';
 
 class UserAccountSettings extends StatefulWidget {
   const UserAccountSettings({Key? key}) : super(key: key);

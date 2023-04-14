@@ -1,6 +1,4 @@
 import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_buy.dart';
-import 'package:sugary_map/ui/page/user/user_nav/mypage/order/dummy_detail.dart';
 
 class BookmarkPage extends StatefulWidget {
   const BookmarkPage({Key? key}) : super(key: key);
@@ -24,7 +22,6 @@ class _BookmarkPageState extends State<BookmarkPage> {
             SizedBox(height: 50),
             GestureDetector(
               onTap: () {
-                GoRouter.of(context).goNamed(DummyDetail.routeName);
               },
               child: Row(
                 children: [

@@ -1,7 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jboy.sugary.sugary_map">
 
+    <!-- 権限の追加 ここから-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- ここまで -->
+
 <!-- ここから url_launcherをAndroidで使うための記述-->
 <queries>
     <intent>
@@ -14,8 +18,12 @@
 
    <application
         android:label="sugary_map"
-        android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <!-- google_maps_flutterのAPI KEYの設定 ここから-->
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="${googleMapApiKey}"/>
+        <!-- ここまで-->
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"

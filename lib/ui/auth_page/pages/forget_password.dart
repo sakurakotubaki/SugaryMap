@@ -2,7 +2,7 @@
 
 import 'package:sugary_map/service/export/global_export.dart';
 import 'package:sugary_map/ui/auth_page/auth_service/user_reset_password.dart';
-import 'package:sugary_map/ui/auth_page/auth_validator/auth_controller.dart';
+import 'package:sugary_map/ui/auth_page/auth_controller/auth_controller.dart';
 
 class ForgetPassword extends ConsumerWidget {
   const ForgetPassword({super.key});
@@ -15,9 +15,8 @@ class ForgetPassword extends ConsumerWidget {
     final resetPassword = ref.read(passwordResetClassProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('パスワードのリセット'),
-      ),
+      backgroundColor: Colors.white,
+      appBar: AppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
