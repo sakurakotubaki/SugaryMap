@@ -1,8 +1,8 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
-import 'package:sugary_map/service/export/global_export.dart';
-import 'package:sugary_map/service/router/router.dart';
+import 'package:sugary_map/presentation/export/global_export.dart';
+import 'package:sugary_map/presentation/router/router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -4,9 +4,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final signInServiceProvider = Provider<SignInService>((ref) => SignInService());
 
 class SignInService {
+  final auth = FirebaseAuth.instance;
   Future<UserCredential> signIn(String email, String password) async {
     try {
-      final result = await FirebaseAuth.instance.signInWithEmailAndPassword(
+      final result = await auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -16,6 +17,10 @@ class SignInService {
     } catch (e) {
       throw 'エラーが発生しました。';
     }
+  }
+
+  Future<void> signOut() async {
+    await auth.signOut();
   }
 
   String _handleError(String errorCode) {

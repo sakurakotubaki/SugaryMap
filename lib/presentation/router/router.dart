@@ -1,15 +1,18 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sugary_map/ui/auth_page/pages/forget_password.dart';
-import 'package:sugary_map/ui/auth_page/pages/signin_page.dart';
-import 'package:sugary_map/ui/auth_page/pages/signup_page.dart';
-import 'package:sugary_map/ui/page/user/navigation_page/map_page/home_page.dart';
-import 'package:sugary_map/ui/page/user/navigation_page/map_page/test_map.dart';
-import 'package:sugary_map/ui/page/user/navigation_page/mypage/mypage.dart';
-import 'package:sugary_map/ui/page/user/navigation_page/notification_page/notification_page.dart';
-import 'package:sugary_map/ui/page/user/navigation_page/post_page/post_page.dart';
-import 'package:sugary_map/ui/page/user/navigation_page/scaffold_navbar.dart';
+import 'package:sugary_map/presentation/router/auth_provider.dart';
+import 'package:sugary_map/presentation/ui/page/auth_page/pages/forget_password.dart';
+import 'package:sugary_map/presentation/ui/page/auth_page/pages/signin_page.dart';
+import 'package:sugary_map/presentation/ui/page/auth_page/pages/signup_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/map_page/home_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/map_page/test_map.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/notification_page/notification_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/post_page/post_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/scaffold_navbar.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -17,7 +20,17 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'shell');
 
 final goRouterProvider = Provider<GoRouter>((ref) {
+  final authState = ref.watch(authProvider);
+
   return GoRouter(
+    redirect: (context, state) {
+      if (authState.isLoading || authState.hasError) return null;
+      // SignInPageへリダイレクトする
+      final isStart = state.location == '/';
+      // これはFirebaseAuth SDKが「ログイン」状態をどのように処理するかに関係する
+      // `null`を返すと、"権限がない "という意味になる。
+      final isAuth = authState.valueOrNull != null;
+    },
     navigatorKey: _rootNavigatorKey,
     initialLocation: '/home',
     routes: <RouteBase>[
@@ -89,13 +102,11 @@ final goRouterProvider = Provider<GoRouter>((ref) {
   );
 });
 
-
-
 // // 認証状態によってリダイレクト処理をするコード
 //       redirect: (BuildContext context, GoRouterState state) {
 //         if (authState.isLoading || authState.hasError) return null;
 //         // SignInPageへリダイレクトする
-//         final isStart = state.location == '/a';
+//         final isStart = state.location == '/';
 
 //         final isAuth = authState.valueOrNull != null;
 //         // !=をつけると変数がbool型になる。
