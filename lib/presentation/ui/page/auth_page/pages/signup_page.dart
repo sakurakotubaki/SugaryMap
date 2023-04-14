@@ -1,5 +1,6 @@
 // ignore_for_file: unused_local_variable, no_leading_underscores_for_local_identifiers, unused_import, prefer_single_quotes, prefer_const_constructors
 
+import 'package:sugary_map/application/auth_provider/sign_up/sign_up.dart';
 import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/ui/page/auth_page/auth_service/user_signup_class.dart';
 import 'package:sugary_map/presentation/state/auth_controller.dart';
@@ -12,8 +13,9 @@ class SignUpPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final _email = ref.watch(emailProvider);
-    final _password = ref.watch(passwordProvider);
+    final email = ref.watch(emailProvider);
+    final password = ref.watch(passwordProvider);
+    final signUpService = ref.watch(signUpProvider);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -28,7 +30,7 @@ class SignUpPage extends ConsumerWidget {
             Container(
               width: 300,
               child: TextFormField(
-                controller: _email,
+                controller: email,
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
                     enabledBorder: OutlineInputBorder(
@@ -41,7 +43,7 @@ class SignUpPage extends ConsumerWidget {
             Container(
               width: 300,
               child: TextFormField(
-                controller: _password,
+                controller: password,
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),
                     enabledBorder: OutlineInputBorder(
@@ -56,6 +58,12 @@ class SignUpPage extends ConsumerWidget {
               height: 40,
               child: OutlinedButton(
                   onPressed: () async {
+                    try {
+                      await signUpService.signUp(email.text, password.text);
+                      return;
+                    } catch (e) {
+                      _showErrorSnackbar(context, e.toString());
+                    }
                   },
                   child: const Text(
                     'ユーザー新規登録',
@@ -66,5 +74,14 @@ class SignUpPage extends ConsumerWidget {
         ),
       ),
     );
+  }
+
+  // スナックバーを表示するメソッド
+  void _showErrorSnackbar(BuildContext context, String message) {
+    final snackBar = SnackBar(
+      content: Text(message),
+      duration: const Duration(seconds: 3),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

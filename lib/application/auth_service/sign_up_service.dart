@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class SignUpService {
-  Future<UserCredential> signIn(String email, String password) async {
+  Future<UserCredential> signUp(String email, String password) async {
     try {
       final result = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,

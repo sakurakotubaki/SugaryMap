@@ -2,6 +2,7 @@
 
 import 'dart:developer';
 
+import 'package:sugary_map/application/auth_provider/sign_in/sign_in.dart';
 import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/export/router_export.dart';
 import 'package:sugary_map/presentation/ui/page/auth_page/auth_service/user_signin_class.dart';
@@ -15,8 +16,9 @@ class SignInPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final _email = ref.watch(emailProvider);
-    final _password = ref.watch(passwordProvider);
+    final email = ref.watch(emailProvider);
+    final password = ref.watch(passwordProvider);
+    final signInService = ref.watch(signInProvider);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -32,7 +34,7 @@ class SignInPage extends ConsumerWidget {
               SizedBox(
                 width: 300,
                 child: TextFormField(
-                  controller: _email,
+                  controller: email,
                   decoration: InputDecoration(
                       contentPadding: const EdgeInsets.only(left: 20),
                       enabledBorder: OutlineInputBorder(
@@ -45,7 +47,7 @@ class SignInPage extends ConsumerWidget {
               SizedBox(
                 width: 300,
                 child: TextFormField(
-                  controller: _password,
+                  controller: password,
                   decoration: InputDecoration(
                       contentPadding: const EdgeInsets.only(left: 20),
                       enabledBorder: OutlineInputBorder(
@@ -60,7 +62,12 @@ class SignInPage extends ConsumerWidget {
                 height: 40,
                 child: OutlinedButton(
                     onPressed: () async {
-                      
+                      try {
+                        await signInService.signIn(email.text, password.text);
+                        return;
+                      } catch (e) {
+                        _showErrorSnackbar(context, e.toString());
+                      }
                     },
                     child: const Text(
                       'ログイン',
@@ -85,5 +92,13 @@ class SignInPage extends ConsumerWidget {
         ),
       ),
     );
+  }
+  // スナックバーを表示するメソッド
+  void _showErrorSnackbar(BuildContext context, String message) {
+    final snackBar = SnackBar(
+      content: Text(message),
+      duration: const Duration(seconds: 3),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }
