@@ -12,7 +12,6 @@ class ForgetPassword extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final _email = ref.watch(emailProvider);
-    final resetPassword = ref.read(passwordResetClassProvider);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -40,7 +39,6 @@ class ForgetPassword extends ConsumerWidget {
               height: 40,
               child: OutlinedButton(
                   onPressed: () async {
-                    resetPassword.resetPassword(_email.text, context);
                   },
                   child: const Text(
                     'パスワードをリセット',

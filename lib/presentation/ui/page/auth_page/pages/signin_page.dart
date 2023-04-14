@@ -17,7 +17,6 @@ class SignInPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final _email = ref.watch(emailProvider);
     final _password = ref.watch(passwordProvider);
-    final userSignIn = ref.read(userSignInClassServiceProvider);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -61,8 +60,7 @@ class SignInPage extends ConsumerWidget {
                 height: 40,
                 child: OutlinedButton(
                     onPressed: () async {
-                      userSignIn.userSignIn(
-                          _email.text, _password.text, context);
+                      
                     },
                     child: const Text(
                       'ログイン',
