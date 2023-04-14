@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final signInServiceProvider = Provider<SignInService>((ref) => SignInService());
-
 class SignInService {
   final auth = FirebaseAuth.instance;
   Future<UserCredential> signIn(String email, String password) async {
