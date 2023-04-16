@@ -5,7 +5,7 @@ import 'package:sugary_map/presentation/ui/page/user/navigation_page/map_page/te
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  static const routeName = '/homePage';
+  static const routeName = '/';
 
   @override
   State<HomePage> createState() => _HomePageState();

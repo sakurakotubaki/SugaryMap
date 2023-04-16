@@ -1,11 +1,12 @@
 // ignore_for_file: unused_import, unnecessary_import, prefer_const_constructors, avoid_unnecessary_containers
 
+import 'package:sugary_map/application/auth_provider/sign_in/sign_in.dart';
 import 'package:sugary_map/presentation/constant/privacy_const.dart';
 import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/export/user_nabbar_export.dart';
 import 'package:sugary_map/presentation/router/auth_provider.dart';
-import 'package:sugary_map/presentation/ui/page/auth_page/pages/signin_page.dart';
 import 'package:sugary_map/presentation/ui/component/global/custom_divider.dart';
+import 'package:sugary_map/presentation/ui/page/auth_page/signin_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/bookmark_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/inquiry.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/manual_page.dart';
@@ -22,6 +23,7 @@ class MyPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // ユーザーのログイン状態を監視する
     final authStateAsync = ref.watch(authProvider);
+    final signInService = ref.read(signInProvider);
 
     return authStateAsync.when(
         loading: () => const CircularProgressIndicator(),
@@ -79,9 +81,7 @@ class MyPage extends ConsumerWidget {
                           child: ListView(
                             children: [
                               GestureDetector(
-                                onTap: () {
-
-                                },
+                                onTap: () {},
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
                                   title: Text('注文履歴'),
@@ -111,9 +111,7 @@ class MyPage extends ConsumerWidget {
                               ),
                               CustomDivider(),
                               GestureDetector(
-                                onTap: () {
-
-                                },
+                                onTap: () {},
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
                                   title: Text('アカウント設定'),
@@ -152,7 +150,9 @@ class MyPage extends ConsumerWidget {
                               ),
                               CustomDivider(),
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () async {
+                                  signInService.signOut();
+                                },
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
                                   title: Text('ログアウト'),
@@ -219,9 +219,7 @@ class MyPage extends ConsumerWidget {
                               ),
                               CustomDivider(),
                               GestureDetector(
-                                onTap: () {
-
-                                },
+                                onTap: () {},
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
                                   title: Text('アカウント設定'),

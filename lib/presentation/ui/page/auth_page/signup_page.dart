@@ -3,6 +3,7 @@
 import 'package:sugary_map/application/auth_provider/sign_up/sign_up.dart';
 import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/state/auth_controller.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage.dart';
 import 'package:sugary_map/presentation/ui/page/user/profile/create_user.dart';
 
 class SignUpPage extends ConsumerWidget {
@@ -14,7 +15,7 @@ class SignUpPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final email = ref.watch(emailProvider);
     final password = ref.watch(passwordProvider);
-    final signUpService = ref.watch(signUpProvider);
+    final signUpService = ref.read(signUpProvider);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -59,7 +60,6 @@ class SignUpPage extends ConsumerWidget {
                   onPressed: () async {
                     try {
                       await signUpService.signUp(email.text, password.text);
-                      return;
                     } catch (e) {
                       _showErrorSnackbar(context, e.toString());
                     }

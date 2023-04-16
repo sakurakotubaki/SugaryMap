@@ -11,7 +11,7 @@ class ForgetPassword extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final email = ref.watch(emailProvider);
-    final resetPassword = ref.watch(resetPasswordProvider);
+    final resetPassword = ref.read(resetPasswordProvider);
 
     return Scaffold(
       backgroundColor: Colors.white,

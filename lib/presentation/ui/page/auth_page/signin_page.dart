@@ -15,7 +15,7 @@ class SignInPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final email = ref.watch(emailProvider);
     final password = ref.watch(passwordProvider);
-    final signInService = ref.watch(signInProvider);
+    final signInService = ref.read(signInProvider);
 
     return Scaffold(
       backgroundColor: Colors.white,
