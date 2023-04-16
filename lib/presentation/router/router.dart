@@ -17,7 +17,7 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
 final goRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
   navigatorKey: _rootNavigatorKey,
-  initialLocation: '/a',
+  initialLocation: '/',
   routes: <RouteBase>[
     ShellRoute(
       navigatorKey: _shellNavigatorKey,
@@ -26,25 +26,25 @@ final goRouterProvider = Provider<GoRouter>((ref) {
       },
       routes: <RouteBase>[
         GoRoute(
-          path: '/a',
+          path: '/',
           builder: (BuildContext context, GoRouterState state) {
             return const HomePage();
           },
         ),
         GoRoute(
-          path: '/b',
+          path: '/post',
           builder: (BuildContext context, GoRouterState state) {
             return const PostPage();
           },
         ),
         GoRoute(
-          path: '/c',
+          path: '/push',
           builder: (BuildContext context, GoRouterState state) {
             return const NotificationPage();
           },
         ),
         GoRoute(
-          path: '/d',
+          path: '/setting',
           builder: (BuildContext context, GoRouterState state) {
             return const MyPage();
           },

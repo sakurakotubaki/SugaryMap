@@ -41,17 +41,17 @@ class ScaffoldWithNavBar extends StatelessWidget {
 
   static int _calculateSelectedIndex(BuildContext context) {
     final String location = GoRouterState.of(context).location;
-    if (location.startsWith('/a')) {
+    if (location.startsWith('/')) {
       return 0;
     }
-    if (location.startsWith('/b')) {
+    if (location.startsWith('/post')) {
       return 1;
     }
-    if (location.startsWith('/c')) {
+    if (location.startsWith('/push')) {
       return 2;
     }
 
-    if (location.startsWith('/d')) {
+    if (location.startsWith('/setting')) {
       return 3;
     }
     return 0;
@@ -60,17 +60,17 @@ class ScaffoldWithNavBar extends StatelessWidget {
   void _onItemTapped(int index, BuildContext context) {
     switch (index) {
       case 0:
-        GoRouter.of(context).go('/a');
+        GoRouter.of(context).go('/');
         break;
       case 1:
-        GoRouter.of(context).go('/b');
+        GoRouter.of(context).go('/post');
         break;
       case 2:
-        GoRouter.of(context).go('/c');
+        GoRouter.of(context).go('/push');
         break;
 
       case 3:
-        GoRouter.of(context).go('/d');
+        GoRouter.of(context).go('/setting');
         break;
     }
   }
