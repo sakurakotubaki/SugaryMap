@@ -3,15 +3,9 @@
 import 'package:sugary_map/application/auth_provider/sign_in/sign_in.dart';
 import 'package:sugary_map/presentation/constant/privacy_const.dart';
 import 'package:sugary_map/presentation/export/global_export.dart';
-import 'package:sugary_map/presentation/export/user_nabbar_export.dart';
 import 'package:sugary_map/presentation/router/auth_provider.dart';
 import 'package:sugary_map/presentation/ui/component/global/custom_divider.dart';
 import 'package:sugary_map/presentation/ui/page/auth_page/signin_page.dart';
-import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/bookmark_page.dart';
-import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/inquiry.dart';
-import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/manual_page.dart';
-import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/user_notification.dart';
-import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/user_terms.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyPage extends ConsumerWidget {
@@ -90,8 +84,6 @@ class MyPage extends ConsumerWidget {
                               CustomDivider(),
                               GestureDetector(
                                 onTap: () {
-                                  GoRouter.of(context)
-                                      .goNamed(BookmarkPage.routeName);
                                 },
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
@@ -101,8 +93,6 @@ class MyPage extends ConsumerWidget {
                               CustomDivider(),
                               GestureDetector(
                                 onTap: () {
-                                  GoRouter.of(context)
-                                      .goNamed(ManualPage.routeName);
                                 },
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
@@ -140,8 +130,6 @@ class MyPage extends ConsumerWidget {
                               CustomDivider(),
                               GestureDetector(
                                 onTap: () {
-                                  GoRouter.of(context)
-                                      .goNamed(UserInquiry.routeName);
                                 },
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
@@ -198,8 +186,6 @@ class MyPage extends ConsumerWidget {
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  GoRouter.of(context)
-                                      .goNamed(BookmarkPage.routeName);
                                 },
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
@@ -209,8 +195,6 @@ class MyPage extends ConsumerWidget {
                               CustomDivider(),
                               GestureDetector(
                                 onTap: () {
-                                  GoRouter.of(context)
-                                      .goNamed(ManualPage.routeName);
                                 },
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
@@ -248,8 +232,6 @@ class MyPage extends ConsumerWidget {
                               CustomDivider(),
                               GestureDetector(
                                 onTap: () {
-                                  GoRouter.of(context)
-                                      .goNamed(UserInquiry.routeName);
                                 },
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
