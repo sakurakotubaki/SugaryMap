@@ -85,6 +85,13 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                           return const SignUpPage();
                         },
                       ),
+                      GoRoute(
+                        name: ForgetPassword.routeName,
+                        path: 'forget',
+                        builder: (BuildContext context, GoRouterState state) {
+                          return const ForgetPassword();
+                        },
+                      ),
                     ]),
               ]),
         ],
