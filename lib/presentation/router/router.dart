@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,6 +20,10 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
 
 final goRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
+    observers: [
+      // GoogleAnalyticsの設定
+      FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance),
+    ],
     navigatorKey: _rootNavigatorKey,
     initialLocation: '/',
     routes: <RouteBase>[

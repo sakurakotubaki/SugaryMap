@@ -1,3 +1,6 @@
+// ignore_for_file: unused_local_variable
+
+import 'package:sugary_map/application/analytics_provider/analytics.dart';
 import 'package:sugary_map/application/auth_provider/sign_in/sign_in.dart';
 import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/router/auth_provider.dart';
@@ -14,6 +17,7 @@ class NotificationPage extends ConsumerWidget {
     final email = ref.watch(emailProvider);
     final password = ref.watch(passwordProvider);
     final signInService = ref.read(signInProvider);
+    final analyticsRef = ref.read(analyticsServiceProvider);
 
     return authStateAsync.when(
         loading: () => const CircularProgressIndicator(),
@@ -74,6 +78,7 @@ class NotificationPage extends ConsumerWidget {
                             child: OutlinedButton(
                                 onPressed: () async {
                                   try {
+                                    analyticsRef.logEvent();
                                     await signInService.signIn(
                                         email.text, password.text);
                                     return;
@@ -104,26 +109,3 @@ class NotificationPage extends ConsumerWidget {
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }
-// class NotificationPage extends StatefulWidget {
-//   const NotificationPage({Key? key}) : super(key: key);
-
-//   static const routeName = '/notificationPage';
-
-//   @override
-//   State<NotificationPage> createState() => _NotificationPageState();
-// }
-
-// class _NotificationPageState extends State<NotificationPage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(
-//         child: Column(
-//           children: <Widget>[
-
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }

@@ -1,5 +1,6 @@
 // ignore_for_file: unused_import, unnecessary_import, prefer_const_constructors, avoid_unnecessary_containers
 
+import 'package:sugary_map/application/analytics_provider/analytics.dart';
 import 'package:sugary_map/application/auth_provider/sign_in/sign_in.dart';
 import 'package:sugary_map/presentation/constant/privacy_const.dart';
 import 'package:sugary_map/presentation/export/global_export.dart';
@@ -18,6 +19,7 @@ class MyPage extends ConsumerWidget {
     // ユーザーのログイン状態を監視する
     final authStateAsync = ref.watch(authProvider);
     final signInService = ref.read(signInProvider);
+    final analyticsRef = ref.read(analyticsServiceProvider);
 
     return authStateAsync.when(
         loading: () => const CircularProgressIndicator(),
@@ -83,8 +85,7 @@ class MyPage extends ConsumerWidget {
                               ),
                               CustomDivider(),
                               GestureDetector(
-                                onTap: () {
-                                },
+                                onTap: () {},
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
                                   title: Text('お気に入り'),
@@ -92,8 +93,7 @@ class MyPage extends ConsumerWidget {
                               ),
                               CustomDivider(),
                               GestureDetector(
-                                onTap: () {
-                                },
+                                onTap: () {},
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
                                   title: Text('使い方'),
@@ -129,8 +129,7 @@ class MyPage extends ConsumerWidget {
                               ),
                               CustomDivider(),
                               GestureDetector(
-                                onTap: () {
-                                },
+                                onTap: () {},
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
                                   title: Text('お問い合わせ'),
@@ -185,8 +184,7 @@ class MyPage extends ConsumerWidget {
                           child: ListView(
                             children: [
                               GestureDetector(
-                                onTap: () {
-                                },
+                                onTap: () {},
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
                                   title: Text('お気に入り'),
@@ -194,8 +192,7 @@ class MyPage extends ConsumerWidget {
                               ),
                               CustomDivider(),
                               GestureDetector(
-                                onTap: () {
-                                },
+                                onTap: () {},
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
                                   title: Text('使い方'),
@@ -231,8 +228,7 @@ class MyPage extends ConsumerWidget {
                               ),
                               CustomDivider(),
                               GestureDetector(
-                                onTap: () {
-                                },
+                                onTap: () {},
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
                                   title: Text('お問い合わせ'),
@@ -240,7 +236,8 @@ class MyPage extends ConsumerWidget {
                               ),
                               CustomDivider(),
                               GestureDetector(
-                                onTap: () {
+                                onTap: () async {
+                                  analyticsRef.logEvent();
                                   context.goNamed(SignInPage.routeName);
                                 },
                                 child: ListTile(
