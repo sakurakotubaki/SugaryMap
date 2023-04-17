@@ -8,6 +8,9 @@ import 'package:sugary_map/presentation/ui/page/auth_page/forget_password.dart';
 import 'package:sugary_map/presentation/ui/page/auth_page/signin_page.dart';
 import 'package:sugary_map/presentation/ui/page/auth_page/signup_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/map_page/home_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/create_user.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/mail_reset_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/password_reset_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/accont_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/notification_page/notification_page.dart';
@@ -106,12 +109,31 @@ final goRouterProvider = Provider<GoRouter>((ref) {
               },
               routes: [
                 GoRoute(
-                  name: UserAccountSettings.routeName,
-                  path: 'user_account',
-                  builder: (BuildContext context, GoRouterState state) {
-                    return const UserAccountSettings();
-                  },
-                ),
+                    name: UserAccountSettings.routeName,
+                    path: 'user_account',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return const UserAccountSettings();
+                    },
+                    routes: [
+                      GoRoute(
+                          name: UserEmailUpdate.routeName,
+                          path: 'email_reset',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return UserEmailUpdate();
+                          }),
+                      GoRoute(
+                          name: UserPasswordUpdate.routeName,
+                          path: 'password_update',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return const UserPasswordUpdate();
+                          }),
+                      GoRoute(
+                          name: CreateUser.routeName,
+                          path: 'create_user',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return const CreateUser();
+                          }),
+                    ]),
                 GoRoute(
                     name: SignInPage.routeName,
                     path: 'sign_in',

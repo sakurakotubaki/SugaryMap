@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 
 class CustomAuthForm extends StatelessWidget {
-  const CustomAuthForm({
+  CustomAuthForm({
     Key? key,
     required this.labelText,
+    required this.controller,
   }) : super(key: key);
 
   final String labelText;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 300,
       child: TextFormField(
+        controller: controller,
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.only(left: 20),

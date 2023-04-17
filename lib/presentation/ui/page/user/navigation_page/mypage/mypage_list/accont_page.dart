@@ -1,7 +1,8 @@
 import 'package:sugary_map/presentation/export/global_export.dart';
+import 'package:sugary_map/presentation/ui/component/global/custom_divider.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/create_user.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/mail_reset_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/password_reset_page.dart';
-import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/update_user.dart';
 
 class UserAccountSettings extends StatefulWidget {
   const UserAccountSettings({Key? key}) : super(key: key);
@@ -23,14 +24,16 @@ class _UserAccountSettingsState extends State<UserAccountSettings> {
         child: Center(
           child: Column(
             children: <Widget>[
+              // ignore: sized_box_for_whitespace
               Container(
                 height: 800,
                 child: ListView(
                   children: [
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Container(
                       // 左右外側に空白を作る.
                       margin: EdgeInsets.symmetric(horizontal: 20.0),
+                      // ignore: prefer_const_constructors
                       child: Text(
                           "メールアドレスの変更には、ユーザーが最近ログインしている必要があります。一度ログアウトして、再ログインしてください。",
                           style: TextStyle(fontSize: 15)),
@@ -39,50 +42,35 @@ class _UserAccountSettingsState extends State<UserAccountSettings> {
                       onTap: () {
                         GoRouter.of(context).goNamed(UserEmailUpdate.routeName);
                       },
-                      child: ListTile(
+                      child: const ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
                         title: Text('メールアドレスを変更する'),
                       ),
                     ),
-                    Divider(
-                      thickness: 2,
-                      indent: 20,
-                      endIndent: 20,
-                      color: Colors.black12,
-                    ),
+                    const CustomDivider(),
                     GestureDetector(
                       onTap: () {
                         GoRouter.of(context).goNamed(UserPasswordUpdate.routeName);
                       },
-                      child: ListTile(
+                      child: const ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
                         title: Text('パスワードを変更する'),
                       ),
                     ),
-                    Divider(
-                      thickness: 2,
-                      indent: 20,
-                      endIndent: 20,
-                      color: Colors.black12,
-                    ),
+                    const CustomDivider(),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context).goNamed(UpdateUser.routeName);
+                        GoRouter.of(context).goNamed(CreateUser.routeName);
                       },
-                      child: ListTile(
+                      child: const ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
-                        title: Text('プロフィールを編集'),
+                        title: Text('プロフィールを作成'),
                       ),
                     ),
-                    Divider(
-                      thickness: 2,
-                      indent: 20,
-                      endIndent: 20,
-                      color: Colors.black12,
-                    ),
+                    const CustomDivider(),
                     GestureDetector(
                       onTap: () {},
-                      child: ListTile(
+                      child: const ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
                         title: Text('お支払い方法'),
                       ),

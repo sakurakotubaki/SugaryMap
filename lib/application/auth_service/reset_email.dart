@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class ResetEmail {
   final auth = FirebaseAuth.instance;
-  Future<void> resetPassword(String email) async {
+  Future<void> emailUpdate(String email) async {
     try {
       final result = await auth.currentUser?.updateEmail(email);
       return result;
