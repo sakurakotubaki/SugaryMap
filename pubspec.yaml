@@ -48,6 +48,7 @@ dependencies:
   firebase_auth: ^4.2.10
   cloud_firestore: ^4.4.4
   firebase_storage: ^11.0.15
+  firebase_messaging: ^14.2.2
   freezed_annotation: ^2.2.0
   json_annotation: ^4.8.0
   riverpod_annotation: ^2.0.4
