@@ -7,6 +7,3 @@ final userNameProvider = StateProvider.autoDispose((ref) {
   return TextEditingController(text: '');
 });
 
-final phoneNumberProvider = StateProvider.autoDispose((ref) {
-  return TextEditingController(text: '');
-});

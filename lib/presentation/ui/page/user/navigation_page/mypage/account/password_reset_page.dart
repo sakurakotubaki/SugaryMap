@@ -2,7 +2,7 @@ import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/ui/component/auth/custom_form_field.dart';
 
 class UserPasswordUpdate extends StatefulWidget {
-  UserPasswordUpdate({Key? key}) : super(key: key);
+  const UserPasswordUpdate({Key? key}) : super(key: key);
 
   static const routeName = 'userPasswordUpdate';
 

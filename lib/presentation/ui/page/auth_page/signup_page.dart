@@ -4,7 +4,6 @@ import 'package:sugary_map/application/auth_provider/sign_up/sign_up.dart';
 import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/state/auth_controller.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage.dart';
-import 'package:sugary_map/presentation/ui/page/user/profile/create_user.dart';
 
 class SignUpPage extends ConsumerWidget {
   const SignUpPage({super.key});

@@ -3,9 +3,7 @@
 import 'package:flutter/services.dart';
 import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/export/router_export.dart';
-import 'package:sugary_map/presentation/ui/page/user/profile/data_service/user_data_service.dart';
 import 'package:sugary_map/presentation/ui/page/user/profile/component/custom_form_field.dart';
-import 'package:sugary_map/presentation/ui/page/user/profile/component/custom_input_number.dart';
 import 'package:sugary_map/presentation/ui/page/user/profile/component/user_profile_provider.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/map_page/home_page.dart';
 
@@ -17,9 +15,6 @@ class CreateUser extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final userGlobalKey = ref.watch(userProfileFormKeyProvider);
-    final nameController = ref.watch(userNameProvider);
-    final phoneController = ref.watch(phoneNumberProvider);
-    final newUser = ref.read(userDataServiceClassProvider.notifier).state;
 
     return Scaffold(
       appBar: AppBar(
@@ -60,7 +55,6 @@ class CreateUser extends ConsumerWidget {
               SizedBox(
                 width: 300,
                 child: TextFormField(
-                  controller: nameController,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return '名前を入力してください';
@@ -96,8 +90,7 @@ class CreateUser extends ConsumerWidget {
                         backgroundColor: Colors.black87),
                     onPressed: () async {
                       if (userGlobalKey.currentState!.validate()) {
-                        newUser.newUserProfile(
-                            nameController.text, phoneController.text);
+
                       }
                     },
                     child: Text(

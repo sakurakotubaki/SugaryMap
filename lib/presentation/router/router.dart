@@ -9,10 +9,10 @@ import 'package:sugary_map/presentation/ui/page/auth_page/signin_page.dart';
 import 'package:sugary_map/presentation/ui/page/auth_page/signup_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/map_page/home_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/accont_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/notification_page/notification_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/post_page/post_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/scaffold_navbar.dart';
-import 'package:sugary_map/presentation/ui/page/user/profile/data_service/user_data_service.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -105,6 +105,13 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                 return const MyPage();
               },
               routes: [
+                GoRoute(
+                  name: UserAccountSettings.routeName,
+                  path: 'user_account',
+                  builder: (BuildContext context, GoRouterState state) {
+                    return const UserAccountSettings();
+                  },
+                ),
                 GoRoute(
                     name: SignInPage.routeName,
                     path: 'sign_in',

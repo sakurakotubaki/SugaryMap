@@ -1,10 +1,8 @@
 import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/export/router_export.dart';
-import 'package:sugary_map/presentation/ui/page/user/profile/component/custom_form_field.dart';
-import 'package:sugary_map/presentation/ui/page/user/profile/component/custom_input_number.dart';
 
 class UpdateUser extends StatefulWidget {
-  UpdateUser({Key? key}) : super(key: key);
+  const UpdateUser({Key? key}) : super(key: key);
 
   static const routeName = 'UpdateUser';
 
@@ -22,7 +20,7 @@ class _UpdateUserState extends State<UpdateUser> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Stack(
               children: [
                 Container(

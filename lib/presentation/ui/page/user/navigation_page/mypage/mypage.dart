@@ -7,6 +7,7 @@ import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/router/auth_provider.dart';
 import 'package:sugary_map/presentation/ui/component/global/custom_divider.dart';
 import 'package:sugary_map/presentation/ui/page/auth_page/signin_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/accont_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyPage extends ConsumerWidget {
@@ -101,7 +102,10 @@ class MyPage extends ConsumerWidget {
                               ),
                               CustomDivider(),
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  context
+                                      .goNamed(UserAccountSettings.routeName);
+                                },
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
                                   title: Text('アカウント設定'),
@@ -199,14 +203,17 @@ class MyPage extends ConsumerWidget {
                                 ),
                               ),
                               CustomDivider(),
-                              GestureDetector(
-                                onTap: () {},
-                                child: ListTile(
-                                  trailing: Icon(Icons.arrow_forward_ios),
-                                  title: Text('アカウント設定'),
-                                ),
-                              ),
-                              CustomDivider(),
+                              // GestureDetector(
+                              //   onTap: () {
+                              //     context
+                              //         .goNamed(UserAccountSettings.routeName);
+                              //   },
+                              //   child: ListTile(
+                              //     trailing: Icon(Icons.arrow_forward_ios),
+                              //     title: Text('アカウント設定'),
+                              //   ),
+                              // ),
+                              // CustomDivider(),
                               GestureDetector(
                                 onTap: () {
                                   launchUrl(Uri.parse(privacyUrl));
