@@ -3,8 +3,8 @@
 import 'package:flutter/services.dart';
 import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/export/router_export.dart';
-import 'package:sugary_map/presentation/ui/page/user/profile/component/custom_form_field.dart';
-import 'package:sugary_map/presentation/ui/page/user/profile/component/user_profile_provider.dart';
+// import 'package:sugary_map/presentation/ui/page/user/profile/component/custom_form_field.dart';
+// import 'package:sugary_map/presentation/ui/page/user/profile/component/user_profile_provider.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/map_page/home_page.dart';
 
 class CreateUser extends ConsumerWidget {
@@ -14,7 +14,7 @@ class CreateUser extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final userGlobalKey = ref.watch(userProfileFormKeyProvider);
+    // final userGlobalKey = ref.watch(userProfileFormKeyProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -22,7 +22,7 @@ class CreateUser extends ConsumerWidget {
       ),
       body: SingleChildScrollView(
         child: Form(
-          key: userGlobalKey,
+          // key: userGlobalKey,
           child: Column(
             children: [
               const SizedBox(height: 50),
@@ -89,9 +89,9 @@ class CreateUser extends ConsumerWidget {
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black87),
                     onPressed: () async {
-                      if (userGlobalKey.currentState!.validate()) {
+                      // if (userGlobalKey.currentState!.validate()) {
 
-                      }
+                      // }
                     },
                     child: Text(
                       '登録',
