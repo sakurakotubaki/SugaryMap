@@ -51,7 +51,7 @@ class ScaffoldWithNavBar extends StatelessWidget {
       return 2;
     }
 
-    if (location.startsWith('/setting')) {
+    if (location.startsWith('/my_page')) {
       return 3;
     }
     return 0;
@@ -70,7 +70,7 @@ class ScaffoldWithNavBar extends StatelessWidget {
         break;
 
       case 3:
-        GoRouter.of(context).go('/setting');
+        GoRouter.of(context).go('/my_page');
         break;
     }
   }

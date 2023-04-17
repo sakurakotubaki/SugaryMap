@@ -11,6 +11,8 @@ import 'package:sugary_map/presentation/ui/page/auth_page/signup_page.dart';
 class NotificationPage extends ConsumerWidget {
   const NotificationPage({super.key});
 
+  static const rootName = 'notificationPage';
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authStateAsync = ref.watch(authProvider);

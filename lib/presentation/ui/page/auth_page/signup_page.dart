@@ -59,7 +59,7 @@ class SignUpPage extends ConsumerWidget {
               child: OutlinedButton(
                   onPressed: () async {
                     try {
-                      await signUpService.signUp(email.text, password.text);
+                      signUpService.signUp(email.text, password.text);
                     } catch (e) {
                       _showErrorSnackbar(context, e.toString());
                     }
