@@ -1,5 +1,4 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -9,6 +8,7 @@ import 'package:sugary_map/presentation/ui/page/auth_page/signin_page.dart';
 import 'package:sugary_map/presentation/ui/page/auth_page/signup_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/map_page/home_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/create_user.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/delete_account_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/mail_reset_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/password_reset_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage.dart';
@@ -129,10 +129,15 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                           }),
                       GoRoute(
                           name: CreateUser.routeName,
-                          path:
-                              'application.store_provider.application.store_provider.create_user',
+                          path: 'create_user',
                           builder: (BuildContext context, GoRouterState state) {
                             return const CreateUser();
+                          }),
+                      GoRoute(
+                          name: DeleteAccountPage.rootName,
+                          path: 'delete_user',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return const DeleteAccountPage();
                           }),
                     ]),
                 GoRoute(
