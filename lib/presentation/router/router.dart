@@ -129,7 +129,8 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                           }),
                       GoRoute(
                           name: CreateUser.routeName,
-                          path: 'create_user',
+                          path:
+                              'application.store_provider.application.store_provider.create_user',
                           builder: (BuildContext context, GoRouterState state) {
                             return const CreateUser();
                           }),
