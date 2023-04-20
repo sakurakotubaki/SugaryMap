@@ -1,4 +1,5 @@
-import 'package:flutter_carousel_slider/carousel_slider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/map_page/test_map.dart';
 
@@ -37,7 +38,12 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   context.goNamed(TestMap.rootName);
                 },
-                child: Text('show test'))
+                child: Text('show test')),
+            TextButton(
+                onPressed: () async {
+                  await FirebaseAuth.instance.signOut();
+                },
+                child: Text('Sign Out'))
           ],
         ),
       ),

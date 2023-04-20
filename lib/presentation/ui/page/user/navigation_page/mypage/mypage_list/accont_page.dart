@@ -1,6 +1,7 @@
 import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/ui/component/global/custom_divider.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/create_user.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/delete_account_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/mail_reset_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/password_reset_page.dart';
 
@@ -18,7 +19,7 @@ class _UserAccountSettingsState extends State<UserAccountSettings> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('アカウント設定'),
+        title: const Text('アカウント設定'),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -50,7 +51,8 @@ class _UserAccountSettingsState extends State<UserAccountSettings> {
                     const CustomDivider(),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context).goNamed(UserPasswordUpdate.routeName);
+                        GoRouter.of(context)
+                            .goNamed(UserPasswordUpdate.routeName);
                       },
                       child: const ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
@@ -73,6 +75,17 @@ class _UserAccountSettingsState extends State<UserAccountSettings> {
                       child: const ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
                         title: Text('お支払い方法'),
+                      ),
+                    ),
+                    const CustomDivider(),
+                    GestureDetector(
+                      onTap: () {
+                        GoRouter.of(context)
+                            .goNamed(DeleteAccountPage.rootName);
+                      },
+                      child: const ListTile(
+                        trailing: Icon(Icons.arrow_forward_ios),
+                        title: Text('退会する'),
                       ),
                     ),
                   ],

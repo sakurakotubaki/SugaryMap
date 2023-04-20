@@ -1,5 +1,4 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -9,10 +8,13 @@ import 'package:sugary_map/presentation/ui/page/auth_page/signin_page.dart';
 import 'package:sugary_map/presentation/ui/page/auth_page/signup_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/map_page/home_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/create_user.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/delete_account_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/mail_reset_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/password_reset_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/update_user.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/accont_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/profile_test.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/notification_page/notification_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/post_page/post_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/scaffold_navbar.dart';
@@ -108,6 +110,20 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                 return const MyPage();
               },
               routes: [
+                // TODO: TestPage
+                GoRoute(
+                    name: ProfileTest.rootName,
+                    path: 'test',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return ProfileTest();
+                    }),
+                // TODO: UpdateTest
+                GoRoute(
+                    name: UpdateUser.routeName,
+                    path: 'update_user',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return UpdateUser();
+                    }),
                 GoRoute(
                     name: UserAccountSettings.routeName,
                     path: 'user_account',
@@ -132,6 +148,12 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                           path: 'create_user',
                           builder: (BuildContext context, GoRouterState state) {
                             return const CreateUser();
+                          }),
+                      GoRoute(
+                          name: DeleteAccountPage.rootName,
+                          path: 'delete_user',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return const DeleteAccountPage();
                           }),
                     ]),
                 GoRoute(
