@@ -44,6 +44,7 @@ class SignInPage extends ConsumerWidget {
               SizedBox(
                 width: 300,
                 child: TextFormField(
+                  obscureText: true,
                   controller: password,
                   decoration: InputDecoration(
                       contentPadding: const EdgeInsets.only(left: 20),
@@ -89,6 +90,7 @@ class SignInPage extends ConsumerWidget {
       ),
     );
   }
+
   // スナックバーを表示するメソッド
   void _showErrorSnackbar(BuildContext context, String message) {
     final snackBar = SnackBar(

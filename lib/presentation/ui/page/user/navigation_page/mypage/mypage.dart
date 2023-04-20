@@ -9,6 +9,7 @@ import 'package:sugary_map/presentation/router/auth_provider.dart';
 import 'package:sugary_map/presentation/ui/component/global/custom_divider.dart';
 import 'package:sugary_map/presentation/ui/page/auth_page/signin_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/accont_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/profile_test.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyPage extends ConsumerWidget {
@@ -23,7 +24,7 @@ class MyPage extends ConsumerWidget {
     final signInService = ref.read(signInProvider);
     final analyticsRef = ref.read(analyticsServiceProvider);
     // Todo: ProfileData
-    final getUser = ref.watch(getProfileProvider);
+    final getUser = ref.watch(profileProvider);
 
     return authStateAsync.when(
         loading: () => const CircularProgressIndicator(),
@@ -39,95 +40,64 @@ class MyPage extends ConsumerWidget {
                   body: Center(
                     child: Column(
                       children: <Widget>[
-                        Padding(
-                            padding: const EdgeInsets.only(
-                                top: 20, left: 20, bottom: 20),
-                            // child: Row(
-                            //   children: [
-                            //     Container(
-                            //       clipBehavior: Clip.antiAlias,
-                            //       width: 80,
-                            //       height: 80,
-                            //       decoration: const BoxDecoration(
-                            //         // BoxShapeをcircleにしているので丸型になってほしい
-                            //         shape: BoxShape.circle,
-                            //         color: Colors.blue,
-                            //       ),
-                            //       // 正方形の画像を表示する
-                            //       // Containerは丸型なので丸くなってほしい
-                            //       child: Image.network(
-                            //         'https://pbs.twimg.com/media/FPf418SaUAA0bbN?format=jpg&name=900x900',
-                            //       ),
-                            //     ),
-                            //     const SizedBox(width: 20),
-                            //     Column(
-                            //       children: [
-                            //         const Text('こんぶさん'),
-                            //         SizedBox(height: 20),
-                            //         Row(
-                            //           // ignore: prefer_const_literals_to_create_immutables
-                            //           children: [
-                            //             Text('称号'),
-                            //             SizedBox(width: 20),
-                            //             Text('甘党'),
-                            //           ],
-                            //         ),
-                            //       ],
-                            //     )
-                            //   ],
-                            // ),
-                            child: getUser.when(
-                              loading: () => const CircularProgressIndicator(),
-                              error: (err, stack) => Text('Error: $err'),
-                              data: (data) {
-                                return Row(
-                                  children: [
-                                    Container(
-                                      clipBehavior: Clip.antiAlias,
-                                      width: 80,
-                                      height: 80,
-                                      decoration: const BoxDecoration(
-                                        // BoxShapeをcircleにしているので丸型になってほしい
-                                        shape: BoxShape.circle,
-                                        color: Colors.blue,
-                                      ),
-                                      // 正方形の画像を表示する
-                                      // Containerは丸型なので丸くなってほしい
-                                      child: data != null
-                                          ? Image.network(data['imageUrl'])
-                                          : null,
-                                    ),
-                                    const SizedBox(width: 20),
-                                    Column(
-                                      children: [
-                                        data != null
-                                            ? Text(data['name'])
-                                            : const Text('プロフィールが登録されてません'),
-                                        SizedBox(height: 20),
-                                        Row(
-                                          // ignore: prefer_const_literals_to_create_immutables
-                                          children: [
-                                            Text('称号'),
-                                            SizedBox(width: 20),
-                                            data != null
-                                                ? Text(data['degree'])
-                                                : const Text('プロフィールが登録されてません'),
-                                          ],
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                );
-                              },
-                            )),
+                        // Padding(
+                        //     padding: const EdgeInsets.only(
+                        //         top: 20, left: 20, bottom: 20),
+                        //     child: getUser.when(
+                        //       loading: () => const CircularProgressIndicator(),
+                        //       error: (err, stack) => Text('Error: $err'),
+                        //       data: (data) {
+                        //         return Row(
+                        //           children: [
+                        //             Container(
+                        //               clipBehavior: Clip.antiAlias,
+                        //               width: 80,
+                        //               height: 80,
+                        //               decoration: const BoxDecoration(
+                        //                 // BoxShapeをcircleにしているので丸型になってほしい
+                        //                 shape: BoxShape.circle,
+                        //                 color: Colors.blue,
+                        //               ),
+                        //               // 正方形の画像を表示する
+                        //               // Containerは丸型なので丸くなってほしい
+                        //               child: data != null
+                        //                   ? Image.network(data['imageUrl'])
+                        //                   : null,
+                        //             ),
+                        //             const SizedBox(width: 20),
+                        //             Column(
+                        //               children: [
+                        //                 data != null
+                        //                     ? Text(data['name'])
+                        //                     : const Text('プロフィールが登録されてません'),
+                        //                 SizedBox(height: 20),
+                        //                 Row(
+                        //                   // ignore: prefer_const_literals_to_create_immutables
+                        //                   children: [
+                        //                     Text('称号'),
+                        //                     SizedBox(width: 20),
+                        //                     data != null
+                        //                         ? Text(data['degree'])
+                        //                         : const Text('プロフィールが登録されてません'),
+                        //                   ],
+                        //                 ),
+                        //               ],
+                        //             )
+                        //           ],
+                        //         );
+                        //       },
+                        //     )),
                         Expanded(
                           child: ListView(
                             children: [
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  GoRouter.of(context)
+                                      .goNamed(ProfileTest.rootName);
+                                },
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),
-                                  title: Text('注文履歴'),
+                                  title: Text('Profile Test'),
                                 ),
                               ),
                               CustomDivider(),

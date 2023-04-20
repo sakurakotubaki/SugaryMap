@@ -42,6 +42,7 @@ class SignUpPage extends ConsumerWidget {
             Container(
               width: 300,
               child: TextFormField(
+                obscureText: true,
                 controller: password,
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 20),

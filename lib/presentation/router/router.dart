@@ -13,6 +13,7 @@ import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/acco
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/password_reset_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/accont_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/profile_test.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/notification_page/notification_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/post_page/post_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/scaffold_navbar.dart';
@@ -108,6 +109,13 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                 return const MyPage();
               },
               routes: [
+                // TODO: TestPage
+                GoRoute(
+                    name: ProfileTest.rootName,
+                    path: 'test',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return ProfileTest();
+                    }),
                 GoRoute(
                     name: UserAccountSettings.routeName,
                     path: 'user_account',
