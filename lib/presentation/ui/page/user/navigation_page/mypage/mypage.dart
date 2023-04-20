@@ -8,6 +8,7 @@ import 'package:sugary_map/presentation/export/global_export.dart';
 import 'package:sugary_map/presentation/router/auth_provider.dart';
 import 'package:sugary_map/presentation/ui/component/global/custom_divider.dart';
 import 'package:sugary_map/presentation/ui/page/auth_page/signin_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/update_user.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/accont_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/profile_test.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -92,8 +93,10 @@ class MyPage extends ConsumerWidget {
                             children: [
                               GestureDetector(
                                 onTap: () {
+                                  // GoRouter.of(context)
+                                  // .goNamed(ProfileTest.rootName);
                                   GoRouter.of(context)
-                                      .goNamed(ProfileTest.rootName);
+                                      .goNamed(UpdateUser.routeName);
                                 },
                                 child: ListTile(
                                   trailing: Icon(Icons.arrow_forward_ios),

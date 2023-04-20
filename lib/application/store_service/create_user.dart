@@ -52,7 +52,7 @@ class CreateUserClass {
       'createdAt': createdAt,
     };
 
-    final _reference = db.collection('user').doc(uid);
-    _reference.set(data);
+    final reference = db.collection('user').doc(uid);
+    reference.set(data);
   }
 }

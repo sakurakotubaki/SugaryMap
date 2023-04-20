@@ -5,12 +5,12 @@ import 'package:firebase_storage/firebase_storage.dart';
 class AccountDeletionClass {
   final auth = FirebaseAuth.instance;
   final db = FirebaseFirestore.instance;
+  final storage = FirebaseStorage.instance;
   final deletedAt = Timestamp.fromDate(DateTime.now());
 
   Future<void> deleteAccount() async {
     try {
       final uid = auth.currentUser?.uid;
-      final storage = FirebaseStorage.instance;
       const uploadName = 'image.png';
 
       Map<String, dynamic> data = {

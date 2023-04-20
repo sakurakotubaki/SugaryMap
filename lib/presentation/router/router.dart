@@ -11,6 +11,7 @@ import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/acco
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/delete_account_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/mail_reset_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/password_reset_page.dart';
+import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/account/update_user.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/accont_page.dart';
 import 'package:sugary_map/presentation/ui/page/user/navigation_page/mypage/mypage_list/profile_test.dart';
@@ -115,6 +116,13 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                     path: 'test',
                     builder: (BuildContext context, GoRouterState state) {
                       return ProfileTest();
+                    }),
+                // TODO: UpdateTest
+                GoRoute(
+                    name: UpdateUser.routeName,
+                    path: 'update_user',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return UpdateUser();
                     }),
                 GoRoute(
                     name: UserAccountSettings.routeName,
